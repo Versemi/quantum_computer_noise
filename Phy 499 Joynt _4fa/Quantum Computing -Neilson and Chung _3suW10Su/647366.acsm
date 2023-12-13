@@ -1,0 +1,37 @@
+<fulfillmentToken fulfillmentType="loan" auth="user" xmlns="http://ns.adobe.com/adept">
+  <distributor>urn:uuid:9cb786e8-586a-4950-8901-fff8d2ee6025</distributor>
+  <operatorURL>http://acs.ebookcentral.proquest.com/fulfillment</operatorURL>
+  <transaction>647366_113529070</transaction>
+  <expiration>2018-09-01T22:39:30-07:00</expiration>
+  <resourceItemInfo>
+    <resource>urn:uuid:00000000-0000-0000-0000-000000647366</resource>
+    <resourceItem>0</resourceItem>
+    <metadata>
+      <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">Quantum Computation and Quantum Information</dc:title>
+      <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Nielsen, Michael; Chuang, Isaac; </dc:creator>
+      <dc:publisher xmlns:dc="http://purl.org/dc/elements/1.1/">Cambridge University Press</dc:publisher>
+      <dc:identifier xmlns:dc="http://purl.org/dc/elements/1.1/">647366</dc:identifier>
+      <dc:format xmlns:dc="http://purl.org/dc/elements/1.1/">application/pdf</dc:format>
+    </metadata>
+    <licenseToken>
+      <resource>urn:uuid:00000000-0000-0000-0000-000000647366</resource>
+      <permissions>
+        <display>
+          <duration>86124</duration>
+        </display>
+        <excerpt>
+          <duration>86124</duration>
+          <count initial="107" max="107" incrementInterval="804"/>
+        </excerpt>
+        <print>
+          <duration>86124</duration>
+          <count initial="142" max="142" incrementInterval="606"/>
+        </print>
+        <play>
+          <duration>86124</duration>
+        </play>
+      </permissions>
+    </licenseToken>
+  </resourceItemInfo>
+  <hmac>b7O0BalZY4IHPK92ZMssrlp5Z/U=</hmac>
+</fulfillmentToken>

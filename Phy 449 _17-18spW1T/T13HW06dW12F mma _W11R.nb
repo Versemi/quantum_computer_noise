@@ -1,0 +1,143 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3850,        135]
+NotebookOptionsPosition[      3050,        107]
+NotebookOutlinePosition[      3394,        122]
+CellTagsIndexPosition[      3351,        119]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Physics 449 hw#6 Due 4/20 W12F", "Chapter",
+ CellChangeTimes->{{3.7325750208773413`*^9, 
+  3.7325750311202135`*^9}},ExpressionUUID->"172edd93-739a-4885-963f-\
+c4c9c15bfa2a"],
+
+Cell["\<\
+Name: Ruojun Wang
+W11R 4/12\
+\>", "Text",
+ CellChangeTimes->{{3.7325750389789844`*^9, 
+  3.73257504764203*^9}},ExpressionUUID->"060c1133-ad4b-4b70-8eda-\
+5df5d0a9535e"],
+
+Cell[CellGroupData[{
+
+Cell["2) T13.7", "Section",
+ CellChangeTimes->{{3.7325750795452847`*^9, 
+  3.732575084101162*^9}},ExpressionUUID->"60a9b835-681c-47bf-a663-\
+887d3b492c1f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox[
+    RowBox[{"\[Mu]", " ", "V0", " "}], 
+    RowBox[{"2", "\[Pi]", " ", 
+     SuperscriptBox["\[HBar]", "2"]}]], 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["r", "2"], 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{
+        RowBox[{"-", "r"}], "/", "a"}]], 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{"\[ImaginaryI]", " ", "q", " ", "r", " ", 
+        RowBox[{"Cos", "[", "\[Theta]", "]"}]}]]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"r", ",", "0", ",", "\[Infinity]"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[Phi]", ",", "0", ",", 
+       RowBox[{"2", "\[Pi]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[Theta]", ",", "0", ",", "\[Pi]"}], "}"}]}], "]"}]}], "//", 
+  "Simplify"}]], "Input",
+ CellChangeTimes->{{3.732575091670636*^9, 
+  3.732575194173067*^9}},ExpressionUUID->"e2e91c9a-2766-4c54-ada8-\
+fd2f3b7ee8b3"],
+
+Cell[BoxData[
+ RowBox[{"ConditionalExpression", "[", 
+  RowBox[{
+   RowBox[{"-", 
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["a", "3"], " ", "\[Pi]", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "2"}], "+", 
+        RowBox[{
+         SuperscriptBox["a", "2"], " ", 
+         SuperscriptBox["q", "2"]}]}], ")"}], " ", "V0", " ", "\[Mu]"}], 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"1", "+", 
+         RowBox[{
+          SuperscriptBox["a", "2"], " ", 
+          SuperscriptBox["q", "2"]}]}], ")"}], 
+       RowBox[{"5", "/", "2"}]], " ", 
+      SuperscriptBox["\[HBar]", "2"]}]]}], ",", 
+   RowBox[{
+    RowBox[{"Re", "[", 
+     FractionBox["1", "a"], "]"}], ">", 
+    RowBox[{"Abs", "[", 
+     RowBox[{"Im", "[", "q", "]"}], "]"}]}]}], "]"}]], "Output",
+ CellChangeTimes->{
+  3.7325752387542024`*^9},ExpressionUUID->"1a574671-c877-4bcf-88a8-\
+09312a866208"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1216, 728},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 179, 3, 72, "Chapter", "ExpressionUUID" -> \
+"172edd93-739a-4885-963f-c4c9c15bfa2a"],
+Cell[762, 27, 178, 6, 49, "Text", "ExpressionUUID" -> \
+"060c1133-ad4b-4b70-8eda-5df5d0a9535e"],
+Cell[CellGroupData[{
+Cell[965, 37, 155, 3, 70, "Section", "ExpressionUUID" -> \
+"60a9b835-681c-47bf-a663-887d3b492c1f"],
+Cell[CellGroupData[{
+Cell[1145, 44, 945, 27, 56, "Input", "ExpressionUUID" -> \
+"e2e91c9a-2766-4c54-ada8-fd2f3b7ee8b3"],
+Cell[2093, 73, 917, 29, 93, "Output", "ExpressionUUID" -> \
+"1a574671-c877-4bcf-88a8-09312a866208"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

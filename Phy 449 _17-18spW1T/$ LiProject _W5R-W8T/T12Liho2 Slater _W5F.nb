@@ -1,0 +1,1597 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     56076,       1589]
+NotebookOptionsPosition[     50554,       1462]
+NotebookOutlinePosition[     51551,       1492]
+CellTagsIndexPosition[     51508,       1489]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["Slater Determinants and the Pauli Exclusion Principle",
+ FontSize->24,
+ FontColor->RGBColor[
+  0.9740291447318227, 0.3026626993209735, 0.32771801327534905`]]], "Title",
+ CellChangeTimes->{{3.5720155839971457`*^9, 3.572015596770288*^9}, {
+  3.594837777572315*^9, 3.594837799695654*^9}, {3.7015990285602627`*^9, 
+  3.701599035657387*^9}, {3.7280485785254107`*^9, 3.728048584778322*^9}, {
+  3.7282942358332443`*^9, 3.728294238437572*^9}, {3.728314480019953*^9, 
+  3.728314488344036*^9}},ExpressionUUID->"3d5905d0-5a59-448b-8675-\
+3058f285f002"],
+
+Cell[TextData[{
+ "\tA very common method to ensure that multi-electron wavefunctions are \
+antisymmetric on exchange is to expand the wavefunctions in a series of \
+Slater determinants, each of which is constructed to be anti-symmetric.  To \
+illustrate the idea, we begin with the He atom.  We are using single particle \
+orbitals ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[CurlyPhi]", "n"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "a6588a80-a860-49ef-8fc1-8824867af7f3"],
+ " of the hydrogenic type."
+}], "Text",
+ CellChangeTimes->{{3.7281989425215483`*^9, 3.728198998730859*^9}, {
+   3.728199042586638*^9, 3.728199142446855*^9}, {3.728199201222598*^9, 
+   3.7281992325308113`*^9}, {3.728199278364903*^9, 3.728199712344615*^9}, {
+   3.72819975400394*^9, 3.7281998553693027`*^9}, {3.72819997313268*^9, 
+   3.728199999607052*^9}, {3.7282000485446*^9, 3.728200055328446*^9}, 
+   3.72820012137903*^9, {3.72820016656499*^9, 3.728200723961055*^9}, {
+   3.728200754500648*^9, 3.728200903840508*^9}, {3.728200984882934*^9, 
+   3.7282010652066174`*^9}, {3.728211112877644*^9, 3.728211230034853*^9}, {
+   3.728211488054587*^9, 3.728211499720931*^9}, {3.728211665056782*^9, 
+   3.7282117331731567`*^9}, {3.728211831723975*^9, 3.728211966780342*^9}, {
+   3.7282942588708353`*^9, 3.728294394364244*^9}, {3.728294462933281*^9, 
+   3.7282946636681232`*^9}, {3.728294777688875*^9, 3.728294785562619*^9}, {
+   3.728294817244269*^9, 3.7282948184576473`*^9}, {3.7282952756822863`*^9, 
+   3.7282953316057463`*^9}, {3.728296365631686*^9, 
+   3.728296377498667*^9}},ExpressionUUID->"ac1f21ca-0d18-4ee6-bc35-\
+6c4c7b888f29"],
+
+Cell["\<\
+\tTo guarantee that our wavefunctions obey the Pauli exclusion principle, we \
+will expand the wavefunction in a series of Slater determinants (the name \
+will become clear later):\
+\>", "Text",
+ CellChangeTimes->{{3.728296371045918*^9, 3.728296382032489*^9}, {
+  3.728296429881197*^9, 3.728296442016564*^9}, {3.728302795205888*^9, 
+  3.7283028075352497`*^9}, {3.728303002186597*^9, 3.72830301640281*^9}, {
+  3.728309167990712*^9, 
+  3.7283091775411663`*^9}},ExpressionUUID->"802edcdd-6b7d-413e-8d8b-\
+78d4d5c6b340"],
+
+Cell[BoxData[Cell[TextData[{
+  Cell[BoxData[
+   FormBox[
+    RowBox[{
+     TemplateBox[{RowBox[{"\[LeftDoubleBracketingBar]", 
+         RowBox[{
+           RowBox[{
+             SubscriptBox["n", "1"], "d"}], ";", 
+           RowBox[{
+             SubscriptBox["n", "2"], " ", "u"}]}], 
+         "\[RightDoubleBracketingBar]"}]},
+      "Ket"], "=", 
+     RowBox[{
+      RowBox[{
+       FractionBox["1", 
+        SqrtBox["2"]], 
+       RowBox[{"(", 
+        RowBox[{
+         TemplateBox[{RowBox[{
+             RowBox[{
+               SubscriptBox["n", "1"], "d"}], ";", 
+             RowBox[{
+               SubscriptBox["n", "2"], "u"}]}]},
+          "Ket"], "-", 
+         TemplateBox[{RowBox[{
+             RowBox[{
+               SubscriptBox["n", "2"], "u"}], ";", 
+             RowBox[{
+               SubscriptBox["n", "1"], "d"}]}]},
+          "Ket"]}], ")"}]}], "=", 
+      RowBox[{
+       FractionBox["1", 
+        SqrtBox["2"]], 
+       RowBox[{"(", 
+        RowBox[{"1", "-", 
+         SubscriptBox["P", "12"]}], ")"}], 
+       TemplateBox[{RowBox[{
+           RowBox[{
+             SubscriptBox["n", "1"], "d"}], ";", 
+           RowBox[{
+             SubscriptBox["n", "2"], "u"}]}]},
+        "Ket"]}]}]}], TraditionalForm]],ExpressionUUID->
+   "087cd63c-26bb-494c-b8ff-84e541b290ad"],
+  ". "
+ }],ExpressionUUID->
+  "20293610-b9f6-49ae-be23-e409268374da"]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.7283028112714243`*^9, 3.728302812063834*^9}, {
+  3.728314554542145*^9, 
+  3.728314562158276*^9}},ExpressionUUID->"3ccf1c2c-bc15-4c4e-9960-\
+657e1e3d09c0"],
+
+Cell["\<\
+This superficially appears to be quite different than both the product basis \
+and the singlet/triplet basis, since it is neither a singlet nor a triplet \
+state.  But it is anti-symmetric, since \
+\>", "Text",
+ CellChangeTimes->{
+  3.7283027970385447`*^9},ExpressionUUID->"da48941a-f540-48cc-9e40-\
+3aa93d65ce53"],
+
+Cell[BoxData[Cell[TextData[{
+  Cell[BoxData[
+   FormBox[
+    RowBox[{" ", 
+     RowBox[{
+      FormBox[
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          SubscriptBox["P", "12"], 
+          TemplateBox[{RowBox[{"\[LeftDoubleBracketingBar]", 
+              RowBox[{
+                RowBox[{
+                  SubscriptBox["n", "1"], "d"}], ";", 
+                RowBox[{
+                  SubscriptBox["n", "2"], "u"}]}], 
+              "\[RightDoubleBracketingBar]"}]},
+           "Ket"]}], "=", 
+         RowBox[{
+          RowBox[{
+           SubscriptBox["P", "12"], 
+           FractionBox["1", 
+            SqrtBox["2"]], 
+           RowBox[{"(", 
+            RowBox[{"1", "-", 
+             SubscriptBox["P", "12"]}], ")"}], 
+           TemplateBox[{RowBox[{
+               RowBox[{
+                 SubscriptBox["n", "1"], "d"}], ";", 
+               RowBox[{
+                 SubscriptBox["n", "2"], "u"}]}]},
+            "Ket"]}], "=", 
+          RowBox[{
+           FractionBox["1", 
+            SqrtBox["2"]], 
+           RowBox[{"(", 
+            RowBox[{
+             SubscriptBox["P", "12"], "-", 
+             SubsuperscriptBox["P", "12", "2"]}], ")"}], 
+           TemplateBox[{RowBox[{
+               RowBox[{
+                 SubscriptBox["n", "1"], "d"}], ";", 
+               RowBox[{
+                 SubscriptBox["n", "2"], "u"}]}]},
+            "Ket"]}]}]}], "\[IndentingNewLine]", 
+        RowBox[{"=", 
+         RowBox[{
+          RowBox[{
+           FractionBox["1", 
+            SqrtBox["2"]], 
+           RowBox[{"(", 
+            RowBox[{
+             SubscriptBox["P", "12"], "-", "1"}], ")"}], 
+           TemplateBox[{RowBox[{
+               RowBox[{
+                 SubscriptBox["n", "1"], "d"}], ";", 
+               RowBox[{
+                 SubscriptBox["n", "2"], "u"}]}]},
+            "Ket"]}], "=", 
+          RowBox[{"-", 
+           TemplateBox[{RowBox[{"\[LeftDoubleBracketingBar]", 
+               RowBox[{
+                 RowBox[{
+                   SubscriptBox["n", "1"], "d"}], ";", 
+                 RowBox[{
+                   SubscriptBox["n", "2"], "u"}]}], 
+               "\[RightDoubleBracketingBar]"}]},
+            "Ket"]}]}]}]}],
+       TraditionalForm], "."}]}], TraditionalForm]],ExpressionUUID->
+   "560cf8b7-efc0-4949-87b5-f0240a5bdbdb"],
+  " "
+ }],ExpressionUUID->
+  "fe9d6003-3813-403d-8537-0cdefeafa4fc"]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.7283028112714243`*^9, 3.728302812063834*^9}, {
+  3.728303011137413*^9, 3.728303035877904*^9}, {3.7283145744101667`*^9, 
+  3.72831459453409*^9}},ExpressionUUID->"2e84f397-deaf-4d81-ae02-\
+9b32ae545f80"],
+
+Cell[TextData[{
+ "\tLet\[CloseCurlyQuote]s calculate a general matrix element of the \
+Hamiltonian in this basis.  Using ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"1", " ", "-", 
+       SubscriptBox["P", "12"]}], ")"}], "2"], "=", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"1", " ", "-", 
+       RowBox[{"2", 
+        SubscriptBox["P", "12"]}], "+", 
+       SuperscriptBox[
+        SubscriptBox["P", "12"], "2"]}], ")"}], "=", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"1", " ", "-", 
+        RowBox[{"2", 
+         SubscriptBox["P", "12"]}], "+", "1"}], ")"}], "=", 
+      RowBox[{"2", 
+       RowBox[{"(", 
+        RowBox[{"1", "-", 
+         SubscriptBox["P", "12"]}], ")"}]}]}]}]}], TraditionalForm]],
+  ExpressionUUID->"e986228c-9528-4ebc-a732-85cc86875971"],
+ ", we get:"
+}], "Text",
+ CellChangeTimes->{{3.728296433774774*^9, 3.728296448699258*^9}, 
+   3.72829651219685*^9, {3.728303079499555*^9, 
+   3.728303104287168*^9}},ExpressionUUID->"c3f02cd2-bfea-4339-ae82-\
+87dc2cf07255"],
+
+Cell[BoxData[
+ RowBox[{Cell[" ",ExpressionUUID->"1dfbb2d8-8ede-4763-9de6-9d3b6a408b3b"], 
+  Cell[TextData[Cell[BoxData[{
+   FormBox[
+    RowBox[{
+     RowBox[{
+      TemplateBox[{RowBox[{"\[LeftDoubleBracketingBar]", 
+          RowBox[{
+            RowBox[{
+              SubscriptBox["n", "1"], "d"}], ";", 
+            RowBox[{
+              SubscriptBox["n", "2"], "u"}]}], 
+          "\[RightDoubleBracketingBar]"}]},
+       "Bra"], "H", 
+      TemplateBox[{RowBox[{"\[LeftDoubleBracketingBar]", 
+          RowBox[{
+            RowBox[{
+              SubscriptBox["n", "3"], "d"}], ";", 
+            RowBox[{
+              SubscriptBox["n", "4"], "u"}]}], 
+          "\[RightDoubleBracketingBar]"}]},
+       "Ket"]}], "=", 
+     RowBox[{
+      FractionBox["1", "2"], 
+      RowBox[{
+       TemplateBox[{RowBox[{
+           RowBox[{
+             SubscriptBox["n", "1"], "d"}], ";", 
+           RowBox[{
+             SubscriptBox["n", "2"], " ", "u"}]}]},
+        "Bra"], "(", 
+       RowBox[{"1", "-", 
+        SubscriptBox["P", "12"]}], ")"}], "H", " ", 
+      RowBox[{"(", 
+       RowBox[{"1", "-", 
+        SubscriptBox["P", "12"]}], ")"}], 
+      TemplateBox[{RowBox[{
+          RowBox[{
+            SubscriptBox["n", "3"], "d"}], ";", 
+          RowBox[{
+            SubscriptBox["n", "4"], " ", "u"}]}]},
+       "Ket"]}]}], TraditionalForm], "\[IndentingNewLine]", 
+   FormBox[
+    RowBox[{"=", 
+     RowBox[{
+      RowBox[{
+       FractionBox["1", "2"], 
+       TemplateBox[{RowBox[{
+           RowBox[{
+             SubscriptBox["n", "1"], "d"}], ";", 
+           RowBox[{
+             SubscriptBox["n", "2"], " ", "u", " "}]}]},
+        "Bra"], "H", " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          SubscriptBox["P", "12"]}], ")"}], "2"], 
+       TemplateBox[{RowBox[{
+           RowBox[{
+             SubscriptBox["n", "3"], "d"}], ";", 
+           RowBox[{
+             SubscriptBox["n", "4"], " ", "u"}]}]},
+        "Ket"]}], "=", 
+      RowBox[{
+       TemplateBox[{RowBox[{
+           RowBox[{
+             SubscriptBox["n", "1"], "d"}], ";", 
+           RowBox[{
+             SubscriptBox["n", "2"], " ", "u", " "}]}]},
+        "Bra"], "H", " ", 
+       RowBox[{"(", 
+        RowBox[{"1", "-", 
+         SubscriptBox["P", "12"]}], ")"}], 
+       TemplateBox[{RowBox[{
+           RowBox[{
+             SubscriptBox["n", "3"], "d"}], ";", 
+           RowBox[{
+             SubscriptBox["n", "4"], " ", "u"}]}]},
+        "Ket"]}]}]}], TraditionalForm], "\[IndentingNewLine]", 
+   FormBox[
+    RowBox[{"=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        TemplateBox[{RowBox[{
+            SubscriptBox["n", "1"], 
+            SubscriptBox["n", "2"], " "}]},
+         "Bra"], "H", " ", 
+        TemplateBox[{RowBox[{
+            SubscriptBox["n", "3"], 
+            SubscriptBox["n", "4"], " "}]},
+         "Ket"], 
+        TemplateBox[{RowBox[{"d", " ", "u"}],RowBox[{"d", " ", "u"}]},
+         "BraKet"]}], "-", 
+       RowBox[{
+        TemplateBox[{RowBox[{
+            SubscriptBox["n", "1"], 
+            SubscriptBox["n", "2"], " "}]},
+         "Bra"], "H", " ", 
+        TemplateBox[{RowBox[{
+            SubscriptBox["n", "4"], 
+            SubscriptBox["n", "3"], " "}]},
+         "Ket"], 
+        TemplateBox[{RowBox[{"d", " ", "u"}],RowBox[{"u", " ", "d"}]},
+         "BraKet"]}]}], "=", 
+      RowBox[{
+       TemplateBox[{RowBox[{
+           SubscriptBox["n", "1"], 
+           SubscriptBox["n", "2"], " "}]},
+        "Bra"], "H", " ", 
+       TemplateBox[{RowBox[{
+           SubscriptBox["n", "3"], 
+           SubscriptBox["n", "4"], " "}]},
+        "Ket"]}]}]}], TraditionalForm]}],ExpressionUUID->
+   "bde2c3d7-84c0-47ff-8ee2-476b0c98da71"]],ExpressionUUID->
+   "da937bb6-f81a-4b54-bafe-4bab53eb2882"]}]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.7283028112714243`*^9, 3.728302812063834*^9}, {
+  3.728303011137413*^9, 3.728303035877904*^9}, {3.728303073197247*^9, 
+  3.728303085794619*^9}, {3.728314623783527*^9, 
+  3.72831463491012*^9}},ExpressionUUID->"e2699560-821d-43cb-835e-\
+cab5a5fa5589"],
+
+Cell["\<\
+This is identical to assuming an unsymmetrized product basis!\
+\>", "Text",
+ CellChangeTimes->{
+  3.728303095243308*^9},ExpressionUUID->"ff13aa49-c876-42bb-b479-\
+1c5c6a668008"],
+
+Cell["\<\
+With this interpretation, the symmetric linear combinations of Slater \
+determinants are singlets:  \
+\>", "Text",
+ CellChangeTimes->{
+  3.728296515989003*^9, {3.728303138885071*^9, 
+   3.728303182598688*^9}},ExpressionUUID->"2168670d-e341-4ba2-bf5c-\
+8ab55b717c11"],
+
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{
+    FractionBox["1", 
+     SqrtBox[
+      RowBox[{"2", ")"}]]], 
+    RowBox[{"(", 
+     RowBox[{
+      TemplateBox[{RowBox[{"\[LeftDoubleBracketingBar]", 
+          RowBox[{
+            RowBox[{
+              SubscriptBox["n", "3"], "d"}], ";", 
+            RowBox[{
+              SubscriptBox["n", "4"], "u"}]}], 
+          "\[RightDoubleBracketingBar]"}]},
+       "Ket"], "+", 
+      TemplateBox[{RowBox[{"\[LeftDoubleBracketingBar]", 
+          RowBox[{
+            RowBox[{
+              SubscriptBox["n", "4"], "d"}], ";", 
+            RowBox[{
+              SubscriptBox["n", "3"], "u"}]}], 
+          "\[RightDoubleBracketingBar]"}]},
+       "Ket"]}], ")"}]}], "=", 
+   RowBox[{
+    FractionBox["1", "2"], 
+    RowBox[{"(", 
+     RowBox[{
+      TemplateBox[{RowBox[{
+          RowBox[{
+            SubscriptBox["n", "3"], "d"}], ";", 
+          RowBox[{
+            SubscriptBox["n", "4"], "u"}]}]},
+       "Ket"], "-", 
+      TemplateBox[{RowBox[{
+          RowBox[{
+            SubscriptBox["n", "4"], "u"}], ";", 
+          RowBox[{
+            SubscriptBox["n", "3"], "d"}]}]},
+       "Ket"], "+", 
+      TemplateBox[{RowBox[{
+          RowBox[{
+            SubscriptBox["n", "4"], "d"}], ";", 
+          RowBox[{
+            SubscriptBox["n", "3"], "u"}]}]},
+       "Ket"], "-", 
+      TemplateBox[{RowBox[{
+          RowBox[{
+            SubscriptBox["n", "3"], "u"}], ";", 
+          RowBox[{
+            SubscriptBox["n", "4"], "d"}]}]},
+       "Ket"]}], ")"}]}]}], TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{"=", 
+   RowBox[{
+    FractionBox["1", "2"], 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        TemplateBox[{RowBox[{
+            SubscriptBox["n", "3"], 
+            SubscriptBox["n", "4"]}]},
+         "Ket"], 
+        TemplateBox[{RowBox[{"d", "\[VeryThinSpace]", "u"}]},
+         "Ket"]}], "-", 
+       RowBox[{
+        TemplateBox[{RowBox[{
+            SubscriptBox["n", "3"], 
+            SubscriptBox["n", "4"]}]},
+         "Ket"], 
+        TemplateBox[{RowBox[{"u", " ", "d"}]},
+         "Ket"]}], "+", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          TemplateBox[{RowBox[{
+              SubscriptBox["n", "4"], 
+              SubscriptBox["n", "3"]}]},
+           "Ket"], 
+          TemplateBox[{RowBox[{"d", " ", "u"}]},
+           "Ket"]}], "-", 
+         RowBox[{
+          TemplateBox[{RowBox[{
+              SubscriptBox["n", "4"], 
+              SubscriptBox["n", "3"]}]},
+           "Ket"], 
+          TemplateBox[{RowBox[{"u", " ", "d"}]},
+           "Ket"]}]}], ")"}]}], "\[IndentingNewLine]", "=", 
+      RowBox[{
+       FractionBox["1", "2"], 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           TemplateBox[{RowBox[{
+               SubscriptBox["n", "3"], 
+               SubscriptBox["n", "4"]}]},
+            "Ket"], 
+           RowBox[{"(", 
+            RowBox[{
+             TemplateBox[{RowBox[{"d", "\[VeryThinSpace]", "u"}]},
+              "Ket"], "-", 
+             TemplateBox[{RowBox[{"u", " ", "d"}]},
+              "Ket"]}], ")"}]}], "+", 
+          RowBox[{
+           TemplateBox[{RowBox[{
+               SubscriptBox["n", "4"], 
+               SubscriptBox["n", "3"]}]},
+            "Ket"], 
+           RowBox[{"(", 
+            RowBox[{
+             TemplateBox[{RowBox[{"d", " ", "u"}]},
+              "Ket"], "-", 
+             TemplateBox[{RowBox[{"u", " ", "d"}]},
+              "Ket"]}], ")"}]}]}], "=", 
+         RowBox[{
+          FractionBox["1", 
+           SqrtBox["2"]], 
+          RowBox[{"(", 
+           RowBox[{
+            TemplateBox[{RowBox[{
+                SubscriptBox["n", "3"], 
+                SubscriptBox["n", "4"]}]},
+             "Ket"], "+", 
+            TemplateBox[{RowBox[{
+                SubscriptBox["n", "4"], 
+                SubscriptBox["n", "3"]}]},
+             "Ket"]}], ")"}], 
+          TemplateBox[{"sing"},
+           "Ket"]}]}]}]}]}]}]}]}], 
+  TraditionalForm]}], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.7283028112714243`*^9, 3.728302812063834*^9}, {
+  3.728303011137413*^9, 3.728303035877904*^9}, {3.728303073197247*^9, 
+  3.728303085794619*^9}, {3.7283031326275063`*^9, 3.728303142464253*^9}, {
+  3.728314644989862*^9, 
+  3.728314654619832*^9}},ExpressionUUID->"e20bac53-dfab-4009-9a87-\
+7df2061ade62"],
+
+Cell[" while the antisymmetric combinations are triplets:", "Text",
+ CellChangeTimes->{
+  3.728303155318687*^9},ExpressionUUID->"78765cbe-c565-48cd-a7f6-\
+02e59a4407df"],
+
+Cell[BoxData[
+ FormBox[Cell[TextData[Cell[BoxData[{
+   FormBox[
+    RowBox[{
+     RowBox[{
+      FractionBox["1", 
+       SqrtBox[
+        RowBox[{"2", ")"}]]], 
+      RowBox[{"(", 
+       RowBox[{
+        TemplateBox[{RowBox[{"\[LeftDoubleBracketingBar]", 
+            RowBox[{
+              RowBox[{
+                SubscriptBox["n", "3"], "d"}], ";", 
+              RowBox[{
+                SubscriptBox["n", "4"], "u"}]}], 
+            "\[RightDoubleBracketingBar]"}]},
+         "Ket"], "-", 
+        TemplateBox[{RowBox[{"\[LeftDoubleBracketingBar]", 
+            RowBox[{
+              RowBox[{
+                SubscriptBox["n", "4"], "d"}], ";", 
+              RowBox[{
+                SubscriptBox["n", "3"], "u"}]}], 
+            "\[RightDoubleBracketingBar]"}]},
+         "Ket"]}], ")"}]}], "=", 
+     RowBox[{
+      FractionBox["1", "2"], 
+      RowBox[{"(", 
+       RowBox[{
+        TemplateBox[{RowBox[{
+            RowBox[{
+              SubscriptBox["n", "3"], "d"}], ";", 
+            RowBox[{
+              SubscriptBox["n", "4"], "u"}]}]},
+         "Ket"], "-", 
+        TemplateBox[{RowBox[{
+            RowBox[{
+              SubscriptBox["n", "4"], "u"}], ";", 
+            RowBox[{
+              SubscriptBox["n", "3"], "d"}]}]},
+         "Ket"], "-", 
+        TemplateBox[{RowBox[{
+            RowBox[{
+              SubscriptBox["n", "4"], "d"}], ";", 
+            RowBox[{
+              SubscriptBox["n", "3"], "u"}]}]},
+         "Ket"], "+", 
+        TemplateBox[{RowBox[{
+            RowBox[{
+              SubscriptBox["n", "3"], "u"}], ";", 
+            RowBox[{
+              SubscriptBox["n", "4"], "d"}]}]},
+         "Ket"]}], ")"}]}]}], TraditionalForm], "\[IndentingNewLine]", 
+   FormBox[
+    RowBox[{"=", 
+     RowBox[{
+      FractionBox["1", "2"], 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          TemplateBox[{RowBox[{
+              SubscriptBox["n", "3"], 
+              SubscriptBox["n", "4"]}]},
+           "Ket"], 
+          TemplateBox[{RowBox[{"d", "\[VeryThinSpace]", "u"}]},
+           "Ket"]}], "+", 
+         RowBox[{
+          TemplateBox[{RowBox[{
+              SubscriptBox["n", "3"], 
+              SubscriptBox["n", "4"]}]},
+           "Ket"], 
+          TemplateBox[{RowBox[{"u", " ", "d"}]},
+           "Ket"]}], "-", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            TemplateBox[{RowBox[{
+                SubscriptBox["n", "4"], 
+                SubscriptBox["n", "3"]}]},
+             "Ket"], 
+            TemplateBox[{RowBox[{"d", " ", "u"}]},
+             "Ket"]}], "+", 
+           RowBox[{
+            TemplateBox[{RowBox[{
+                SubscriptBox["n", "4"], 
+                SubscriptBox["n", "3"]}]},
+             "Ket"], 
+            TemplateBox[{RowBox[{"u", " ", "d"}]},
+             "Ket"]}]}], ")"}]}], "\[IndentingNewLine]", "=", 
+        RowBox[{
+         FractionBox["1", 
+          SqrtBox["2"]], 
+         RowBox[{"(", 
+          RowBox[{
+           TemplateBox[{RowBox[{
+               SubscriptBox["n", "3"], 
+               SubscriptBox["n", "4"]}]},
+            "Ket"], "-", 
+           TemplateBox[{RowBox[{
+               SubscriptBox["n", "4"], 
+               SubscriptBox["n", "3"]}]},
+            "Ket"]}], ")"}], 
+         TemplateBox[{"trip"},
+          "Ket"]}]}]}]}]}], TraditionalForm]}],ExpressionUUID->
+   "748bc0a5-180d-4dcd-8033-12fcaebe437e"]],ExpressionUUID->
+   "62076f23-2ba7-4f3a-b184-318906cecef2"], 
+  TraditionalForm]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.7283028112714243`*^9, 3.728302812063834*^9}, {
+  3.728303011137413*^9, 3.728303035877904*^9}, {3.728303073197247*^9, 
+  3.728303085794619*^9}, {3.7283031326275063`*^9, 3.728303198900223*^9}, {
+  3.7283146619695063`*^9, 
+  3.7283146703722143`*^9}},ExpressionUUID->"239b5ce9-9c6c-438f-9e37-\
+3651e9f3de0a"],
+
+Cell[TextData[{
+ "\tSo, from this discussion we conclude that for a 2-electron system whether \
+to use a Slater determinant or product basis is a matter of personal whim\
+\[LongDash]literally.  The Hamiltonian matrix is identical in the two cases.  \
+For 3 electrons, this is not true.  For example, the product state ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[{RowBox[{
+       RowBox[{"1", "s", " ", "d"}], ";", 
+       RowBox[{"1", "s", " ", "u"}], ";", 
+       RowBox[{"1", "s", " ", "d"}]}]},
+    "Ket"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d8c7bd42-09ff-4911-b80c-01833028ff30"],
+ " is a perfectly valid mathematical construction, but it is not \
+exchange-anti-symmetric nor can it be made so, and so should be left out of \
+the basis set for the Hamiltonian.  The Pauli requirement that the \
+wavefunction be antisymmetric upon interchange of ",
+ StyleBox["any pair ",
+  FontSlant->"Italic"],
+ " of electrons very greatly restricts the types of states that can exist.\n\n\
+\tAgain, for the He atom we can be kind of sloppy and use a simple product \
+basis to represent the Hamiltonian because the fact that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"[", 
+     RowBox[{
+      OverscriptBox["H", "^"], ",", 
+      SubscriptBox["P", "12"]}], "]"}], "=", "0"}], TraditionalForm]],
+  ExpressionUUID->"b6d199ab-eb93-4ffe-8f82-14881fa09529"],
+ " guarantees that the resulting eigenvectors, when multiplied by appropriate \
+singlet/triplet spin states, would be simultaneous eigenvectors of the \
+exchange operator and the Hamiltonian.  "
+}], "Text",
+ CellChangeTimes->{{3.728294916400568*^9, 3.72829500258674*^9}, {
+  3.728295134852511*^9, 3.728295270865519*^9}, {3.728295339794634*^9, 
+  3.728295426364057*^9}, {3.728295471895227*^9, 3.7282955932488213`*^9}, {
+  3.7282956374728413`*^9, 3.728295656375477*^9}, {3.728295746373386*^9, 
+  3.728295778480832*^9}, {3.728296209807969*^9, 3.7282962468403997`*^9}, {
+  3.728296404826428*^9, 3.728296413400764*^9}, {3.728303231933403*^9, 
+  3.7283032760981817`*^9}},ExpressionUUID->"6bd93abe-50e2-4ecd-87c5-\
+ed43e2eb1b4d"],
+
+Cell[TextData[{
+ "\tThe same reasoning does not hold for a 3-electron system.  While ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"[", 
+     RowBox[{
+      OverscriptBox["H", "^"], ",", 
+      SubscriptBox[
+       OverscriptBox["P", "^"], "12"]}], "]"}], "=", 
+    RowBox[{
+     RowBox[{"[", 
+      RowBox[{
+       OverscriptBox["H", "^"], ",", 
+       SubscriptBox[
+        OverscriptBox["P", "^"], "23"]}], "]"}], "=", 
+     RowBox[{
+      RowBox[{"[", 
+       RowBox[{
+        OverscriptBox["H", "^"], ",", 
+        SubscriptBox[
+         OverscriptBox["P", "^"], "13"]}], "]"}], "=", "0"}]}]}], 
+   TraditionalForm]],ExpressionUUID->"9a976885-1a51-4ede-8072-afb5b980ac37"],
+ ", the eigenvectors generally ",
+ StyleBox["cannot",
+  FontSlant->"Italic"],
+ " be chosen to be simultaneous eigenvectors of the three exchange operators. \
+ But how to reconcile this with Pauli? The answer lies is that the fact that \
+the exchange operators (which have eigenvalues of only ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[PlusMinus]", "1"}], TraditionalForm]],ExpressionUUID->
+  "7bfa6a7f-463e-454a-95ce-5ce6403a23dc"],
+ ") have a large amount of degeneracy.  For a given ",
+ Cell[BoxData[
+  FormBox[
+   OverscriptBox["H", "^"], TraditionalForm]],ExpressionUUID->
+  "b8fad29e-9c60-4414-88d2-41401d658a22"],
+ ", we can always choose to find eigenstates that are eigenfunctions of ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox[
+    OverscriptBox["P", "^"], "12"], TraditionalForm]],ExpressionUUID->
+  "0f505f4b-e4c6-49c2-aef7-a72c1d677bd5"],
+ ", since ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"[", 
+     RowBox[{
+      OverscriptBox["H", "^"], ",", 
+      SubscriptBox[
+       OverscriptBox["P", "^"], "12"]}], "]"}], "=", "0"}], TraditionalForm]],
+  ExpressionUUID->"ac2f8032-fdb6-4d20-9164-79add29b9e22"],
+ ".  What will happen is that the eigenvalues will nevertheless be \
+degenerate.  The allowed physical solutions must come from the subset of \
+eigenvalues of ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox[
+    OverscriptBox["P", "^"], "12"], TraditionalForm]],ExpressionUUID->
+  "d18463f9-2bcb-4698-8481-535dba6accab"],
+ " that are -1 and have the same eigenvalue of ",
+ Cell[BoxData[
+  FormBox[
+   OverscriptBox["H", "^"], TraditionalForm]],ExpressionUUID->
+  "8b7a127c-259b-464b-b7c3-a3ed7bb6312e"],
+ ".  Focussing on that degenerate subspace, we can then chose a linear \
+combination of those eigenvectors that is also an eigenvector of ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox[
+    OverscriptBox["P", "^"], "23"], TraditionalForm]],ExpressionUUID->
+  "8a5e1bc6-c50e-4502-a367-301ea16f9653"],
+ ".  When we do that, you can prove (you will do so as part of your project) \
+that the result will also be an eigenvector of ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox[
+    OverscriptBox["P", "^"], "13"], TraditionalForm]],ExpressionUUID->
+  "600bc0ce-031d-4c7d-b233-0598e6efa491"],
+ " with eigenvalue -1.  "
+}], "Text",
+ CellChangeTimes->{{3.7283032727378893`*^9, 3.728303278259131*^9}, {
+  3.7283033224831753`*^9, 
+  3.728303350057235*^9}},ExpressionUUID->"159cd369-4dd1-4be7-bc90-\
+b9f48f17dc07"],
+
+Cell[TextData[{
+ "\tLet\[CloseCurlyQuote]s illustrate.  Suppose we have a set of 6 products \
+of spin-orbitals that nominally obey the Pauli principle (the electrons have \
+unique quantum numbers): ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     TemplateBox[{RowBox[{
+         RowBox[{"a", "\[VeryThinSpace]", "d"}], ";", 
+         RowBox[{"b", "\[VeryThinSpace]", "u"}], ";", 
+         RowBox[{"c", " ", "u"}]}]},
+      "Ket"], "=", 
+     TemplateBox[{"1"},
+      "Ket"]}], ",", 
+    RowBox[{
+     TemplateBox[{RowBox[{
+         RowBox[{"a", "\[VeryThinSpace]", "d"}], ";", 
+         RowBox[{"c", "\[VeryThinSpace]", "u"}], ";", 
+         RowBox[{"b", " ", "u"}]}]},
+      "Ket"], "=", 
+     TemplateBox[{"2"},
+      "Ket"]}], ",", 
+    TemplateBox[{RowBox[{
+        RowBox[{"b", "\[VeryThinSpace]", "u"}], ";", 
+        RowBox[{"c", " ", "u"}], ";", 
+        RowBox[{"a", "\[VeryThinSpace]", "d"}]}]},
+     "Ket"], ",", 
+    TemplateBox[{RowBox[{
+        RowBox[{"c", "\[VeryThinSpace]", "u"}], ";", 
+        RowBox[{"b", " ", "u"}], ";", 
+        RowBox[{"a", "\[VeryThinSpace]", "d"}]}]},
+     "Ket"], ",", 
+    TemplateBox[{RowBox[{
+        RowBox[{"c", " ", "u"}], ";", 
+        RowBox[{"a", "\[VeryThinSpace]", "d"}], ";", 
+        RowBox[{"b", "\[VeryThinSpace]", "u"}]}]},
+     "Ket"], ",", 
+    RowBox[{
+     TemplateBox[{RowBox[{
+         RowBox[{"b", " ", "u"}], ";", 
+         RowBox[{"a", "\[VeryThinSpace]", "d"}], ";", 
+         RowBox[{"c", "\[VeryThinSpace]", "u"}]}]},
+      "Ket"], "=", 
+     RowBox[{
+      TemplateBox[{"6"},
+       "Ket"], "."}]}]}], TraditionalForm]],ExpressionUUID->
+  "8d95300d-d7cb-4010-aadd-cbb643b781ba"],
+ "  \nThe diagonal elements of the Hamiltonian for this set must all be \
+equal.  Since the Hamiltonian matrix elements are zero unless the spin \
+quantum numbers are the same for both bra and ket,  the only off-diagonal \
+elements are ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["H", "12"], "=", 
+    RowBox[{
+     SubscriptBox["H", "34"], "=", 
+     SubscriptBox["H", "56"]}]}], TraditionalForm]],ExpressionUUID->
+  "413e27ee-2913-4619-a9e9-205ef5524ea5"],
+ ".  Thus our 4 operators are"
+}], "Text",
+ CellChangeTimes->{{3.7282962504511967`*^9, 3.728296251859391*^9}, {
+  3.728296315038617*^9, 
+  3.7282963418928967`*^9}},ExpressionUUID->"5df52ccd-78de-4dc6-a638-\
+9239cdb1857f"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"h", "=", GridBox[{
+     {"h11", "h12", "0", "0", "0", "0"},
+     {"h12", "h11", "0", "0", "0", "0"},
+     {"0", "0", "h11", "h12", "0", "0"},
+     {"0", "0", "h12", "h11", "0", "0"},
+     {"0", "0", "0", "0", "h11", "h12"},
+     {"0", "0", "0", "0", "h12", "h11"}
+    }]}], ";", 
+  RowBox[{"P12", "=", GridBox[{
+     {"0", "0", "0", "0", "0", "1"},
+     {"0", "0", "0", "0", "1", "0"},
+     {"0", "0", "0", "1", "0", "0"},
+     {"0", "0", "1", "0", "0", "0"},
+     {"0", "1", "0", "0", "0", "0"},
+     {"1", "0", "0", "0", "0", "0"}
+    }]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"P13", "=", GridBox[{
+      {"0", "0", "0", "1", "0", "0"},
+      {"0", "0", "1", "0", "0", "0"},
+      {"0", "1", "0", "0", "0", "0"},
+      {"1", "0", "0", "0", "0", "0"},
+      {"0", "0", "0", "0", "0", "1"},
+      {"0", "0", "0", "0", "1", "0"}
+     }]}], ";", 
+   RowBox[{"P23", "=", GridBox[{
+      {"0", "1", "0", "0", "0", "0"},
+      {"1", "0", "0", "0", "0", "0"},
+      {"0", "0", "0", "0", "0", "1"},
+      {"0", "0", "0", "0", "1", "0"},
+      {"0", "0", "0", "1", "0", "0"},
+      {"0", "0", "1", "0", "0", "0"}
+     }]}], ";"}], "\[VeryThinSpace]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.725132740448024*^9, 3.72513298827169*^9}, {
+  3.725133019072916*^9, 3.725133064117206*^9}, {3.725150391565963*^9, 
+  3.7251504549806757`*^9}, {3.728303424937477*^9, 3.728303438559989*^9}, {
+  3.728303598761345*^9, 
+  3.728303606827388*^9}},ExpressionUUID->"44da0ad2-79ba-4663-9dc2-\
+b941506d92fc"],
+
+Cell[TextData[{
+ "Now we find the eigenvectors and eigenvalues of ",
+ Cell[BoxData[
+  FormBox["h", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "7257c56c-8441-4f0f-a584-b45fccb7deb7"],
+ ", ensuring that they are also eigenvectors of ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["P", "12"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d1fc59ed-a11c-499a-965f-0c7d71e4499b"],
+ " by adding a ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Lambda]", " ", 
+    SubscriptBox["P", "12"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "abb76475-4f38-4e66-8ef4-73d44345e856"],
+ " term:"
+}], "Text",
+ CellChangeTimes->{{3.728303469757041*^9, 
+  3.728303538809348*^9}},ExpressionUUID->"92edf559-1790-4ae2-9a8d-\
+8a4428bf6460"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"eh", ",", "uh"}], "}"}], "=", 
+  RowBox[{"Eigensystem", "[", 
+   RowBox[{"h", "+", 
+    RowBox[{"\[Lambda]", " ", "P12"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.725150520231639*^9, 3.725150532857435*^9}, {
+  3.725150681431905*^9, 3.725150695618177*^9}, {3.7283036123626213`*^9, 
+  3.728303612722417*^9}, {3.728308269606638*^9, 
+  3.728308271586151*^9}},ExpressionUUID->"9e720ba4-7513-4ab9-8f16-\
+07f0d53e729d"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"h11", "-", "h12", "-", "\[Lambda]"}], ",", 
+     RowBox[{"h11", "-", "h12", "-", "\[Lambda]"}], ",", 
+     RowBox[{"h11", "+", "h12", "-", "\[Lambda]"}], ",", 
+     RowBox[{"h11", "-", "h12", "+", "\[Lambda]"}], ",", 
+     RowBox[{"h11", "+", "h12", "+", "\[Lambda]"}], ",", 
+     RowBox[{"h11", "+", "h12", "+", "\[Lambda]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "1", ",", "0", ",", "0", ",", 
+       RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", 
+       RowBox[{"-", "1"}], ",", "1", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", 
+       RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "1", ",", "1"}], "}"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", 
+       RowBox[{"-", "1"}], ",", "0", ",", "0", ",", 
+       RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1", ",", "0", ",", "0", ",", "1", ",", "1"}], "}"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "1", ",", "1", ",", "0", ",", "0"}], 
+      "}"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.72515053421924*^9, 3.725150698007647*^9, 
+  3.7251898589390697`*^9, 3.728303553784799*^9, 3.728303613190489*^9, 
+  3.7283079911684628`*^9, 3.7283082725049887`*^9, 
+  3.7287332133633633`*^9},ExpressionUUID->"dcf49e2d-09c6-435d-af09-\
+d7d9b49147a4"]
+}, Open  ]],
+
+Cell[TextData[{
+ "The first 3 states have the required eigenvalue of -1 for ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["P", "12"], TraditionalForm]],ExpressionUUID->
+  "2fed608b-c023-449c-a441-ee4e9991dfc2"],
+ ".  The third one is not degenerate, and is not anti-symmetric, so it cannot \
+satisfy the anti-symmetry requirement.  The first and second states, however, \
+are degenerate and so perhaps a linear combination of them can be constructed \
+that does satisfy the Pauli principle.  To do that, lets look at the ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["P", "23"], TraditionalForm]],ExpressionUUID->
+  "c74b3e24-dd61-4130-851a-2e519b84db3c"],
+ " operator in that subspace:"
+}], "Text",
+ CellChangeTimes->{{3.728303571547307*^9, 3.7283037677925663`*^9}, {
+  3.728303828835994*^9, 3.728303869639203*^9}, {3.728819277458733*^9, 
+  3.7288192823839607`*^9}},ExpressionUUID->"1870f93c-befc-49ed-9f5a-\
+e15ef0d48b69"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"uh", "=", 
+   RowBox[{"Normalize", "/@", " ", "uh"}]}], ";", 
+  RowBox[{"P23deg", "=", 
+   RowBox[{
+    RowBox[{"uh", "\[LeftDoubleBracket]", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2"}], "}"}], "\[RightDoubleBracket]"}], ".", "P23", 
+    ".", 
+    RowBox[{
+     RowBox[{"uh", "\[LeftDoubleBracket]", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "2"}], "}"}], "\[RightDoubleBracket]"}], 
+     "\[Transpose]"}]}]}], ";", 
+  RowBox[{"P23deg", "//", "MF"}]}]], "Input",
+ CellChangeTimes->{{3.725150827514707*^9, 3.725150837932423*^9}, {
+  3.725150875709559*^9, 3.7251509631600733`*^9}, {3.728303878087751*^9, 
+  3.728303891385148*^9}, {3.7283079643943872`*^9, 3.728307968915657*^9}, {
+  3.7283082760079823`*^9, 
+  3.728308295571145*^9}},ExpressionUUID->"6126dc63-098d-4243-be2c-\
+3f5c8ac377b8"],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[
+   RowBox[{"(", "\[NoBreak]", GridBox[{
+      {
+       RowBox[{"-", 
+        FractionBox[
+         InterpretationBox["\<\"1\"\>",
+          1,
+          Editable->False], 
+         InterpretationBox["\<\"2\"\>",
+          2,
+          Editable->False]]}], 
+       RowBox[{"-", 
+        FractionBox[
+         InterpretationBox["\<\"1\"\>",
+          1,
+          Editable->False], 
+         SqrtBox[
+          InterpretationBox["\<\"2\"\>",
+           2,
+           Editable->False]]]}]},
+      {
+       RowBox[{"-", 
+        FractionBox[
+         InterpretationBox["\<\"1\"\>",
+          1,
+          Editable->False], 
+         SqrtBox[
+          InterpretationBox["\<\"2\"\>",
+           2,
+           Editable->False]]]}], 
+       InterpretationBox["\<\"0\"\>",
+        0,
+        Editable->False]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}},
+        "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.7]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+   Function[BoxForm`e$, 
+    MatrixForm[BoxForm`e$]]],
+  NumberForm[#, 3]& ]], "Output",
+ CellChangeTimes->{{3.725150911679557*^9, 3.725150932880657*^9}, 
+   3.7251509640201807`*^9, 3.7251898589929237`*^9, 3.728303893417158*^9, 
+   3.728307969668548*^9, 3.728308018421495*^9, {3.7283082880556583`*^9, 
+   3.728308296111464*^9}, 
+   3.728733213597691*^9},ExpressionUUID->"58fc928a-dd4a-4249-ab1a-\
+e146bd8a036a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"e23", ",", "u23"}], "}"}], "=", 
+  RowBox[{"Eigensystem", "[", "P23deg", "]"}]}]], "Input",
+ CellChangeTimes->{{3.728307948712377*^9, 
+  3.728307975935705*^9}},ExpressionUUID->"a3b69e35-50bc-41b1-be9e-\
+58a767e83987"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", 
+     FractionBox["1", "2"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       SqrtBox["2"], ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["1", 
+         SqrtBox["2"]]}], ",", "1"}], "}"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.728307976799766*^9, 3.728308300547028*^9, 
+  3.728733213652996*^9},ExpressionUUID->"c9be13d5-d231-4c1e-8ed1-\
+f366eb98c981"]
+}, Open  ]],
+
+Cell["\<\
+The first eigenvector has eigenvalue -1, and is the one we are after.\
+\>", "Text",
+ CellChangeTimes->{{3.725151037772478*^9, 3.725151075637595*^9}, {
+  3.728308114975271*^9, 
+  3.7283081152781763`*^9}},ExpressionUUID->"772894ac-083b-4ed2-a89a-\
+28db294dbb71"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"u23", "=", 
+   RowBox[{"Normalize", "/@", "u23"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.725151255733322*^9, 3.7251512612049417`*^9}, {
+  3.7283081488604107`*^9, 
+  3.728308163338276*^9}},ExpressionUUID->"994acd4c-abd2-4f61-bd49-\
+8b746dff309f"],
+
+Cell["So the total wavefunction is", "Text",
+ CellChangeTimes->{{3.728308174588147*^9, 
+  3.728308180022107*^9}},ExpressionUUID->"15b427af-64f5-4406-9580-\
+1401198f1000"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[Psi]", "=", 
+  RowBox[{"Sum", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"u23", "\[LeftDoubleBracket]", 
+      RowBox[{"1", ",", "i"}], "\[RightDoubleBracket]"}], 
+     RowBox[{
+      RowBox[{"uh", "\[LeftDoubleBracket]", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "2"}], "}"}], "\[RightDoubleBracket]"}], 
+      "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "2"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.725151078227933*^9, 3.725151226846233*^9}, {
+  3.728308254397045*^9, 3.728308254542767*^9}, {3.728308855902876*^9, 
+  3.728308886974992*^9}},ExpressionUUID->"fd639671-f008-4357-9f72-\
+114664bba07c"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"-", 
+    FractionBox["1", 
+     SqrtBox["6"]]}], ",", 
+   FractionBox["1", 
+    SqrtBox["6"]], ",", 
+   RowBox[{"-", 
+    FractionBox["1", 
+     SqrtBox["6"]]}], ",", 
+   FractionBox["1", 
+    SqrtBox["6"]], ",", 
+   RowBox[{"-", 
+    FractionBox["1", 
+     SqrtBox["6"]]}], ",", 
+   FractionBox["1", 
+    SqrtBox["6"]]}], "}"}]], "Output",
+ CellChangeTimes->{{3.725151127160325*^9, 3.725151138584298*^9}, {
+   3.725151215367435*^9, 3.7251512277267437`*^9}, 3.7251512655022907`*^9, 
+   3.725189859143661*^9, 3.728308892786592*^9, 
+   3.728733213747642*^9},ExpressionUUID->"89c9241e-45fd-4c2f-8cf1-\
+e61aed5a1167"]
+}, Open  ]],
+
+Cell["\<\
+Check that this is indeed an eigenvector of all three exchange operators, \
+with eigenvalue -1:\
+\>", "Text",
+ CellChangeTimes->{{3.725151562488839*^9, 3.7251515882158957`*^9}, {
+  3.728308897167207*^9, 
+  3.728308901104838*^9}},ExpressionUUID->"3c072179-6775-43e1-a153-\
+7da3d7c33491"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"P12", ".", 
+     TemplateBox[{"\[Psi]"},
+      "Ket"]}], "\[Equal]", 
+    RowBox[{"-", 
+     TemplateBox[{"\[Psi]"},
+      "Ket"]}]}], ",", 
+   RowBox[{
+    RowBox[{"P13", ".", 
+     TemplateBox[{"\[Psi]"},
+      "Ket"]}], "\[Equal]", 
+    RowBox[{"-", 
+     TemplateBox[{"\[Psi]"},
+      "Ket"]}]}], ",", 
+   RowBox[{
+    RowBox[{"P23", ".", 
+     TemplateBox[{"\[Psi]"},
+      "Ket"]}], "\[Equal]", 
+    RowBox[{"-", 
+     TemplateBox[{"\[Psi]"},
+      "Ket"]}]}]}], "}"}]], "Input",
+ CellChangeTimes->{{3.7251512928819437`*^9, 3.7251513335024137`*^9}, {
+  3.728733225793598*^9, 
+  3.728733232426428*^9}},ExpressionUUID->"d7a0ee29-e01a-4026-b2c0-\
+4fe555349ec3"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"True", ",", "True", ",", "True"}], "}"}]], "Output",
+ CellChangeTimes->{{3.725151312469934*^9, 3.725151334311576*^9}, 
+   3.7251898591943207`*^9, 3.728308904438566*^9, {3.728733213820859*^9, 
+   3.728733233059228*^9}},ExpressionUUID->"9af16485-4211-4e47-9504-\
+d1af7549d7a9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"P13", ".", "P23", ".", "P12", ".", 
+   TemplateBox[{"\[Psi]"},
+    "Ket"]}], "\[Equal]", 
+  RowBox[{"-", 
+   TemplateBox[{"\[Psi]"},
+    "Ket"]}]}]], "Input",
+ CellChangeTimes->{{3.72873323807974*^9, 
+  3.72873326923733*^9}},ExpressionUUID->"2247cbb2-0c90-4fea-956c-\
+e1d427b10f54"],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{
+  3.728733271264463*^9},ExpressionUUID->"1741c6c5-d162-4c4b-bb13-\
+7c2a92947d98"]
+}, Open  ]],
+
+Cell["Let\[CloseCurlyQuote]s write out the resulting wavefunction \
+explicitly:", "Text",
+ CellChangeTimes->{{3.725151380709477*^9, 
+  3.7251513924675417`*^9}},ExpressionUUID->"5e0e930b-c39e-4aeb-8b34-\
+3a3b17031ece"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[Psi]", ".", 
+  FormBox[
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[CurlyPhi]", "[", 
+      RowBox[{
+       RowBox[{"a", "\[VeryThinSpace]", "d"}], ",", 
+       RowBox[{"b", "\[VeryThinSpace]", "u"}], ",", 
+       RowBox[{"c", " ", "u"}]}], "]"}], ",", 
+     RowBox[{"\[CurlyPhi]", "[", 
+      RowBox[{
+       RowBox[{"a", "\[VeryThinSpace]", "d"}], ",", 
+       RowBox[{"c", "\[VeryThinSpace]", "u"}], ",", 
+       RowBox[{"b", " ", "u"}]}], "]"}], ",", 
+     RowBox[{"\[CurlyPhi]", "[", 
+      RowBox[{
+       RowBox[{"b", "\[VeryThinSpace]", "u"}], ",", 
+       RowBox[{"c", " ", "u"}], ",", 
+       RowBox[{"a", "\[VeryThinSpace]", "d"}]}], "]"}], ",", 
+     RowBox[{"\[CurlyPhi]", "[", 
+      RowBox[{
+       RowBox[{"c", "\[VeryThinSpace]", "u"}], ",", 
+       RowBox[{"b", " ", "u"}], ",", 
+       RowBox[{"a", "\[VeryThinSpace]", "d"}]}], "]"}], ",", 
+     RowBox[{"\[CurlyPhi]", "[", 
+      RowBox[{
+       RowBox[{"c", " ", "u"}], ",", 
+       RowBox[{"a", "\[VeryThinSpace]", "d"}], ",", 
+       RowBox[{"b", "\[VeryThinSpace]", "u"}]}], "]"}], ",", 
+     RowBox[{"\[CurlyPhi]", "[", 
+      RowBox[{
+       RowBox[{"b", " ", "u"}], ",", 
+       RowBox[{"a", "\[VeryThinSpace]", "d"}], ",", 
+       RowBox[{"c", "\[VeryThinSpace]", "u"}]}], "]"}]}], "}"}],
+   TraditionalForm]}]], "Input",
+ CellChangeTimes->{{3.725151421700201*^9, 3.725151552026312*^9}, {
+   3.725151595662191*^9, 3.72515169509505*^9}, 3.7251528264065866`*^9, {
+   3.7283090567732687`*^9, 
+   3.7283090576495247`*^9}},ExpressionUUID->"c1997681-16b4-40e5-be33-\
+ce6660a63215"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   FractionBox[
+    RowBox[{"\[CurlyPhi]", "[", 
+     RowBox[{
+      RowBox[{"a", " ", "d"}], ",", 
+      RowBox[{"b", " ", "u"}], ",", 
+      RowBox[{"c", " ", "u"}]}], "]"}], 
+    SqrtBox["6"]]}], "+", 
+  FractionBox[
+   RowBox[{"\[CurlyPhi]", "[", 
+    RowBox[{
+     RowBox[{"a", " ", "d"}], ",", 
+     RowBox[{"c", " ", "u"}], ",", 
+     RowBox[{"b", " ", "u"}]}], "]"}], 
+   SqrtBox["6"]], "+", 
+  FractionBox[
+   RowBox[{"\[CurlyPhi]", "[", 
+    RowBox[{
+     RowBox[{"b", " ", "u"}], ",", 
+     RowBox[{"a", " ", "d"}], ",", 
+     RowBox[{"c", " ", "u"}]}], "]"}], 
+   SqrtBox["6"]], "-", 
+  FractionBox[
+   RowBox[{"\[CurlyPhi]", "[", 
+    RowBox[{
+     RowBox[{"b", " ", "u"}], ",", 
+     RowBox[{"c", " ", "u"}], ",", 
+     RowBox[{"a", " ", "d"}]}], "]"}], 
+   SqrtBox["6"]], "-", 
+  FractionBox[
+   RowBox[{"\[CurlyPhi]", "[", 
+    RowBox[{
+     RowBox[{"c", " ", "u"}], ",", 
+     RowBox[{"a", " ", "d"}], ",", 
+     RowBox[{"b", " ", "u"}]}], "]"}], 
+   SqrtBox["6"]], "+", 
+  FractionBox[
+   RowBox[{"\[CurlyPhi]", "[", 
+    RowBox[{
+     RowBox[{"c", " ", "u"}], ",", 
+     RowBox[{"b", " ", "u"}], ",", 
+     RowBox[{"a", " ", "d"}]}], "]"}], 
+   SqrtBox["6"]]}]], "Output",
+ CellChangeTimes->{3.7251516990486927`*^9, 3.725152827842292*^9, 
+  3.7251898592424583`*^9, 3.72830906648486*^9, 
+  3.7287332138850317`*^9},ExpressionUUID->"7492052a-18a1-48e1-baf2-\
+ee5de49f46c6"]
+}, Open  ]],
+
+Cell["\<\
+This is a totally antisymmetric wavefunction, called a Slater determinant.  \
+The name comes from the property that it can be calculated by\
+\>", "Text",
+ CellChangeTimes->{{3.72515173735156*^9, 3.725151772662511*^9}, {
+  3.7251518189992647`*^9, 
+  3.725151845529097*^9}},ExpressionUUID->"b4359238-bb62-44f0-9046-\
+79565256c992"],
+
+Cell[BoxData[Cell[TextData[Cell[BoxData[Cell[TextData[Cell[BoxData[
+   FormBox[Cell[TextData[Cell[BoxData[
+     FormBox[
+      RowBox[{
+       TemplateBox[{RowBox[{"\[LeftDoubleBracketingBar]", 
+           RowBox[{
+             RowBox[{"a", " ", "d"}], ",", 
+             RowBox[{"b", " ", "u"}], ",", 
+             RowBox[{"c", " ", "u"}]}], "\[RightDoubleBracketingBar]"}]},
+        "Ket"], "=", 
+       RowBox[{"det", "\[VerticalSeparator]", GridBox[{
+          {
+           RowBox[{
+            RowBox[{"\[CurlyPhi]", "[", "a", "]"}], " ", "d", " ", 
+            RowBox[{"(", "1", ")"}]}], 
+           RowBox[{
+            RowBox[{"\[CurlyPhi]", "[", "b", "]"}], "u", " ", 
+            RowBox[{"(", "1", ")"}]}], 
+           RowBox[{
+            RowBox[{"\[CurlyPhi]", "[", "c", "]"}], "\[VeryThinSpace] ", "u", 
+            " ", 
+            RowBox[{"(", "1", ")"}]}]},
+          {
+           RowBox[{
+            RowBox[{"\[CurlyPhi]", "[", "a", "]"}], " ", 
+            RowBox[{"d", "(", "2", ")"}]}], 
+           RowBox[{
+            RowBox[{"\[CurlyPhi]", "[", "b", "]"}], "u", " ", 
+            RowBox[{"(", "2", ")"}]}], 
+           RowBox[{
+            RowBox[{"\[CurlyPhi]", "[", "c", "]"}], "\[VeryThinSpace] ", 
+            RowBox[{"u", "(", "2", ")"}]}]},
+          {
+           RowBox[{
+            RowBox[{"\[CurlyPhi]", "[", "a", "]"}], " ", 
+            RowBox[{"d", "(", "3", ")"}]}], 
+           RowBox[{
+            RowBox[{"\[CurlyPhi]", "[", "b", "]"}], "u", " ", 
+            RowBox[{"(", "3", ")"}]}], 
+           RowBox[{
+            RowBox[{"\[CurlyPhi]", "[", "c", "]"}], "\[VeryThinSpace] ", 
+            RowBox[{"u", "(", "3", ")"}]}]}
+         }], "\[VerticalSeparator]"}]}], TraditionalForm]],ExpressionUUID->
+     "a7bfd391-f1af-4060-be65-96dc30aa040b"]],ExpressionUUID->
+     "50fa6227-0276-43f3-a4dc-5321ca6b83e0"], TraditionalForm]],
+   ExpressionUUID->"01d0f6f9-5c37-4f5b-b4d1-b859a96ddc79"]],ExpressionUUID->
+   "668e650b-7ca7-4611-a980-6e2c1dc6c16b"]],ExpressionUUID->
+  "2c76c8eb-6e0f-438b-9e58-5b5cf32a50f9"]],ExpressionUUID->
+  "5d00f79c-ae33-4a46-b3c1-d320d8841e76"]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.725151887423045*^9, 3.72515194643537*^9}, {
+  3.725152051462255*^9, 3.7251522404930143`*^9}, {3.725152271347876*^9, 
+  3.725152335096574*^9}, {3.7251851013207493`*^9, 3.725185108897819*^9}, {
+  3.728309120901842*^9, 3.72830912090186*^9}, {3.728783821710246*^9, 
+  3.728783851969755*^9}},ExpressionUUID->"e8063b51-9b58-434a-b4a7-\
+7938477b724a"],
+
+Cell[TextData[{
+ "We will use the notation |\[LeftDoubleBracketingBar]\[Psi]\
+\[RightDoubleBracketingBar]\[RightAngleBracket] to denote a Slater \
+determinant.  Notice that in order for the determinant to not vanish the \
+spatial orbitals ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"\[CurlyPhi]", "[", "b", "]"}], " ", "&"}], " ", 
+    RowBox[{"\[CurlyPhi]", "[", "c", "]"}]}], TraditionalForm]],
+  ExpressionUUID->"2819e502-4843-4556-bc6f-96993dfdb805"],
+ " must be different functions.  Since the spin parts are different in the \
+first 2 columns, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"\[CurlyPhi]", "[", "a", "]"}], " ", "&"}], " ", 
+    RowBox[{"\[CurlyPhi]", "[", "b", "]"}]}], TraditionalForm]],
+  ExpressionUUID->"8f27f4b1-169c-45a3-8c52-f8e75f24dfb3"],
+ " (or ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[CurlyPhi]", "[", "a", "]"}], " ", "and", " ", 
+    RowBox[{"\[CurlyPhi]", "[", "c", "]"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "89f8487c-617e-48fa-be74-ae39dd8466d2"],
+ ") can be the same orbital function."
+}], "Text",
+ CellChangeTimes->{{3.7251530927891808`*^9, 3.725153242685701*^9}, {
+  3.725185156392488*^9, 3.725185176597533*^9}, {3.72831000622086*^9, 
+  3.728310037785643*^9}},ExpressionUUID->"43f91d58-cca0-4b1f-8f9e-\
+392568abbc1e"],
+
+Cell["\<\
+\tGetting back to the key point of all of this:  a naive application of the \
+Pauli exclusion principle would predict a possibility of 6 different \
+equivalent spin orbitals, but a complete statement of the principle, namely \
+that the wavefunction must be antisymmetric on exchange of any pair of \
+identical fermions, results in the conclusion that only a single linear \
+combination of the 6 is actually a valid quantum state.  Thus, in order to \
+build up an appropriate basis for a multi-electron Hamiltonian, we must use \
+properly constructed anti-symmetric spin-orbitals as generated by Slater \
+determinants.\
+\>", "Text",
+ CellChangeTimes->{{3.725152394878088*^9, 3.7251525940092163`*^9}, {
+  3.7283092518832283`*^9, 3.728309284900711*^9}, {3.728314433376089*^9, 
+  3.728314441893076*^9}},ExpressionUUID->"02f9a711-370e-46d8-a18d-\
+335eec6397eb"]
+}, Open  ]]
+},
+WindowSize->{1440, 1072},
+WindowMargins->{{66, Automatic}, {Automatic, 19}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+ShowSelection->True,
+Magnification:>1.5 Inherited,
+FrontEndVersion->"11.1 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 16, \
+2017)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[StyleDefinitions -> "Default.nb"]], 
+   Cell[
+    StyleData[All], FontFamily -> "Century Schoolbook", FontSize -> 14, 
+    FontWeight -> "Regular", FontSlant -> "Plain", 
+    FontVariations -> {"StrikeThrough" -> False, "Underline" -> False}, 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}, FontColor -> 
+    RGBColor[0., 0., 0.]]}, Visible -> False, FrontEndVersion -> 
+  "11.1 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 16, 2017)", 
+  StyleDefinitions -> "PrivateStylesheetFormatting.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 565, 9, 104, "Title", "ExpressionUUID" -> \
+"3d5905d0-5a59-448b-8675-3058f285f002"],
+Cell[1147, 33, 1637, 28, 111, "Text", "ExpressionUUID" -> \
+"ac1f21ca-0d18-4ee6-bc35-6c4c7b888f29"],
+Cell[2787, 63, 526, 10, 79, "Text", "ExpressionUUID" -> \
+"802edcdd-6b7d-413e-8d8b-78d4d5c6b340"],
+Cell[3316, 75, 1574, 49, 50, "DisplayFormulaNumbered", "ExpressionUUID" -> \
+"3ccf1c2c-bc15-4c4e-9960-657e1e3d09c0"],
+Cell[4893, 126, 324, 7, 79, "Text", "ExpressionUUID" -> \
+"da48941a-f540-48cc-9e40-3aa93d65ce53"],
+Cell[5220, 135, 2633, 76, 93, "DisplayFormulaNumbered", "ExpressionUUID" -> \
+"2e84f397-deaf-4d81-ae02-9b32ae545f80"],
+Cell[7856, 213, 1052, 32, 84, "Text", "ExpressionUUID" -> \
+"c3f02cd2-bfea-4339-ae82-87dc2cf07255"],
+Cell[8911, 247, 4079, 120, 124, "DisplayFormulaNumbered", "ExpressionUUID" -> \
+"e2699560-821d-43cb-835e-cab5a5fa5589"],
+Cell[12993, 369, 187, 5, 48, "Text", "ExpressionUUID" -> \
+"ff13aa49-c876-42bb-b479-1c5c6a668008"],
+Cell[13183, 376, 276, 7, 48, "Text", "ExpressionUUID" -> \
+"2168670d-e341-4ba2-bf5c-8ab55b717c11"],
+Cell[13462, 385, 4359, 138, 197, "DisplayFormulaNumbered", "ExpressionUUID" \
+-> "e20bac53-dfab-4009-9a87-7df2061ade62"],
+Cell[17824, 525, 169, 3, 48, "Text", "ExpressionUUID" -> \
+"78765cbe-c565-48cd-a7f6-02e59a4407df"],
+Cell[17996, 530, 3834, 114, 139, "DisplayFormulaNumbered", "ExpressionUUID" \
+-> "239b5ce9-9c6c-438f-9e37-3651e9f3de0a"],
+Cell[21833, 646, 2111, 42, 311, "Text", "ExpressionUUID" -> \
+"6bd93abe-50e2-4ecd-87c5-ed43e2eb1b4d"],
+Cell[23947, 690, 3117, 86, 302, "Text", "ExpressionUUID" -> \
+"159cd369-4dd1-4be7-bc90-b9f48f17dc07"],
+Cell[27067, 778, 2356, 65, 178, "Text", "ExpressionUUID" -> \
+"5df52ccd-78de-4dc6-a638-9239cdb1857f"],
+Cell[29426, 845, 1561, 41, 443, "Input", "ExpressionUUID" -> \
+"44da0ad2-79ba-4663-9dc2-b941506d92fc"],
+Cell[30990, 888, 789, 23, 48, "Text", "ExpressionUUID" -> \
+"92edf559-1790-4ae2-9a8d-8a4428bf6460"],
+Cell[CellGroupData[{
+Cell[31804, 915, 467, 11, 51, "Input", "ExpressionUUID" -> \
+"9e720ba4-7513-4ab9-8f16-07f0d53e729d"],
+Cell[32274, 928, 1546, 39, 85, "Output", "ExpressionUUID" -> \
+"dcf49e2d-09c6-435d-af09-d7d9b49147a4"]
+}, Open  ]],
+Cell[33835, 970, 922, 19, 111, "Text", "ExpressionUUID" -> \
+"1870f93c-befc-49ed-9f5a-e15ef0d48b69"],
+Cell[CellGroupData[{
+Cell[34782, 993, 832, 21, 51, "Input", "ExpressionUUID" -> \
+"6126dc63-098d-4243-be2c-3f5c8ac377b8"],
+Cell[35617, 1016, 1684, 54, 102, "Output", "ExpressionUUID" -> \
+"58fc928a-dd4a-4249-ab1a-e146bd8a036a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37338, 1075, 269, 7, 51, "Input", "ExpressionUUID" -> \
+"a3b69e35-50bc-41b1-be9e-58a767e83987"],
+Cell[37610, 1084, 554, 19, 76, "Output", "ExpressionUUID" -> \
+"c9be13d5-d231-4c1e-8ed1-f366eb98c981"]
+}, Open  ]],
+Cell[38179, 1106, 270, 6, 48, "Text", "ExpressionUUID" -> \
+"772894ac-083b-4ed2-a89a-28db294dbb71"],
+Cell[38452, 1114, 283, 7, 51, "Input", "ExpressionUUID" -> \
+"994acd4c-abd2-4f61-bd49-8b746dff309f"],
+Cell[38738, 1123, 170, 3, 48, "Text", "ExpressionUUID" -> \
+"15b427af-64f5-4406-9580-1401198f1000"],
+Cell[CellGroupData[{
+Cell[38933, 1130, 705, 17, 51, "Input", "ExpressionUUID" -> \
+"fd639671-f008-4357-9f72-114664bba07c"],
+Cell[39641, 1149, 665, 22, 76, "Output", "ExpressionUUID" -> \
+"89c9241e-45fd-4c2f-8cf1-e61aed5a1167"]
+}, Open  ]],
+Cell[40321, 1174, 296, 7, 48, "Text", "ExpressionUUID" -> \
+"3c072179-6775-43e1-a153-7da3d7c33491"],
+Cell[CellGroupData[{
+Cell[40642, 1185, 729, 27, 55, "Input", "ExpressionUUID" -> \
+"d7a0ee29-e01a-4026-b2c0-4fe555349ec3"],
+Cell[41374, 1214, 315, 6, 51, "Output", "ExpressionUUID" -> \
+"9af16485-4211-4e47-9504-d1af7549d7a9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41726, 1225, 317, 10, 55, "Input", "ExpressionUUID" -> \
+"2247cbb2-0c90-4fea-956c-e1d427b10f54"],
+Cell[42046, 1237, 133, 3, 51, "Output", "ExpressionUUID" -> \
+"1741c6c5-d162-4c4b-bb13-7c2a92947d98"]
+}, Open  ]],
+Cell[42194, 1243, 217, 4, 48, "Text", "ExpressionUUID" -> \
+"5e0e930b-c39e-4aeb-8b34-3a3b17031ece"],
+Cell[CellGroupData[{
+Cell[42436, 1251, 1581, 40, 51, "Input", "ExpressionUUID" -> \
+"c1997681-16b4-40e5-be33-ce6660a63215"],
+Cell[44020, 1293, 1429, 48, 77, "Output", "ExpressionUUID" -> \
+"7492052a-18a1-48e1-baf2-ee5de49f46c6"]
+}, Open  ]],
+Cell[45464, 1344, 339, 7, 79, "Text", "ExpressionUUID" -> \
+"b4359238-bb62-44f0-9046-79565256c992"],
+Cell[45806, 1353, 2506, 54, 148, "DisplayFormulaNumbered", "ExpressionUUID" \
+-> "e8063b51-9b58-434a-b4a7-7938477b724a"],
+Cell[48315, 1409, 1354, 34, 166, "Text", "ExpressionUUID" -> \
+"43f91d58-cca0-4b1f-8f9e-392568abbc1e"],
+Cell[49672, 1445, 866, 14, 255, "Text", "ExpressionUUID" -> \
+"02f9a711-370e-46d8-a18d-335eec6397eb"]
+}, Open  ]]
+}
+]
+*)
+

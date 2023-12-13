@@ -1,0 +1,24 @@
+results 
+
+1st time: 
+
+55
+https://quantumexperience.ng.bluemix.net/qx/executions?executionId=5bbe35205a4f6800617dee78
+60
+https://quantumexperience.ng.bluemix.net/qx/executions?executionId=5bbe3548beb6560071c9cf3c
+65
+https://quantumexperience.ng.bluemix.net/qx/executions?executionId=5bbe6fbc0257ff0067d6d216
+70 
+https://quantumexperience.ng.bluemix.net/qx/executions?executionId=5bbe6f98732da30065a30965
+
+
+
+2nd time: 
+
+55
+https://quantumexperience.ng.bluemix.net/qx/executions?executionId=5bbe70689d5d3e007116825b
+60
+https://quantumexperience.ng.bluemix.net/qx/executions?executionId=5bbe7019a0d26900639e4170
+70
+https://quantumexperience.ng.bluemix.net/qx/executions?executionId=5bbe35c3a7ec660054c5d24d
+

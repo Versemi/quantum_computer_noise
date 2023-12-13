@@ -1,0 +1,1285 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.4' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     38922,       1277]
+NotebookOptionsPosition[     34903,       1138]
+NotebookOutlinePosition[     35432,       1159]
+CellTagsIndexPosition[     35389,       1156]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"<<", 
+  "\"\<C:\\\\Users\\\\Nick Dupuis\\\\Google \
+Drive\\\\School\\\\Physics\\\\Quantum\\\\449 Quantum II\\\\448defs.m\>\""}]], \
+"Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.714673536115389*^9, 3.7146735675740395`*^9}, {
+  3.731797767408454*^9, 3.7317977957675962`*^9}, {3.731879392355794*^9, 
+  3.7318793998109317`*^9}}],
+
+Cell["\<\
+449 Exam One Take Home - Nick Dupuis (4/4/2018)
+NOTE: Problems are set up in section format so that they are collapsible.\
+\>", "Section",
+ CellChangeTimes->{{3.714673626698183*^9, 3.7146736840466623`*^9}, {
+   3.714673855277085*^9, 3.714673865948449*^9}, {3.714673941726175*^9, 
+   3.714673995215523*^9}, {3.7146833039418507`*^9, 3.7146833088120003`*^9}, {
+   3.71470224570345*^9, 3.714702293303387*^9}, {3.71494250855951*^9, 
+   3.714942516928695*^9}, {3.7149507721348877`*^9, 3.7149507776450872`*^9}, {
+   3.715546263889328*^9, 3.7155462751017675`*^9}, {3.7157041701103797`*^9, 
+   3.7157041803347344`*^9}, {3.7165613637426558`*^9, 3.716561372664501*^9}, {
+   3.7165616002579513`*^9, 3.7165616226128783`*^9}, {3.716564199747199*^9, 
+   3.7165642500266476`*^9}, {3.7165755816388206`*^9, 3.716575582704259*^9}, 
+   3.7166105664171505`*^9, {3.716681496351597*^9, 3.716681497207408*^9}, {
+   3.7317977259707823`*^9, 3.731797727510251*^9}, {3.7317978122383685`*^9, 
+   3.7317978125426683`*^9}, {3.7318886353399615`*^9, 3.731888645628825*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\[Checkmark]1) Sr has 2 valence electrons. Some of its important low-lying \
+excited states are denoted ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"5", 
+    SuperscriptBox["s5p", "3"]}], TraditionalForm]]],
+ " ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["P", "j"], TraditionalForm]]],
+ "."
+}], "Section",
+ CellChangeTimes->{{3.651581374335353*^9, 3.65158139084967*^9}, {
+   3.651581522036751*^9, 3.6515816144323797`*^9}, {3.651581681528296*^9, 
+   3.651581722657494*^9}, {3.6519191772916594`*^9, 3.65191918964577*^9}, {
+   3.683480501706832*^9, 3.683480508333123*^9}, {3.684190577608858*^9, 
+   3.684190579859028*^9}, {3.7155461509415693`*^9, 3.7155461659804697`*^9}, {
+   3.7155467593248053`*^9, 3.7155467724144135`*^9}, 3.7165613894578667`*^9, 
+   3.716561594350732*^9, {3.716564933180975*^9, 3.7165649407983217`*^9}, 
+   3.716565082563065*^9, {3.7165651211866317`*^9, 3.716565123120409*^9}, 
+   3.7317978108870735`*^9, {3.7317978694141207`*^9, 3.7317978912960777`*^9}, {
+   3.7318864661349964`*^9, 3.731886480454697*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\[Checkmark]a) What are the possible values of j?", "Subsection",
+ CellChangeTimes->{{3.731797897597107*^9, 3.7317979127666206`*^9}, {
+  3.7317994113075805`*^9, 3.7317994197486773`*^9}}],
+
+Cell["\<\
+J spans |l+s|,...,|l-s|. 
+we know that 3 = 2s+1\[LongRightArrow] s =1
+we also know that we are in a p state so l = 1 thus:
+J = |1+1|,...,|1-1| = 2,1,0\
+\>", "Text",
+ CellChangeTimes->{{3.731797983734586*^9, 3.7317979923598347`*^9}, {
+  3.731798063877306*^9, 3.7317980829265604`*^9}, {3.731798134694124*^9, 
+  3.7317982049663973`*^9}, {3.7317990621481404`*^9, 3.73179908725217*^9}, {
+  3.731799155891889*^9, 3.731799203811781*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\[Checkmark]b) Let your largest answer to a) be j",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["", "max"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ". Assuming the radial wavefunctions are ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["P", 
+    RowBox[{"5", "s"}]], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "(r) and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["P", 
+    RowBox[{"5", "p"}]], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "(r),\nwrite down the total wavefunction for the state with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"j", "=", 
+    RowBox[{"m", "=", 
+     SubscriptBox["j", "max"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "."
+}], "Subsection",
+ CellChangeTimes->{{3.7317992413957677`*^9, 3.731799315008393*^9}, {
+  3.7318024824500494`*^9, 3.7318024853928747`*^9}}],
+
+Cell[TextData[{
+ "letting ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["J", "max"], "=", 
+    RowBox[{"j", "=", 
+     RowBox[{"m", " ", "=", "2"}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " we have that we can compose the wave function as:\n\[Psi] = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["Y", "lm"], "(", 
+     RowBox[{"\[Theta]", ",", "\[Phi]"}], ")"}], 
+    RowBox[{
+     SubscriptBox["P", 
+      RowBox[{"5", "s"}]], "(", "r", ")"}], 
+    RowBox[{
+     SubscriptBox["Y", "l`m`"], "(", 
+     RowBox[{"\[Theta]", ",", "\[Phi]"}], ")"}], 
+    RowBox[{
+     SubscriptBox["P", 
+      RowBox[{"5", "p"}]], "(", "r", ")"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "\nSo next we want to determine the values of l,m,l` and m` that this is \
+valid for.\n\nFor ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{
+    SubscriptBox["Y", "lm"], "(", 
+    RowBox[{"\[Theta]", ",", "\[Phi]"}], ")"}], 
+   SubscriptBox["P", 
+    RowBox[{"5", "s"}]], 
+   RowBox[{"(", "r", ")"}]}]]],
+ " we have that l = 0, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["m", "l"], "=", "0"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ", and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["m", "s"], "=", 
+    FractionBox["1", "2"]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " \[DoubleLongRightArrow]",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["m", "j1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["m", "l"], "+", 
+     SubscriptBox["m", "s"]}], " ", "=", " ", 
+    FractionBox["1", "2"]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "\nFor ",
+ Cell[BoxData[
+  RowBox[{
+   SubscriptBox["Y", "l`m`"], 
+   RowBox[{"(", 
+    RowBox[{"\[Theta]", ",", "\[Phi]"}], ")"}], 
+   RowBox[{
+    SubscriptBox["P", 
+     RowBox[{"5", "p"}]], "(", "r", ")"}]}]]],
+ "we have that l` = 1, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["m", "l"], "`"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "= -1,0,1  and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["m", "s"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["1", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " \[DoubleRightArrow] ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["m", "j2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["m", "l"], "`"}], "+", 
+    RowBox[{
+     SubscriptBox["m", "s"], " ", "`"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "\n\nWith these we want to choose variables such that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["m", "j"], "="}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["m", "j1"], "+", 
+     SubscriptBox["m", "j2"]}], " ", "=", " ", 
+    RowBox[{
+     RowBox[{
+      FractionBox["1", "2"], "+", 
+      RowBox[{
+       SubscriptBox["m", "l"], "`"}], "+", 
+      RowBox[{
+       SubscriptBox["m", "s"], " ", "`"}]}], " ", "=", " ", 
+     RowBox[{
+      RowBox[{"1", "+", " ", 
+       RowBox[{
+        SubscriptBox["m", "l"], "`"}]}], " ", "=", "  ", "2"}]}]}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " thus we have that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["m", "l"], "`"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " = 1  so now we can write the wave function out as:\n\n\[Psi] = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["Y", "lm"], "(", 
+     RowBox[{"\[Theta]", ",", "\[Phi]"}], ")"}], 
+    RowBox[{
+     SubscriptBox["P", 
+      RowBox[{"5", "s"}]], "(", "r", ")"}], 
+    RowBox[{
+     SubscriptBox["Y", "l`m`"], "(", 
+     RowBox[{"\[Theta]", ",", "\[Phi]"}], ")"}], 
+    RowBox[{
+     SubscriptBox["P", 
+      RowBox[{"5", "p"}]], "(", "r", ")"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " =  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["Y", "00"], "(", 
+     RowBox[{"\[Theta]", ",", "\[Phi]"}], ")"}], 
+    RowBox[{
+     SubscriptBox["P", 
+      RowBox[{"5", "s"}]], "(", "r", ")"}], 
+    RowBox[{
+     SubscriptBox["Y", "11"], "(", 
+     RowBox[{"\[Theta]", ",", "\[Phi]"}], ")"}], 
+    RowBox[{
+     SubscriptBox["P", 
+      RowBox[{"5", "p"}]], "(", "r", ")"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text",
+ CellChangeTimes->{{3.731800014635399*^9, 3.731800031636679*^9}, {
+  3.7318001773411913`*^9, 3.7318002577721853`*^9}, {3.7318007346278877`*^9, 
+  3.7318007673231936`*^9}, {3.731801099642383*^9, 3.7318011000577917`*^9}, {
+  3.7318024633287506`*^9, 3.7318024649763136`*^9}, {3.7318027450354776`*^9, 
+  3.7318028484434795`*^9}, {3.7318029118962307`*^9, 3.731802997768464*^9}, {
+  3.7318030334165845`*^9, 3.731803074271713*^9}, {3.731803149743966*^9, 
+  3.7318032074432125`*^9}, {3.7318033590333567`*^9, 3.731803470007622*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\[Checkmark]c) Simplify: ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{
+    TemplateBox[{RowBox[{"5", 
+        SuperscriptBox["s5p", "3"], 
+        SubscriptBox["P", 
+         SubscriptBox["j", "max"]]}]},
+     "Bra"], " ", 
+    FractionBox["1", 
+     SubscriptBox["r", "12"]], 
+    TemplateBox[{RowBox[{"5", 
+        SuperscriptBox["s5p", "3"], 
+        SubscriptBox["P", 
+         SubscriptBox["j", "max"]]}]},
+     "Ket"]}], " ", "="}]]]
+}], "Subsection",
+ CellChangeTimes->{{3.7318011071705914`*^9, 3.7318011487403965`*^9}, 
+   3.731801483367792*^9, {3.731879191349349*^9, 3.7318791960828657`*^9}}],
+
+Cell["\<\
+From the problem statement we know that Z = 2 due to the interaction of inner \
+and outer charges. Now that we have this we can simply integrate:\
+\>", "Text",
+ CellChangeTimes->{{3.731879101661475*^9, 3.731879189064146*^9}, {
+  3.7318792576988754`*^9, 3.7318792604685297`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    SubscriptBox["p", 
+     RowBox[{"n_", ",", " ", "l_"}]], "[", 
+    RowBox[{"s_", ",", " ", "z_"}], "]"}], ":=", 
+   RowBox[{
+    SqrtBox["z"], "*", 
+    RowBox[{
+     SubscriptBox["P", 
+      RowBox[{"n", ",", " ", "l"}]], "[", 
+     RowBox[{"z", "*", "s"}], "]"}]}]}], ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.7318792126697493`*^9, 3.7318792285569625`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{
+        SubscriptBox["p", 
+         RowBox[{"5", ",", " ", "0"}]], "[", 
+        RowBox[{"r1", ",", " ", "2"}], "]"}], "2"], "*", 
+      SuperscriptBox[
+       RowBox[{
+        SubscriptBox["p", 
+         RowBox[{"5", ",", " ", "1"}]], "[", 
+        RowBox[{"r2", ",", " ", "2"}], "]"}], "2"], 
+      RowBox[{"Min", "[", 
+       RowBox[{
+        FractionBox["1", "r1"], ",", 
+        FractionBox["1", "r2"]}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"r1", ",", " ", "0", ",", " ", "\[Infinity]"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"r2", ",", " ", "0", ",", " ", "\[Infinity]"}], "}"}]}], "]"}], 
+   "//", "FullSimplify"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.731879246243898*^9, 3.73187924829486*^9}, {
+  3.7318794649192743`*^9, 3.731879465364713*^9}}],
+
+Cell[BoxData["0.04829345703125`"], "Output",
+ CellChangeTimes->{{3.731879461759246*^9, 3.7318794879333134`*^9}, 
+   3.7318904263378115`*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "2) A spin-0 particle with charge q = e and mass M moves in the spherically \
+symmetric potential V(r) = ",
+ Cell[BoxData[
+  FormBox[
+   TagBox[GridBox[{
+      {"\[Piecewise]", GridBox[{
+         {"0", 
+          RowBox[{"r", "<", "a"}]},
+         {"\[Infinity]", 
+          RowBox[{"r", ">", "a"}]}
+        },
+        AllowedDimensions->{2, Automatic},
+        Editable->True,
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}},
+           "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.84]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}},
+        Selectable->True]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+       "RowsIndexed" -> {}},
+     GridBoxItemSize->{
+      "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.35]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    "Piecewise",
+    DeleteWithContents->True,
+    Editable->False,
+    SelectWithContents->True,
+    Selectable->False], TraditionalForm]]],
+ ". The energy levels can be parameterized by the equation ",
+ Cell[BoxData[
+  RowBox[{
+   SubscriptBox["E", "nl"], " ", "=", " ", 
+   RowBox[{
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["\[Pi]", "2"], 
+      SuperscriptBox["\[HBar]", "2"]}], 
+     RowBox[{"2", 
+      SuperscriptBox["Ma", "2"]}]], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"n", "+", 
+       SubscriptBox["s", "l"]}], ")"}], "2"]}]}]]],
+ " where n is the number of radial zero crossings and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["s", "l"], " "}], TraditionalForm]]],
+ "depends, to a good approximation, mostly on l but only slightly on n."
+}], "Section",
+ CellChangeTimes->{{3.73180149597086*^9, 3.731801547505202*^9}, {
+   3.7318015970736628`*^9, 3.731801613794673*^9}, 3.7318016720294323`*^9, {
+   3.7318017041051435`*^9, 3.7318017274174643`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+\[Checkmark]a) For s-states, the equation is exact. What is the value of \
+\[Delta] for s-states?\
+\>", "Subsection",
+ CellChangeTimes->{{3.7318017354812*^9, 3.7318017443566837`*^9}, {
+  3.7318882265245266`*^9, 3.731888229750619*^9}}],
+
+Cell[TextData[{
+ "We have that ",
+ Cell[BoxData[
+  RowBox[{
+   SubscriptBox["E", "nl"], " ", "=", " ", 
+   RowBox[{
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["\[Pi]", "2"], 
+      SuperscriptBox["\[HBar]", "2"]}], 
+     RowBox[{"2", 
+      SuperscriptBox["Ma", "2"]}]], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"n", "+", 
+       SubscriptBox["s", "l"]}], ")"}], "2"]}]}]]],
+ " and we know that for s states l must be 0. Additionally, because we are in \
+a spherical well we know that we want to solve this by finding the roots of \
+the Bessel function. We find that there is a zero at:"
+}], "Text",
+ CellChangeTimes->{{3.7318866531780777`*^9, 3.731886772542378*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindRoot", "[", 
+  RowBox[{
+   RowBox[{"SphericalBesselJ", "[", 
+    RowBox[{"0", ",", " ", "r"}], "]"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", " ", "4"}], "}"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"r", "\[Rule]", "3.141592653589793`"}], "}"}]], "Output",
+ CellChangeTimes->{3.731886780375867*^9, 3.7318904264709415`*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Now, rewriting our original equation as a Bessel function we see: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["E", 
+     RowBox[{"n", ",", "J"}]], "=", 
+    RowBox[{
+     FractionBox[
+      SuperscriptBox[
+       RowBox[{"(", "\[Pi]\[HBar]", ")"}], "2"], 
+      RowBox[{"2", 
+       SuperscriptBox[
+        SubscriptBox["M", "a"], "2"]}]], 
+     SuperscriptBox[
+      SubscriptBox["B", 
+       RowBox[{"n", ",", "J"}]], "2"]}]}], TraditionalForm]],
+  ExpressionUUID -> "6d30fb86-d740-420e-a4d6-4c8ccd80ec71"],
+ " where ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["B", 
+     RowBox[{"n", ",", " ", "J"}]], "=", 
+    RowBox[{"\[Pi]", "(", 
+     RowBox[{"n", "+", 
+      SubscriptBox["s", "l"]}], ")"}]}], TraditionalForm]],
+  ExpressionUUID -> "2697c095-bb2c-4dd0-a234-f901c90b4218"],
+ ". Solving this we see: "
+}], "Text",
+ CellChangeTimes->{{3.7318868522476835`*^9, 3.731886915953692*^9}, {
+  3.7318881097837515`*^9, 3.731888157939869*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{"\[Pi]", "\[Equal]", 
+    RowBox[{"\[Pi]", 
+     RowBox[{"(", 
+      RowBox[{"1", "+", "s"}], ")"}]}]}], ",", " ", "s"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"s", "\[Rule]", "0"}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.731888164406049*^9, 3.731890426487958*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Thus we have that l = 0 \[DoubleLongRightArrow] ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["S", "l"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " = 0 = \[Delta]\nSo the answer is \[Delta] = 0 for s-states."
+}], "Text",
+ CellChangeTimes->{{3.7318881652508583`*^9, 3.731888224509611*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\[Checkmark]b) Put ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Delta]", "0"], TraditionalForm]]],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Delta]", "1"], TraditionalForm]]],
+ ", and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Delta]", "2"], TraditionalForm]]],
+ " in numerical order. Briefly explain your reasoning."
+}], "Subsection",
+ CellChangeTimes->{{3.7318017622157836`*^9, 3.7318017874339294`*^9}, {
+  3.731888584565358*^9, 3.731888587757414*^9}}],
+
+Cell[TextData[{
+ "We already know ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Delta]", "0"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "from (a) so repeating that process and finding roots we see: \n\nFor ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Delta]", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.731888265369735*^9, 3.73188827532325*^9}, {
+  3.7318883142034874`*^9, 3.731888336531866*^9}, {3.7318884220197096`*^9, 
+  3.7318884401070395`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindRoot", "[", 
+  RowBox[{
+   RowBox[{"SphericalBesselJ", "[", 
+    RowBox[{"1", ",", " ", "r"}], "]"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", " ", "4"}], "}"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"r", "\[Rule]", "4.493409457909063`"}], "}"}]], "Output",
+ CellChangeTimes->{3.7318883399401197`*^9, 3.7318904265049744`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SubscriptBox["r", "1"], " ", "=", " ", "4.493409457909063`"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.731888358038449*^9, 3.7318883672212553`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    SubscriptBox["r", "1"], "\[Equal]", 
+    RowBox[{"\[Pi]", 
+     RowBox[{"(", 
+      RowBox[{"1", "+", 
+       SubscriptBox["\[Delta]", "1"]}], ")"}]}]}], ",", " ", 
+   SubscriptBox["\[Delta]", "1"]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7318883552467904`*^9, 3.731888391995962*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    SubscriptBox["\[Delta]", "1"], "\[Rule]", "0.43029665312420257`"}], "}"}],
+   "}"}]], "Output",
+ CellChangeTimes->{{3.731888382989339*^9, 3.7318883928948317`*^9}, 
+   3.731890426530001*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "For ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Delta]", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.731888412971057*^9, 3.7318884191149373`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindRoot", "[", 
+  RowBox[{
+   RowBox[{"SphericalBesselJ", "[", 
+    RowBox[{"2", ",", " ", "r"}], "]"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", " ", "4"}], "}"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"r", "\[Rule]", "5.763459196894551`"}], "}"}]], "Output",
+ CellChangeTimes->{3.731888452226631*^9, 3.731890426544012*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   SubscriptBox["r", "2"], "=", "5.763459196894551`"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    SubscriptBox["r", "2"], "\[Equal]", 
+    RowBox[{"\[Pi]", 
+     RowBox[{"(", 
+      RowBox[{"1", "+", 
+       SubscriptBox["\[Delta]", "2"]}], ")"}]}]}], ",", " ", 
+   SubscriptBox["\[Delta]", "2"]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.73188846194794*^9, 3.7318885023806543`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    SubscriptBox["\[Delta]", "2"], "\[Rule]", "0.8345660409884263`"}], "}"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.731888503112354*^9, 3.7318904265580254`*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Therefore we have:\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Delta]", "0"], "=", 
+    RowBox[{
+     RowBox[{"0", "<", 
+      SubscriptBox["\[Delta]", "1"]}], "=", 
+     RowBox[{
+      RowBox[{".430297", "<", 
+       SubscriptBox["\[Delta]", "2"]}], "=", ".834566"}]}]}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "\nso ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Delta]", "0"], "<", 
+    SubscriptBox["\[Delta]", "1"], "<", 
+    SubscriptBox["\[Delta]", "2"]}], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text",
+ CellChangeTimes->{{3.731888507267332*^9, 3.7318885816525693`*^9}}]
+}, Closed]],
+
+Cell["\<\
+c) A magnetic field is applied, of strength B. Find the first-order \
+correction to the energy levels.\
+\>", "Subsection",
+ CellChangeTimes->{{3.731801791312643*^9, 3.7318018000029635`*^9}}],
+
+Cell["\<\
+d) Two more identical particles are added. What is the energy and degeneracy \
+of the first excited
+state for B = 0?\
+\>", "Subsection",
+ CellChangeTimes->{{3.7318018116090775`*^9, 3.731801818963118*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+\[Checkmark]3) A Rb atom in its ground (5s) state is place in an electric \
+field, adding a term V = e x \[ScriptCapitalE] to the Rb
+Hamiltonian. Ignore spin.\
+\>", "Section",
+ CellChangeTimes->{{3.7318018044562283`*^9, 3.7318018384728055`*^9}, {
+  3.7318894319226713`*^9, 3.7318894350266705`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\[Checkmark]a) With the field on, the ",
+ Cell[BoxData[
+  TemplateBox[{RowBox[{"5", "s"}]},
+   "Ket"]]],
+ " state is changed to ",
+ Cell[BoxData[
+  TemplateBox[{RowBox[{"5", "s"}]},
+   "Ket"]]],
+ " +",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    UnderscriptBox["\[Sum]", "m"], 
+    RowBox[{
+     SubscriptBox["\[Epsilon]", "lm"], 
+     TemplateBox[{RowBox[{"5", "lm"}]},
+      "Ket"]}]}], TraditionalForm]]],
+ ". What are the values of\nl and m and why?"
+}], "Subsection",
+ CellChangeTimes->{{3.7318019629289627`*^9, 3.731802032002099*^9}, {
+  3.7318894248609257`*^9, 3.731889428556464*^9}}],
+
+Cell["\<\
+Right off the bat we can say that l = 1 simply due to parity. Any combination \
+of states where l = 0 will give us a 0 on our inner product thus that is out. \
+With l = 1 we then know that the values of m are m = -1,0,1. Plugging these \
+values into our function we see:
+
+For m = -1:\
+\>", "Text",
+ CellChangeTimes->{{3.7318891385958195`*^9, 3.7318891766122327`*^9}, {
+   3.7318892112183633`*^9, 3.7318892894662848`*^9}, 3.7318893774585238`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"SphericalHarmonicY", "[", 
+     RowBox[{"0", ",", " ", "0", ",", " ", "\[Theta]", ",", " ", "\[Phi]"}], 
+     "]"}], 
+    RowBox[{"Cos", "[", "\[Phi]", "]"}], 
+    RowBox[{"Sin", "[", "\[Theta]", "]"}], 
+    RowBox[{"SphericalHarmonicY", "[", 
+     RowBox[{
+     "1", " ", ",", " ", "1", ",", " ", "\[Theta]", ",", " ", "\[Phi]"}], 
+     "]"}], 
+    RowBox[{"Sin", "[", "\[Theta]", "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Theta]", ",", " ", "0", ",", " ", "\[Pi]"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Phi]", ",", " ", "0", ",", " ", 
+     RowBox[{"2", "*", "\[Pi]"}]}], "}"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  FractionBox["1", 
+   SqrtBox["6"]]}]], "Output",
+ CellChangeTimes->{3.7318892738022747`*^9, 3.7318904266981745`*^9}]
+}, Open  ]],
+
+Cell["For m = 0:", "Text",
+ CellChangeTimes->{{3.7318892940736957`*^9, 3.731889296923427*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"SphericalHarmonicY", "[", 
+     RowBox[{"0", ",", " ", "0", ",", " ", "\[Theta]", ",", " ", "\[Phi]"}], 
+     "]"}], 
+    RowBox[{"Cos", "[", "\[Phi]", "]"}], 
+    RowBox[{"Sin", "[", "\[Theta]", "]"}], 
+    RowBox[{"SphericalHarmonicY", "[", 
+     RowBox[{
+     "1", " ", ",", " ", "0", ",", " ", "\[Theta]", ",", " ", "\[Phi]"}], 
+     "]"}], 
+    RowBox[{"Sin", "[", "\[Theta]", "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Theta]", ",", " ", "0", ",", " ", "\[Pi]"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Phi]", ",", " ", "0", ",", " ", 
+     RowBox[{"2", "*", "\[Pi]"}]}], "}"}]}], "]"}]], "Input"],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.731889304671831*^9, 3.7318904267461967`*^9}]
+}, Open  ]],
+
+Cell["For m = 1:", "Text",
+ CellChangeTimes->{{3.7318893093473234`*^9, 3.7318893117225947`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"SphericalHarmonicY", "[", 
+     RowBox[{"0", ",", " ", "0", ",", " ", "\[Theta]", ",", " ", "\[Phi]"}], 
+     "]"}], 
+    RowBox[{"Cos", "[", "\[Phi]", "]"}], 
+    RowBox[{"Sin", "[", "\[Theta]", "]"}], 
+    RowBox[{"SphericalHarmonicY", "[", 
+     RowBox[{"1", " ", ",", " ", 
+      RowBox[{"-", "1"}], ",", " ", "\[Theta]", ",", " ", "\[Phi]"}], "]"}], 
+    RowBox[{"Sin", "[", "\[Theta]", "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Theta]", ",", " ", "0", ",", " ", "\[Pi]"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Phi]", ",", " ", "0", ",", " ", 
+     RowBox[{"2", "*", "\[Pi]"}]}], "}"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ FractionBox["1", 
+  SqrtBox["6"]]], "Output",
+ CellChangeTimes->{3.7318893195281534`*^9, 3.731890426900359*^9}]
+}, Open  ]],
+
+Cell["\<\
+So we can rule out m = 0.
+Thus our answer comes to l = 1 and m = \[PlusMinus]1\
+\>", "Text",
+ CellChangeTimes->{{3.7318893914549255`*^9, 3.731889419611889*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "b) Use perturbation theory to give a formula for ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Epsilon]", "lm"], TraditionalForm]]],
+ " in terms of relevant matrix elements of V and\nunperturbed Rb energy \
+levels."
+}], "Subsection",
+ CellChangeTimes->{{3.7318020365124173`*^9, 3.731802051969227*^9}, {
+  3.7318020823853397`*^9, 3.7318020851880236`*^9}, {3.7318894994513297`*^9, 
+  3.73188950030616*^9}}],
+
+Cell[TextData[{
+ "I will start by doing my favorite thing in Mathematica and defining a \
+general equation to spit out values for ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Epsilon]", "lm"], TraditionalForm]]],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.7318895227946973`*^9, 3.731889554947466*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["\[Epsilon]", 
+   RowBox[{"l_", ",", "m_"}]], ":=", 
+  RowBox[{
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"SphericalHarmonicY", "[", 
+       RowBox[{"0", ",", " ", "0", ",", " ", "\[Theta]", ",", " ", "\[Phi]"}],
+        "]"}], 
+      RowBox[{
+       SubscriptBox["p", 
+        RowBox[{"5", ",", " ", "0"}]], "[", 
+       RowBox[{"r", ",", "1"}], "]"}], "*", 
+      RowBox[{"Cos", "[", "\[Phi]", "]"}], 
+      RowBox[{"Sin", "[", "\[Theta]", "]"}], "*", "e", "*", "r", "*", 
+      "\[ScriptCapitalE]", "*", 
+      RowBox[{"SphericalHarmonicY", "[", 
+       RowBox[{"l", ",", " ", "m", ",", " ", "\[Theta]", ",", " ", "\[Phi]"}],
+        "]"}], 
+      RowBox[{
+       SubscriptBox["p", 
+        RowBox[{"5", ",", " ", "1"}]], "[", 
+       RowBox[{"r", ",", "l"}], "]"}], 
+      RowBox[{"Sin", "[", "\[Theta]", "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[Theta]", ",", " ", "0", ",", " ", "\[Pi]"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[Phi]", ",", " ", "0", ",", " ", 
+       RowBox[{"2", "*", "\[Pi]"}]}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"r", ",", " ", "0", ",", " ", "\[Infinity]"}], "}"}]}], "]"}], "//",
+    "FullSimplify"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.7318895630732555`*^9, 3.731889674081544*^9}}],
+
+Cell[TextData[{
+ "Now that we have that defined we can generate the ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Epsilon]", "lm"], TraditionalForm]]],
+ " elements:"
+}], "Text",
+ CellChangeTimes->{{3.7318897142089677`*^9, 3.7318897562972536`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ SubscriptBox["\[Epsilon]", 
+  RowBox[{"1", ",", "1"}]]], "Input",
+ CellChangeTimes->{{3.731889764025654*^9, 3.7318897704177847`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", "15"}], " ", "e", " ", "\[ScriptCapitalE]"}]], "Output",
+ CellChangeTimes->{3.7318897712706056`*^9, 3.731890427620047*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ SubscriptBox["\[Epsilon]", 
+  RowBox[{"1", ",", 
+   RowBox[{"-", "1"}]}]]], "Input",
+ CellChangeTimes->{{3.73188977292017*^9, 3.731889781578473*^9}}],
+
+Cell[BoxData[
+ RowBox[{"15", " ", "e", " ", "\[ScriptCapitalE]"}]], "Output",
+ CellChangeTimes->{3.731889783604421*^9, 3.731890428371767*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["c) Calculate the induced dipole moment -e \[LeftAngleBracket]x\
+\[RightAngleBracket].", "Subsection",
+ CellChangeTimes->{3.731889514438697*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"$Assumptions", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"e", "\[Element]", "Reals"}], " ", ",", " ", 
+     RowBox[{"\[ScriptCapitalE]", "\[Element]", "Reals"}]}], "}"}]}], 
+  ";"}]], "Input",
+ InitializationCell->True],
+
+Cell["\<\
+In order to calculate the \[LeftAngleBracket]x\[RightAngleBracket] we need to \
+define the wave function for this situation:\
+\>", "Text",
+ CellChangeTimes->{{3.7318901588657207`*^9, 3.7318902017227473`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Psi]", " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[Epsilon]", 
+      RowBox[{"1", ",", "1"}]], "*", 
+     RowBox[{"SphericalHarmonicY", "[", 
+      RowBox[{
+      "1", " ", ",", " ", "1", ",", " ", "\[Theta]", ",", " ", "\[Phi]"}], 
+      "]"}], 
+     RowBox[{
+      SubscriptBox["p", 
+       RowBox[{"5", ",", " ", "1"}]], "[", 
+      RowBox[{"r", ",", "1"}], "]"}]}], "+", 
+    RowBox[{
+     SubscriptBox["\[Epsilon]", 
+      RowBox[{"1", ",", 
+       RowBox[{"-", "1"}]}]], "*", 
+     RowBox[{"SphericalHarmonicY", "[", 
+      RowBox[{"1", " ", ",", " ", 
+       RowBox[{"-", "1"}], ",", " ", "\[Theta]", ",", " ", "\[Phi]"}], "]"}], 
+     RowBox[{
+      SubscriptBox["p", 
+       RowBox[{"5", ",", " ", 
+        RowBox[{"-", "1"}]}]], "[", 
+      RowBox[{"r", ",", "1"}], "]"}]}], "+", 
+    RowBox[{
+     RowBox[{"SphericalHarmonicY", "[", 
+      RowBox[{
+      "0", " ", ",", " ", "0", ",", " ", "\[Theta]", ",", " ", "\[Phi]"}], 
+      "]"}], 
+     RowBox[{
+      SubscriptBox["p", 
+       RowBox[{"5", ",", " ", "0"}]], "[", 
+      RowBox[{"r", ",", "1"}], "]"}]}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.7318902034874306`*^9, 3.7318902516895905`*^9}}],
+
+Cell["Thus the expectation value (in spherical) becomes:", "Text",
+ CellChangeTimes->{{3.73189026290232*^9, 3.7318902859603977`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ExpX", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"\[Psi]", "\[Conjugate]"}], "*", "r", "*", 
+      RowBox[{"Cos", "[", "\[Phi]", "]"}], 
+      RowBox[{"Sin", "[", "\[Theta]", "]"}], "*", "\[Psi]", "*", 
+      RowBox[{"Sin", "[", "\[Theta]", "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[Theta]", ",", " ", "0", ",", " ", "\[Pi]"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[Phi]", ",", " ", "0", ",", " ", 
+       RowBox[{"2", "*", "\[Pi]"}]}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"r", ",", " ", "0", ",", " ", "\[Infinity]"}], "}"}]}], "]"}], "//",
+    "FullSimplify"}]}]], "Input",
+ CellChangeTimes->{{3.7318903674964757`*^9, 3.731890372252034*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["75", "2"], " ", 
+  RowBox[{"(", 
+   RowBox[{"12", "+", 
+    RowBox[{"5", " ", 
+     SqrtBox["6"]}]}], ")"}], " ", "e", " ", "\[ScriptCapitalE]"}]], "Output",
+ CellChangeTimes->{3.731890629455286*^9, 3.7318908793966093`*^9}]
+}, Open  ]],
+
+Cell["So the dipole moment is:", "Text",
+ CellChangeTimes->{{3.7318903770876603`*^9, 3.7318903844407015`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"-", "e"}], "*", "ExpX"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.731890289673953*^9, 3.7318903198868804`*^9}, {
+  3.731890364468579*^9, 3.7318903877608786`*^9}, {3.7318907258005447`*^9, 
+  3.731890727472135*^9}, {3.73189091681343*^9, 3.731890917279884*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", "909.2793267718458`"}], " ", 
+  SuperscriptBox["e", "2"], " ", "\[ScriptCapitalE]"}]], "Output",
+ CellChangeTimes->{3.7318906295253534`*^9, 3.73189087945866*^9, 
+  3.731890918190759*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[TextData[{
+ "4) What is ",
+ Cell[BoxData[
+  RowBox[{
+   TemplateBox[{RowBox[{
+       RowBox[{"||", 
+         RowBox[{"2", "sd"}]}], ";", 
+       RowBox[{"1", "su"}], ";", 
+       RowBox[{
+         RowBox[{"2", "su"}], "||"}]}]},
+    "Bra"], 
+   SuperscriptBox[
+    OverscriptBox["S", "^"], "2"], 
+   TemplateBox[{RowBox[{
+       RowBox[{"||", 
+         RowBox[{"2", "sd"}]}], ";", 
+       RowBox[{"1", "su"}], ";", 
+       RowBox[{
+         RowBox[{"2", "su"}], "||"}]}]},
+    "Ket"]}]]],
+ ", where ",
+ Cell[BoxData[
+  RowBox[{
+   OverscriptBox["S", "_"], "=", 
+   RowBox[{
+    OverscriptBox[
+     SubscriptBox["S", "1"], "_"], "+", 
+    OverscriptBox[
+     SubscriptBox["S", "2"], "_"], "+", 
+    OverscriptBox[
+     SubscriptBox["S", "3"], "_"]}]}]]],
+ " is the total spin operator\nof the 3 electrons in the Li atom? You can \
+probably figure out the answer from the NIST tables,\nbut use your knowledge \
+of Li wavefunctions and spin operators to prove it."
+}], "Section",
+ CellChangeTimes->{{3.7318020944248686`*^9, 3.7318021117454515`*^9}, 
+   3.731802185180415*^9, 3.731802239574497*^9}]
+},
+WindowSize->{1631, 997},
+WindowMargins->{{-8, Automatic}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{611.9999999999999, 792.}},
+Magnification->1.25,
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 361, 8, 57, "Input",
+ InitializationCell->True],
+Cell[922, 30, 1050, 15, 137, "Section"],
+Cell[CellGroupData[{
+Cell[1997, 49, 1040, 22, 70, "Section"],
+Cell[CellGroupData[{
+Cell[3062, 75, 192, 2, 59, "Subsection"],
+Cell[3257, 79, 440, 9, 141, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[3734, 93, 853, 28, 84, "Subsection"],
+Cell[4590, 123, 5048, 175, 300, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[9675, 303, 614, 19, 56, "Subsection"],
+Cell[10292, 324, 288, 5, 38, "Text"],
+Cell[10583, 331, 434, 14, 65, "Input",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[11042, 349, 917, 26, 61, "Input"],
+Cell[11962, 377, 140, 2, 37, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12163, 386, 2543, 71, 220, "Section"],
+Cell[CellGroupData[{
+Cell[14731, 461, 244, 5, 59, "Subsection"],
+Cell[14978, 468, 689, 20, 78, "Text"],
+Cell[CellGroupData[{
+Cell[15692, 492, 217, 6, 37, "Input"],
+Cell[15912, 500, 162, 3, 70, "Output"]
+}, Open  ]],
+Cell[16089, 506, 986, 31, 59, "Text"],
+Cell[CellGroupData[{
+Cell[17100, 541, 198, 6, 37, "Input"],
+Cell[17301, 549, 167, 4, 70, "Output"]
+}, Open  ]],
+Cell[17483, 556, 318, 8, 63, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[17838, 569, 490, 16, 48, "Subsection"],
+Cell[18331, 587, 522, 15, 88, "Text"],
+Cell[CellGroupData[{
+Cell[18878, 606, 217, 6, 37, "Input"],
+Cell[19098, 614, 164, 3, 70, "Output"]
+}, Open  ]],
+Cell[19277, 620, 188, 5, 37, "Input"],
+Cell[CellGroupData[{
+Cell[19490, 629, 350, 10, 37, "Input"],
+Cell[19843, 641, 250, 7, 70, "Output"]
+}, Open  ]],
+Cell[20108, 651, 222, 8, 38, "Text"],
+Cell[CellGroupData[{
+Cell[20355, 663, 217, 6, 37, "Input"],
+Cell[20575, 671, 160, 3, 70, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20772, 679, 462, 14, 62, "Input"],
+Cell[21237, 695, 221, 6, 70, "Output"]
+}, Open  ]],
+Cell[21473, 704, 664, 23, 84, "Text"]
+}, Closed]],
+Cell[22152, 730, 200, 4, 48, "Subsection"],
+Cell[22355, 736, 214, 5, 84, "Subsection"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22606, 746, 308, 6, 137, "Section"],
+Cell[CellGroupData[{
+Cell[22939, 756, 607, 21, 101, "Subsection"],
+Cell[23549, 779, 455, 9, 113, "Text"],
+Cell[CellGroupData[{
+Cell[24029, 792, 691, 18, 37, "Input"],
+Cell[24723, 812, 147, 4, 70, "Output"]
+}, Open  ]],
+Cell[24885, 819, 94, 1, 38, "Text"],
+Cell[CellGroupData[{
+Cell[25004, 824, 691, 18, 37, "Input"],
+Cell[25698, 844, 94, 1, 70, "Output"]
+}, Open  ]],
+Cell[25807, 848, 96, 1, 38, "Text"],
+Cell[CellGroupData[{
+Cell[25928, 853, 701, 17, 37, "Input"],
+Cell[26632, 872, 126, 3, 70, "Output"]
+}, Open  ]],
+Cell[26773, 878, 170, 4, 63, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[26980, 887, 424, 10, 84, "Subsection"],
+Cell[27407, 899, 300, 8, 38, "Text"],
+Cell[27710, 909, 1341, 35, 84, "Input",
+ InitializationCell->True],
+Cell[29054, 946, 249, 7, 38, "Text"],
+Cell[CellGroupData[{
+Cell[29328, 957, 148, 3, 39, "Input"],
+Cell[29479, 962, 161, 3, 37, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29677, 970, 164, 4, 39, "Input"],
+Cell[29844, 976, 141, 2, 37, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30034, 984, 149, 2, 59, "Subsection"],
+Cell[30186, 988, 261, 8, 57, "Input",
+ InitializationCell->True],
+Cell[30450, 998, 218, 4, 38, "Text"],
+Cell[30671, 1004, 1218, 36, 39, "Input"],
+Cell[31892, 1042, 133, 1, 38, "Text"],
+Cell[CellGroupData[{
+Cell[32050, 1047, 758, 18, 37, "Input"],
+Cell[32811, 1067, 262, 7, 54, "Output"]
+}, Open  ]],
+Cell[33088, 1077, 110, 1, 38, "Text"],
+Cell[CellGroupData[{
+Cell[33223, 1082, 310, 6, 37, "Input"],
+Cell[33536, 1090, 225, 5, 37, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[33800, 1100, 1099, 36, 246, "Section"]
+}
+]
+*)
+

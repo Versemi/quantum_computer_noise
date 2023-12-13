@@ -1,0 +1,149 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 11/26 4faW13M 
+
+\documentclass[letterpaper]{article}
+\usepackage[paperwidth=8.5in, paperheight=11in]{geometry}
+\linespread{1.2}
+\normalsize
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{indentfirst}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\newcommand{\thickhat}[1]{\mathbf{\hat{\text{$#1$}}}}
+\newcommand{\thickbar}[1]{\mathbf{\bar{\text{$#1$}}}}
+\newcommand{\thicktilde}[1]{\mathbf{\tilde{\text{$#1$}}}}
+
+\usepackage[english]{babel}
+\usepackage[autostyle]{csquotes}
+
+%\usepackage{spverbatim}
+
+\usepackage{listings}
+\usepackage{lstautogobble}
+
+\lstset{basicstyle=\ttfamily,
+	mathescape=true,
+	escapeinside=||,
+	autogobble,
+	xleftmargin=0.7in,
+	xrightmargin=.25in}
+
+\usepackage{graphicx}
+
+\usepackage[export]{adjustbox}
+
+\usepackage{amsfonts} % if you want blackboard bold symbols e.g. for real numbers
+
+\usepackage{amsmath}
+\usepackage{chngcntr}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{verbatim} % 4faW13
+
+%\usepackage{subfig}
+
+
+
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\title{	
+	\normalfont \normalsize 
+	\huge Physics 499 Outline of Summary\\ % The assignment title
+}
+
+\author{Ruojun Wang} % Your name
+
+\date{\normalsize\today} % Today's date or a custom date
+
+\begin{document}
+
+\maketitle % Print the title
+
+\paragraph{August, 2018:}
+I read Chapter 1, 2, and 4 of Neilson and Chung's \textit{Quantum Computation and Quantum Information} and learned the basics about quantum circuits. 
+
+\paragraph{Week 1-3 (9/1-9/16):}
+I read paper \enquote{Meassurement of SNC (Premakumar et al.)} and learned other supplement materials (\enquote{Decoherence Free Subspaces for 2 Qubits} and \enquote{Suggestion for a 2-Qubit Experiment}), and I tried to be familiar with IBM Q website used to construct quantum circuits. 
+
+\paragraph{Week 5-8 (9/24-10/21):}
+With instructions, I constructed a gate sequence for Ramsey experiments on IBM Q website. To study how the distribution of four outcomes (00, 01, 10, 11) changes with respect to the waiting time, one of four bell states is prepared and $n$ identity gates follows, given that one identity gate functions as one unit time as the website states. However, the exact time of \enquote{one unit time} is unknown yet. With the restriction of the number of gates, $n\leq74$ for 00+11 state and $n\leq71$ for 01+10 state. Then subsequent gates are prepared so the state could rotate back to the original direction in the Bloch sphere. For 00+11 state, I tableted the results of distributions for four outcomes and the calibration data (T1, T2). I fit the data with 2 functions: $C \exp(- \frac{t}{{T_2}^-})$ and $C \exp(- (\frac{t}{{T_2}^-})^2)$, where $C$ is a constant. However, the error between the data and the fitting curve is large so I added constants to the fitting function to minimize the error. 
+
+\paragraph{Week 9-11 (10/22-11/11):}
+I tableted 5 more groups of results for 00+11 state (8 groups in total). I fit these with new functions with extra constants: $C \exp(- \frac{t}{{T_2}^-})+D$ and $C \exp(- (\frac{t}{{T_2}^-})^2+D)$ and $k t + b$, where $C$, $D$, $k$ and $b$ are constants, and ${T_2}^- \approx 189.013$ is obtained from the first fitting. I also tableted two groups of outcomes for 01+10 state. I fit these with the above three functions, where ${T_2}^-$ is replaced by ${T_2}^+$. ${T_2}^+ \approx 951.874$ is obtained from the first fitting.
+
+\paragraph{Later (Week 13-):}
+More outcomes for 01+10 state need to be tableted to get a better fitting. ${T_2}^(1)$, ${T_2}^(2)$, ${T_2}^+$, ${T_2}^-$ are expected to be obtain to determine $S_{12}$. Also, the operating frequencies need to be checked. Also, four extra experiments with (a) 2 Hadamards on qubit 1 and (b) 2 Hadamards on qubit 2 and (c) two CNOTS with qubit 1 as the control and (d)  two CNOTS with qubit 2 as the control, to examine how 00 probability changes in each case. 
+
+\begin{comment}
+
+$$\frac{1}{{T_2}^{\pm}}=\frac{1}{{T_2}^{(1)}}+\frac{1}{{T_2}^{(2)}}\pm \frac{8}{\hbar^2} \lim_{\omega\to\infty} S_{12}(\omega)$$
+
+
+\section{An IDLA Simulation and the Boundary}
+
+\subsection{An IDLA Simulation with N Particles}
+
+
+
+\subsubsection{Particles move in 8 directions}
+
+\begin{comment}
+\begin{figure}[htbp]
+	\centering
+	\begin{subfigure}[b]{0.3\textwidth}
+		\includegraphics[width=\textwidth]{8direct_Npart100_3suW11T}
+		\caption{\texttt{Npart = 100}}
+		\label{8direct_Npart100_3suW11T}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.3\textwidth}
+		\includegraphics[width=\textwidth]{8direct_Npart1000_3suW11T}
+		\caption{\texttt{Npart = 1000}}
+		\label{8direct_Npart1000_3suW11T}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.3\textwidth}
+		\includegraphics[width=\textwidth]{8direct_Npart10000_3suW11T}
+		\caption{\texttt{Npart = 10000}}
+		\label{8direct_Npart10000_3suW11T}
+	\end{subfigure}
+	\caption{IDLA simulation with 8 directions}
+	\label{IDLA simulation with 8 directions}
+\end{figure}
+\end{comment}
+	
+
+
+
+\begin{comment}
+\paragraph{Build entire boundary.}
+
+
+\begin{align} 
+(\Delta f)_{i,j} = 4f_{i,j}-f_{i+1,j}- f_{i-1,j}-f_{i,j+1}-f_{i,j-1},
+\end{align}
+
+
+\noindent
+where $i$ and $j$ here represent the horizontal and vertical coordinate of the center of one grid. Similarly to the second algorithm, the grids which are occupied are marked as "1," and those which are not occupied are denoted as "0." Hence, if $(\Delta f)_{i,j}>0$, the grid with coordinate $(i,j)$ is considered on the boundary. 
+\end{comment}
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

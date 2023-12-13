@@ -1,0 +1,451 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15731,        443]
+NotebookOptionsPosition[     13303,        383]
+NotebookOutlinePosition[     14209,        412]
+CellTagsIndexPosition[     14166,        409]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Atomic State Notation", "Section",
+ CellChangeTimes->{{3.695641184630333*^9, 3.695641197897715*^9}},
+ FontSize->18],
+
+Cell["\<\
+To specify an atomic state, the tradition is to write the quantum numbers for \
+each individual electron in lowercase, and the quantum numbers for the atom \
+as a whole in uppercase.  The magnetic quantum numbers are only written when \
+they are needed.  The notation is\
+\>", "Text",
+ CellChangeTimes->{{3.6956412063758783`*^9, 3.695641210791081*^9}, {
+  3.695641256238689*^9, 3.6956412988382883`*^9}, {3.69564146451782*^9, 
+  3.695641563891529*^9}},ExpressionUUID->"3c350d5b-1368-46b6-b3df-\
+da960b7d0838"],
+
+Cell[BoxData[Cell[TextData[Cell[BoxData[
+  FormBox[Cell[TextData[Cell[BoxData[
+    FormBox[
+     TemplateBox[{RowBox[{
+         RowBox[{
+           RowBox[{
+             SubscriptBox["n", "1"], 
+             SubscriptBox["l", "1"], 
+             SubscriptBox["n", "2"], 
+             SubscriptBox["l", "2"]}], "..."}], 
+         RowBox[{
+           SuperscriptBox["\[InvisiblePrefixScriptBase]", 
+            RowBox[{
+              RowBox[{"2", "S"}], "+", "1"}]], 
+           SubscriptBox["L", "J"]}]}]},
+      "Ket"], TraditionalForm]],ExpressionUUID->
+    "7de974fc-8378-4175-ba76-d90eabc29dbb"]],ExpressionUUID->
+    "a9cd6a33-a832-4890-9523-29c8eb0f9ddc"], TraditionalForm]],
+  ExpressionUUID->"8a75c8ef-1662-4279-8ff5-06be14b8fa0c"]],ExpressionUUID->
+  "3a29f2d8-4b15-4883-8461-dc72f475cd91"]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.695641307018659*^9, 3.695641325300993*^9}, {
+  3.695641378658725*^9, 3.6956414614804993`*^9}, {3.695641580779675*^9, 
+  3.695641581493623*^9}, {3.695641650792452*^9, 
+  3.695641653071652*^9}},ExpressionUUID->"ef58d9d1-e8e3-4820-8fd6-\
+d2f14c4277f9"],
+
+Cell[TextData[{
+ "Here ",
+ Cell[BoxData[
+  FormBox["S", TraditionalForm]],ExpressionUUID->
+  "2af3faa8-eff7-4b68-b9a9-d2399aa55b9b"],
+ " is the ",
+ StyleBox["total spin quantum number of the atom, ",
+  Background->RGBColor[1, 1, 0.85]],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"L", "=", "S"}], ",", "P", ",", "D", ",", "F", ",", "..."}], 
+   TraditionalForm]],
+  Background->RGBColor[1, 1, 0.85],ExpressionUUID->
+  "8452cebb-d19a-48e8-81d7-b04688b7d41d"],
+ " is the total orbital angular quantum number, specified by a letter, and ",
+ Cell[BoxData[
+  FormBox["J", TraditionalForm]],ExpressionUUID->
+  "4584107c-87b2-4352-a8e6-d0d0fdc83fa4"],
+ " is the total angular momentum.  Sometimes information that is unneeded is \
+suppressed.  For example, for a single electron atom like H or ",
+ Cell[BoxData[
+  FormBox["Rb", TraditionalForm]],ExpressionUUID->
+  "1a9f1ff6-cee6-464e-bf48-0964e5c46994"],
+ ", the 2p state would be specified as"
+}], "Text",
+ CellChangeTimes->{{3.695641571280819*^9, 
+  3.695641888492134*^9}},ExpressionUUID->"7bbfc7f5-4a75-4163-92ab-\
+c0b97a71aafc"],
+
+Cell[BoxData[Cell[TextData[{
+  Cell[BoxData[
+   FormBox[Cell[TextData[Cell[BoxData[
+     FormBox[
+      TemplateBox[{RowBox[{"2", "p", " ", 
+          RowBox[{
+            SuperscriptBox["\[InvisiblePrefixScriptBase]", "2"], 
+            SubscriptBox["P", "J"]}]}]},
+       "Ket"], TraditionalForm]]]]], TraditionalForm]],
+   FormatType->"TraditionalForm"],
+  " or just ",
+  Cell[BoxData[
+   FormBox[Cell[TextData[Cell[BoxData[
+     FormBox[
+      TemplateBox[{RowBox[{"2", " ", 
+          SubscriptBox["p", "J"]}]},
+       "Ket"], TraditionalForm]]]]], TraditionalForm]],
+   FormatType->"TraditionalForm"],
+  " or maybe ",
+  Cell[BoxData[
+   FormBox[Cell[TextData[Cell[BoxData[
+     FormBox[
+      TemplateBox[{RowBox[{"2", 
+          SubscriptBox["P", "J"]}]},
+       "Ket"], TraditionalForm]]]]], TraditionalForm]],
+   FormatType->"TraditionalForm"]
+ }]]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.695641307018659*^9, 3.695641325300993*^9}, {
+  3.695641378658725*^9, 3.6956414614804993`*^9}, {3.695641580779675*^9, 
+  3.695641581493623*^9}, {3.695641650792452*^9, 3.695641653071652*^9}, {
+  3.695641893249611*^9, 3.695642007279006*^9}}],
+
+Cell[TextData[{
+ "since for a 1-electron atom ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"2", "S"}], "+", "1"}], TraditionalForm]],ExpressionUUID->
+  "548c538a-b60f-498d-ac7a-8473df1bf685"],
+ " is always 2 and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"L", "=", 
+    SubscriptBox["l", "1"]}], TraditionalForm]],ExpressionUUID->
+  "67140ce5-4d6e-4135-aea5-df443c1d55c0"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.695642037910284*^9, 
+  3.69564210086554*^9}},ExpressionUUID->"4a9adae7-ff48-4a87-929f-\
+0a7f15b83c6d"],
+
+Cell["It is also assumed that you know that", "Text",
+ CellChangeTimes->{{3.695642253338196*^9, 3.6956422897651367`*^9}, {
+  3.695642336779954*^9, 3.695642337251589*^9}}],
+
+Cell[BoxData[Cell[TextData[Cell[BoxData[Cell[TextData[Cell[BoxData[
+   FormBox[Cell[TextData[Cell[BoxData[
+     FormBox[
+      RowBox[{
+       TemplateBox[{RowBox[{
+           SuperscriptBox["", 
+            RowBox[{
+              RowBox[{"2", "S"}], "+", "1"}]], 
+           SubscriptBox["L", "J"]}]},
+        "Ket"], "=", 
+       RowBox[{
+        UnderscriptBox[
+         StyleBox["\[CapitalSigma]",
+          FontSize->24], 
+         RowBox[{
+          SubscriptBox["m", "L"], 
+          SubscriptBox["m", "S"]}]], 
+        SubsuperscriptBox["C", 
+         RowBox[{"L", "\[VeryThinSpace]", 
+          SubscriptBox["m", "L"], "S", "\[VeryThinSpace]", 
+          SubscriptBox["m", "S"]}], 
+         RowBox[{"J", " ", "m"}]], " ", 
+        TemplateBox[{RowBox[{"L", " ", 
+            SubscriptBox["m", "L"], "S", " ", 
+            SubscriptBox["m", "S"]}]},
+         "Ket"]}]}], TraditionalForm]]]]], TraditionalForm]]]]]], 
+  "DisplayFormulaNumbered",
+  CellChangeTimes->{{3.695641307018659*^9, 3.695641325300993*^9}, {
+   3.695641378658725*^9, 3.6956414614804993`*^9}, {3.695641580779675*^9, 
+   3.695641581493623*^9}, {3.695641650792452*^9, 
+   3.695641653071652*^9}}]]]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.695641307018659*^9, 3.695641325300993*^9}, {
+  3.695641378658725*^9, 3.6956414614804993`*^9}, {3.695641580779675*^9, 
+  3.695641581493623*^9}, {3.695641650792452*^9, 3.695641653071652*^9}, {
+  3.6956423141137943`*^9, 3.695642553559276*^9}}],
+
+Cell["so that the position representation is", "Text",
+ CellChangeTimes->{{3.695642615601123*^9, 3.6956426274916697`*^9}}],
+
+Cell[BoxData[Cell[TextData[Cell[BoxData[Cell[TextData[Cell[BoxData[
+   FormBox[Cell[TextData[Cell[BoxData[
+     FormBox[
+      RowBox[{
+       TemplateBox[{
+        StyleBox["r", FontWeight -> "Bold"],RowBox[{"n", "\[VeryThinSpace]", 
+           SuperscriptBox[
+            RowBox[{"l", " "}], 
+            RowBox[{
+              RowBox[{"2", "S"}], "+", "1"}]], 
+           SubscriptBox["L", "J"]}]},
+        "BraKet"], "=", 
+       RowBox[{
+        RowBox[{
+         UnderscriptBox[
+          StyleBox["\[CapitalSigma]",
+           FontSize->24], 
+          RowBox[{
+           SubscriptBox["m", "l"], 
+           SubscriptBox["m", "s"]}]], 
+         SubsuperscriptBox["C", 
+          RowBox[{"l", "\[VeryThinSpace]", 
+           SubscriptBox["m", "l"], "s", " \[VeryThinSpace]", 
+           SubscriptBox["m", "s"]}], 
+          RowBox[{"J", " ", "m"}]], " ", 
+         TemplateBox[{
+          StyleBox["r", FontWeight -> "Bold"],
+           RowBox[{"n", "\[VeryThinSpace]", "l", " ", 
+             SubscriptBox["m", "l"], 
+             RowBox[{"1", "/", "2"}], " ", 
+             SubscriptBox["m", "s"]}]},
+          "BraKet"]}], "=", 
+        RowBox[{
+         UnderscriptBox[
+          StyleBox["\[CapitalSigma]",
+           FontSize->24], 
+          RowBox[{
+           SubscriptBox["m", "l"], 
+           SubscriptBox["m", "s"]}]], 
+         SubsuperscriptBox["C", 
+          RowBox[{"l", "\[VeryThinSpace]", 
+           SubscriptBox["m", "l"], "s", " \[VeryThinSpace]", 
+           SubscriptBox["m", "s"]}], 
+          RowBox[{"J", " ", "m"}]], 
+         FractionBox[
+          RowBox[{
+           SubscriptBox["P", 
+            RowBox[{"n", "\[VeryThinSpace]", "l"}]], "(", "r", ")"}], "r"], 
+         RowBox[{
+          SubscriptBox["Y", 
+           RowBox[{"l", "\[VeryThinSpace]", "m"}]], "(", 
+          RowBox[{"\[Theta]", ",", "\[Phi]"}], ")"}], 
+         TemplateBox[{SubscriptBox["m", "s"]},
+          "Ket"]}]}]}], TraditionalForm]]]]], TraditionalForm]]]]]], 
+  "DisplayFormulaNumbered",
+  CellChangeTimes->{{3.695641307018659*^9, 3.695641325300993*^9}, {
+   3.695641378658725*^9, 3.6956414614804993`*^9}, {3.695641580779675*^9, 
+   3.695641581493623*^9}, {3.695641650792452*^9, 
+   3.695641653071652*^9}}]]]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.695641307018659*^9, 3.695641325300993*^9}, {
+  3.695641378658725*^9, 3.6956414614804993`*^9}, {3.695641580779675*^9, 
+  3.695641581493623*^9}, {3.695641650792452*^9, 3.695641653071652*^9}, {
+  3.6956423141137943`*^9, 3.695642553559276*^9}, {3.695642636609186*^9, 
+  3.695642862699431*^9}}],
+
+Cell[TextData[{
+ "Thus, the ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"5", 
+    SubscriptBox["d", 
+     RowBox[{"3", "/", "2"}]]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " state would have a wavefunction"
+}], "Text",
+ CellChangeTimes->{{3.69564296110083*^9, 3.69564297678586*^9}}],
+
+Cell[BoxData[Cell[TextData[Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[Psi]", "(", 
+     RowBox[{"5", 
+      SubscriptBox["d", 
+       RowBox[{"3", "/", "2"}]]}], ")"}], "=", 
+    RowBox[{
+     FractionBox[
+      RowBox[{
+       SubscriptBox["P", 
+        RowBox[{"5", "d"}]], "(", "r", ")"}], "r"], 
+     UnderscriptBox[
+      StyleBox["\[CapitalSigma]",
+       FontSize->24], 
+      RowBox[{
+       SubscriptBox["m", "l"], 
+       SubscriptBox["m", "s"]}]], 
+     SubsuperscriptBox["C", 
+      RowBox[{"2", " ", 
+       SubscriptBox["m", "l"], 
+       FractionBox["1", "2"], 
+       SubscriptBox["m", "s"]}], 
+      RowBox[{
+       RowBox[{"3", "/", "2"}], " ", "m"}]], 
+     RowBox[{
+      SubscriptBox["Y", 
+       RowBox[{"2", " ", 
+        SubscriptBox["m", "l"]}]], "(", 
+      RowBox[{"\[Theta]", ",", "\[Phi]"}], ")"}], 
+     TemplateBox[{SubscriptBox["m", "s"]},
+      "Ket"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"]]]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.695641307018659*^9, 3.695641325300993*^9}, {
+  3.695641378658725*^9, 3.6956414614804993`*^9}, {3.695641580779675*^9, 
+  3.695641581493623*^9}, {3.695641650792452*^9, 3.695641653071652*^9}, {
+  3.6956423141137943`*^9, 3.695642553559276*^9}, {3.695642636609186*^9, 
+  3.695642862699431*^9}, {3.6956429971288433`*^9, 3.695643100300061*^9}}],
+
+Cell[TextData[{
+ "which would be explicitly, for m=1/2, letting ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Chi]", 
+     SubscriptBox["m", "s"]], "=", 
+    TemplateBox[{SubscriptBox["m", "s"]},
+     "Ket"]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ","
+}], "Text",
+ CellChangeTimes->{{3.6956432085237913`*^9, 3.695643222428067*^9}, {
+  3.6957298128071632`*^9, 3.695729836779202*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Sum", "[", 
+   RowBox[{
+    RowBox[{
+     FractionBox[
+      SubscriptBox["P", 
+       RowBox[{"5", "d"}]], "r"], 
+     SubscriptBox["Y", 
+      RowBox[{"2", " ", ",", " ", "ml"}]], 
+     SubscriptBox["\[Chi]", "ms"], 
+     RowBox[{"ClebschGordan", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", "ml"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"1", "/", "2"}], ",", "ms"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"3", "/", "2"}], ",", 
+         RowBox[{"1", "/", "2"}]}], "}"}]}], "]"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"ms", ",", 
+      RowBox[{
+       RowBox[{"-", "1"}], "/", "2"}], ",", 
+      RowBox[{"1", "/", "2"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"ml", ",", 
+      RowBox[{"-", "2"}], ",", "2"}], "}"}]}], "]"}], "//", 
+  "Simplify"}]], "Input",
+ CellChangeTimes->{{3.695643131270671*^9, 3.695643273481152*^9}, {
+  3.6956433141501913`*^9, 3.695643316047419*^9}, {3.695729844926491*^9, 
+  3.695729863970874*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SubscriptBox["P", 
+    RowBox[{"5", " ", "d"}]], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", 
+       SqrtBox["2"]}], " ", 
+      SubscriptBox["\[Chi]", 
+       FractionBox["1", "2"]], " ", 
+      SubscriptBox["Y", 
+       RowBox[{"2", ",", "0"}]]}], "+", 
+     RowBox[{
+      SqrtBox["3"], " ", 
+      SubscriptBox["\[Chi]", 
+       RowBox[{"-", 
+        FractionBox["1", "2"]}]], " ", 
+      SubscriptBox["Y", 
+       RowBox[{"2", ",", "1"}]]}]}], ")"}]}], 
+  RowBox[{
+   SqrtBox["5"], " ", "r"}]]], "Output",
+ CellChangeTimes->{{3.695643254410887*^9, 3.6956432754891367`*^9}, 
+   3.6956433168323317`*^9, {3.6957298472260847`*^9, 3.695729865386374*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1216, 728},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[StyleDefinitions -> "Default.nb"]], 
+   Cell[
+    BoxData[
+     FormBox["$Failed", TraditionalForm]], 
+    CellChangeTimes -> {3.6956413397001534`*^9}], 
+   Cell[
+    StyleData[All], FontFamily -> "Century Schoolbook", FontSize -> 13, 
+    FontWeight -> "Regular", FontSlant -> "Plain", 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}]}, Visible -> 
+  False, FrontEndVersion -> 
+  "11.1 for Microsoft Windows (64-bit) (April 18, 2017)", StyleDefinitions -> 
+  "PrivateStylesheetFormatting.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 121, 2, 80, "Section", "ExpressionUUID" -> \
+"6545d50d-ab18-49ea-af00-11e6617570e0"],
+Cell[704, 26, 518, 9, 100, "Text", "ExpressionUUID" -> \
+"3c350d5b-1368-46b6-b3df-da960b7d0838"],
+Cell[1225, 37, 1098, 24, 52, "DisplayFormulaNumbered", "ExpressionUUID" -> \
+"ef58d9d1-e8e3-4820-8fd6-d2f14c4277f9"],
+Cell[2326, 63, 1083, 28, 104, "Text", "ExpressionUUID" -> \
+"7bbfc7f5-4a75-4163-92ab-c0b97a71aafc"],
+Cell[3412, 93, 1146, 30, 52, "DisplayFormulaNumbered", "ExpressionUUID" -> \
+"6c004e3b-d951-4946-b7cf-d1ec832bb10a"],
+Cell[4561, 125, 520, 17, 45, "Text", "ExpressionUUID" -> \
+"4a9adae7-ff48-4a87-929f-0a7f15b83c6d"],
+Cell[5084, 144, 170, 2, 45, "Text", "ExpressionUUID" -> \
+"61f565d2-187b-4526-9e5e-41b20033cc99"],
+Cell[5257, 148, 1464, 34, 63, "DisplayFormulaNumbered", "ExpressionUUID" -> \
+"8122be53-103b-4ef3-a774-b2b93b25ef20"],
+Cell[6724, 184, 122, 1, 45, "Text", "ExpressionUUID" -> \
+"438f1aad-b505-4e0f-bd90-37e643114f11"],
+Cell[6849, 187, 2567, 63, 64, "DisplayFormulaNumbered", "ExpressionUUID" -> \
+"bb1413fd-a684-417c-b278-a1e457943a51"],
+Cell[9419, 252, 294, 10, 48, "Text", "ExpressionUUID" -> \
+"f3aa8b12-3e51-4450-b6e4-bf6d95760496"],
+Cell[9716, 264, 1340, 37, 61, "DisplayFormulaNumbered", "ExpressionUUID" -> \
+"a99d0063-6092-4671-961f-986eb28f1bd0"],
+Cell[11059, 303, 414, 13, 58, "Text", "ExpressionUUID" -> \
+"6b844514-98f1-4036-ba43-c7292e6cc854"],
+Cell[CellGroupData[{
+Cell[11498, 320, 1053, 33, 97, "Input", "ExpressionUUID" -> \
+"5bae18d9-99c7-41c0-b9c0-68d8b71278cb"],
+Cell[12554, 355, 721, 24, 93, "Output", "ExpressionUUID" -> \
+"0d7476aa-5475-40ca-8d57-e96fc3ab59a9"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

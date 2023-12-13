@@ -1,0 +1,1844 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     65634,       1836]
+NotebookOptionsPosition[     58359,       1675]
+NotebookOutlinePosition[     59227,       1703]
+CellTagsIndexPosition[     59184,       1700]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Black-body radiation and spontaneous emission", "Section",
+ CellChangeTimes->{{3.696016181718931*^9, 3.696016214849332*^9}},
+ FontSize->18],
+
+Cell[TextData[{
+ "Consider an atom in thermal equilibrium with a black-body at temperature ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"T", "."}], TraditionalForm]]],
+ "  The probability of finding the atom in the excited state ",
+ Cell[BoxData[
+  FormBox["m", TraditionalForm]]],
+ " must be ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["e", 
+    FractionBox[
+     RowBox[{"-", 
+      SubscriptBox["E", "m"]}], "kT"]], TraditionalForm]]],
+ ".  As Planck had already shown,  blackbody radiation consists of  light \
+with an energy spectral density ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"u", "(", "f", ")"}], "=", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"8", "\[Pi]", " ", "h", " ", 
+       SuperscriptBox["f", "3"]}], 
+      SuperscriptBox["c", "3"]], 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         FractionBox[
+          RowBox[{"h", " ", "f"}], "kT"]], "-", "1"}], ")"}], 
+      RowBox[{"-", "1"}]]}]}], TraditionalForm]]],
+ ".  The units of this are energy/volume/frequency, so the total energy \
+density is "
+}], "Text",
+ CellChangeTimes->{{3.695995475403625*^9, 3.695995506712578*^9}, {
+  3.6959955466841307`*^9, 3.6959956062078876`*^9}, {3.695995641567101*^9, 
+  3.6959957796722603`*^9}, {3.69599584433827*^9, 3.695995888361404*^9}, {
+  3.6959959627808523`*^9, 3.695995966551597*^9}, {3.696016420233705*^9, 
+  3.696016431684001*^9}}],
+
+Cell[BoxData[
+ RowBox[{Cell[TextData[Cell[BoxData[
+   FormBox[
+    RowBox[{"u", "=", 
+     RowBox[{
+      RowBox[{
+       SubsuperscriptBox["\[Integral]", "0", "\[Infinity]"], 
+       RowBox[{
+        RowBox[{"u", "(", "f", ")"}], 
+        RowBox[{"\[DifferentialD]", "f"}]}]}], "=", 
+      FractionBox[
+       RowBox[{"8", " ", 
+        SuperscriptBox["kT", "4"], " ", 
+        SuperscriptBox["\[Pi]", "5"]}], 
+       RowBox[{"15", " ", 
+        SuperscriptBox["c", "3"], " ", 
+        SuperscriptBox["h", "3"]}]]}]}], TraditionalForm]]]]], 
+  "."}]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.69601642311445*^9, 3.696016445531983*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"$Assumptions", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"h", ">", "0"}], ",", 
+     RowBox[{"kT", ">", "0"}]}], "}"}]}], ";", 
+  RowBox[{"Integrate", "[", 
+   RowBox[{
+    FormBox[
+     RowBox[{
+      FractionBox[
+       RowBox[{"8", "\[Pi]", " ", "h", " ", 
+        SuperscriptBox["f", "3"]}], 
+       SuperscriptBox["c", "3"]], 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          FractionBox[
+           RowBox[{"h", "\[VeryThinSpace]", "f"}], "kT"]], "-", "1"}], ")"}], 
+       
+       RowBox[{"-", "1"}]]}],
+     TraditionalForm], ",", 
+    RowBox[{"{", 
+     RowBox[{"f", ",", "0", ",", "\[Infinity]"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6959958944441566`*^9, 3.695995951799531*^9}, {
+  3.6960039955280533`*^9, 3.6960039987628508`*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"8", " ", 
+   SuperscriptBox["kT", "4"], " ", 
+   SuperscriptBox["\[Pi]", "5"]}], 
+  RowBox[{"15", " ", 
+   SuperscriptBox["c", "3"], " ", 
+   SuperscriptBox["h", "3"]}]]], "Output",
+ CellChangeTimes->{{3.695995942279052*^9, 3.695995952843429*^9}}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Half of the energy density is stored in the electric field, half in the \
+magnetic field: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"u", "=", 
+     RowBox[{
+      RowBox[{
+       FractionBox["1", 
+        RowBox[{"8", "\[Pi]"}]], 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["\[DoubleStruckCapitalE]", "2"], "+", 
+         SuperscriptBox["\[DoubleStruckCapitalB]", "2"]}], ")"}]}], "=", 
+      RowBox[{
+       FractionBox["1", 
+        RowBox[{"8", "\[Pi]"}]], 
+       RowBox[{"(", 
+        RowBox[{
+         SubsuperscriptBox["\[DoubleStruckCapitalE]", "x", "2"], "+", 
+         SubsuperscriptBox["\[DoubleStruckCapitalE]", "y", "2"], "+", 
+         SubsuperscriptBox["\[DoubleStruckCapitalE]", "z", "2"], "+", 
+         SuperscriptBox["\[DoubleStruckCapitalB]", "2"]}], ")"}]}]}]}], ","}],
+    TraditionalForm]],ExpressionUUID->
+  "e73924e9-161d-4748-8c60-aa3c378aad7d"],
+ " so the average energy density arising from the z-component of the electric \
+field  is"
+}], "Text",
+ CellChangeTimes->{{3.696008241589711*^9, 3.696008325482347*^9}, {
+  3.696008374330409*^9, 3.696008478022026*^9}, {3.6960085381556797`*^9, 
+  3.696008538155779*^9}, {3.696008805698888*^9, 3.69600881044484*^9}, {
+  3.6960162291822433`*^9, 3.6960162758128757`*^9}, {3.696016470413262*^9, 
+  3.6960164829842787`*^9}, {3.6973699344638*^9, 3.697369937915173*^9}, {
+  3.697370001332615*^9, 3.697370028028171*^9}, {3.733480814137044*^9, 
+  3.733480836579032*^9}},ExpressionUUID->"643ca985-a04c-45fc-9964-\
+f56671381dbc"],
+
+Cell[BoxData[Cell[TextData[Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox[
+     OverscriptBox[
+      SubsuperscriptBox["\[DoubleStruckCapitalE]", "z", "2"], "_"], 
+     RowBox[{"8", "\[Pi]"}]], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       FractionBox["1", "2"], "\[Cross]", 
+       FractionBox["1", "3"], "\[Cross]", "u"}], "\[Rule]", 
+      OverscriptBox[
+       SubsuperscriptBox["\[DoubleStruckCapitalE]", "z", "2"], "_"]}], "=", 
+     RowBox[{
+      RowBox[{
+       FractionBox[
+        RowBox[{"4", "\[Pi]"}], "3"], "u"}], "=", 
+      FractionBox[
+       RowBox[{"32", " ", 
+        SuperscriptBox["kT", "4"], " ", 
+        SuperscriptBox["\[Pi]", "6"]}], 
+       RowBox[{"45", " ", 
+        SuperscriptBox["c", "3"], " ", 
+        SuperscriptBox["h", "3"]}]], " "}]}]}], TraditionalForm]],
+  ExpressionUUID->"afb9a827-72bb-48ab-8d1a-462f2ede0ee5"]],ExpressionUUID->
+  "f8f651b9-d5dc-4a92-9541-b9e68e53f220"]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.69601642311445*^9, 3.696016445531983*^9}, {
+  3.696016477066143*^9, 3.696016479211308*^9}, {3.6973699908962317`*^9, 
+  3.6973699908962584`*^9}, {3.733480764155044*^9, 
+  3.7334807878583727`*^9}},ExpressionUUID->"92d65f85-10c7-4017-a9c6-\
+c961b87129e6"],
+
+Cell[TextData[{
+ "\tThe atom experiences a rapidly fluctuating electric field ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[DoubleStruckCapitalE]", "(", "t", ")"}], TraditionalForm]]],
+ ", so the Hamiltonian is ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"H", "=", 
+    RowBox[{
+     SubscriptBox["H", "a"], "-", 
+     RowBox[{"d", "\[CenterDot]", 
+      RowBox[{"\[DoubleStruckCapitalE]", "(", "t", ")"}], " "}]}]}], 
+   TraditionalForm]]],
+ " also rapidly fluctuates.  The electric field causes the atom to be \
+infrequently put into the excited state, with probability ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["\[ExponentialE]", 
+    FractionBox[
+     RowBox[{"-", 
+      SubscriptBox["E", "m"]}], "kT"]], TraditionalForm]]],
+ ".  However, Einstein realized that even in the absence of the black-body \
+radiation (",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"i", ".", "e", ".", " ", "T"}], "=", "0"}], ")"}], 
+   TraditionalForm]]],
+ " the atom in the excited state would spontaneously radiate and return to \
+the ground state.  Thus, at ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"T", "=", "0"}], TraditionalForm]]],
+ " we expect the excited-state amplitude of an initially excited atom to obey \
+",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"c", "(", "t", ")"}], "=", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "\[Gamma]"}], " ", 
+      RowBox[{"t", "/", "2"}]}]]}], TraditionalForm]]],
+ ", where the excited state lifetime is ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1", "/", "\[Gamma]"}], TraditionalForm]]],
+ ".  We will use a quantum mechanical version of Einstein\[CloseCurlyQuote]s \
+thermal equilibrium argument to deduce the value of ",
+ Cell[BoxData[
+  FormBox["\[Gamma]", TraditionalForm]]],
+ ", without resort to quantum electrodynamics.  For convenience we will \
+assume our excited state is a p-state, with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"m", "=", "0"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ", and the ground state is an s-state.  Only ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["E", "z"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " fluctuations of the black-body electric field cause excitation of this \
+state."
+}], "Text",
+ CellChangeTimes->{{3.695996028793213*^9, 3.69599604175336*^9}, {
+   3.695996125802475*^9, 3.6959961368523817`*^9}, {3.695996291549559*^9, 
+   3.695996324278151*^9}, {3.6959963632238503`*^9, 3.695997007235557*^9}, {
+   3.695997054946718*^9, 3.695997194706559*^9}, {3.6959972428656387`*^9, 
+   3.69599724351798*^9}, {3.6959972992168922`*^9, 3.6959974709036827`*^9}, {
+   3.6959975377410717`*^9, 3.695997777861032*^9}, {3.6959978286393757`*^9, 
+   3.6959979277341967`*^9}, 3.695997964218107*^9, {3.695998401081483*^9, 
+   3.695998405752646*^9}, {3.695998571575952*^9, 3.69599869530303*^9}, {
+   3.695998726162713*^9, 3.6959987427382307`*^9}, {3.6959988008932962`*^9, 
+   3.695998930541987*^9}, {3.69599897191919*^9, 3.695999340419547*^9}, {
+   3.695999573978078*^9, 3.695999595650173*^9}, {3.69599962780088*^9, 
+   3.695999852633274*^9}, {3.695999903786829*^9, 3.6959999217999496`*^9}, {
+   3.695999969284318*^9, 3.696000101900943*^9}, {3.6960001468914537`*^9, 
+   3.696000182294983*^9}, {3.696000226990404*^9, 3.6960002649032803`*^9}, {
+   3.696001256740638*^9, 3.6960012598566217`*^9}, {3.696008660857089*^9, 
+   3.6960087943034983`*^9}, {3.696008829091641*^9, 3.696008967233165*^9}, {
+   3.696009028495512*^9, 3.696009050763352*^9}, {3.696009140242113*^9, 
+   3.69600923590198*^9}, {3.696009273391708*^9, 3.696009306174221*^9}, {
+   3.696009338592013*^9, 3.69600933889543*^9}, {3.696014408975992*^9, 
+   3.696014426822463*^9}, {3.696014464674534*^9, 3.6960144653496532`*^9}, {
+   3.6960145169737473`*^9, 3.696014691507122*^9}, {3.696014739150152*^9, 
+   3.6960151431051197`*^9}, 3.696015326180736*^9, {3.696015361884857*^9, 
+   3.6960154145012093`*^9}, {3.696016301977722*^9, 3.6960163150124483`*^9}, 
+   3.6960164912420588`*^9, {3.6960165336432667`*^9, 3.696016541065386*^9}, 
+   3.696016580907857*^9, {3.696016631790196*^9, 3.696016650804139*^9}, 
+   3.696016758793215*^9, {3.696017336694458*^9, 3.696017338338071*^9}}],
+
+Cell[TextData[{
+ "Note that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["c", "0"], "(", "t", ")"}], "=", 
+    RowBox[{
+     TemplateBox[{RowBox[{
+         RowBox[{"2", "p"}], " ", ",", " ", 
+         RowBox[{"m", "=", "0"}]}],"\[Psi]"},
+      "BraKet"], "=", 
+     RowBox[{
+      TemplateBox[{"0","\[Psi]"},
+       "BraKet"], "=", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{
+        RowBox[{"-", "\[Gamma]"}], " ", 
+        RowBox[{"t", "/", "2"}]}]]}]}]}], TraditionalForm]]],
+ " is the solution to the equation"
+}], "Text",
+ CellChangeTimes->{{3.696016583628941*^9, 3.6960166173879623`*^9}, {
+  3.696017349331256*^9, 3.696017401285039*^9}}],
+
+Cell[BoxData[Cell[TextData[Cell[BoxData[
+  FormBox[
+   RowBox[{"  ", 
+    RowBox[{
+     RowBox[{"\[ImaginaryI]", " ", "\[HBar]", " ", 
+      RowBox[{
+       SubscriptBox["\[DifferentialD]", "t"], 
+       SubscriptBox["c", "0"]}]}], "=", 
+     RowBox[{
+      RowBox[{"-", "\[ImaginaryI]"}], " ", "\[HBar]", " ", 
+      FractionBox["\[Gamma]", "2"], 
+      SubscriptBox["c", "0"]}]}]}], 
+   TraditionalForm]]]]]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.69601642311445*^9, 3.696016445531983*^9}, {
+  3.696016477066143*^9, 3.696016479211308*^9}, {3.6960165963403*^9, 
+  3.696016597649909*^9}}],
+
+Cell[TextData[{
+ "for an atom that is excited at ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"t", "=", "0"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ".  We also note that the Schrodinger equation for the interaction of the \
+atom with just black-body radiation would be\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"\[ImaginaryI]", " ", "\[HBar]", " ", 
+      RowBox[{
+       SubscriptBox["\[DifferentialD]", "t"], 
+       SubscriptBox["c", "0"]}]}], "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", 
+         TemplateBox[{"0"},
+          "Bra"]}], 
+        RowBox[{"d", "\[CenterDot]", "\[DoubleStruckCapitalE]"}], 
+        TemplateBox[{"g"},
+         "Ket"], 
+        SubscriptBox["c", "g"]}], "+", 
+       RowBox[{
+        SubscriptBox["E", "0"], 
+        SubscriptBox["c", "0"]}]}], "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", 
+         SubscriptBox["d", "z"]}], 
+        SubscriptBox["\[DoubleStruckCapitalE]", "z"]}], "+", 
+       RowBox[{
+        SubscriptBox["E", "0"], 
+        SubscriptBox["c", "0"]}]}]}]}], " ", ",", " "}], TraditionalForm]]],
+ "  where ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["c", "g"], "\[TildeTilde]", "1"}], TraditionalForm]]],
+ " is the amplitude to find the atom in the ground state and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["d", "z"], "=", 
+    RowBox[{
+     RowBox[{"-", "e"}], 
+     TemplateBox[{"0"},
+      "Bra"], "z", 
+     TemplateBox[{"g"},
+      "Ket"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ". We hypothesize that the effect of spontaneous emission must be to change \
+this to"
+}], "Text",
+ CellChangeTimes->{{3.696016635244639*^9, 3.6960167226325483`*^9}, {
+  3.6960174116206017`*^9, 3.696017444317235*^9}}],
+
+Cell[BoxData[Cell[TextData[{
+  Cell[BoxData[
+   FormBox[
+    RowBox[{
+     RowBox[{"\[ImaginaryI]", " ", "\[HBar]", " ", 
+      RowBox[{
+       SubscriptBox["\[DifferentialD]", "t"], 
+       SubscriptBox["c", "0"]}]}], "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", 
+        SubscriptBox["d", "z"]}], 
+       SubscriptBox["\[DoubleStruckCapitalE]", "z"]}], "+", 
+      RowBox[{
+       SubscriptBox["E", "0"], 
+       SubscriptBox["c", "0"]}], "-", 
+      RowBox[{"\[ImaginaryI]", " ", "\[HBar]", " ", 
+       FractionBox["\[Gamma]", "2"], " ", 
+       SubscriptBox["c", "0"], " "}]}]}], TraditionalForm]],ExpressionUUID->
+   "3ced4f06-2359-4c0e-8268-492c48a45383"],
+  "."
+ }],ExpressionUUID->
+  "f46536ec-933b-412d-a049-799681485fd0"]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6960166966587267`*^9, 3.696016697258561*^9}, {
+  3.696017458456113*^9, 3.696017463124991*^9}, {3.7334796023430433`*^9, 
+  3.733479604697747*^9}},ExpressionUUID->"4890f3a0-bbcc-4a55-8b98-\
+c47c33e9c7f0"],
+
+Cell[TextData[{
+ " Assuming this is true, we will find ",
+ Cell[BoxData[
+  FormBox["\[Gamma]", TraditionalForm]],ExpressionUUID->
+  "c44518a2-c418-484c-8094-9b87ed58c2ec"],
+ "."
+}], "Text",
+ CellChangeTimes->{
+  3.696016661329975*^9, {3.696016706460273*^9, 
+   3.6960167191108637`*^9}},ExpressionUUID->"08bc46fc-f5f8-40cb-a9b6-\
+f1fbb0ef3b7f"],
+
+Cell[TextData[{
+ "It is easy to solve this equation using Fourier analysis: let  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["c", "0"], "(", "t", ")"}], "=", 
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+     RowBox[{
+      RowBox[{"\[DifferentialD]", "f"}], " ", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{
+        RowBox[{"-", "2"}], "\[Pi]", " ", "\[ImaginaryI]", " ", "f", " ", 
+        "t"}]], 
+      RowBox[{
+       OverscriptBox[
+        SubscriptBox["c", "0"], "~"], "(", "f", ")"}]}]}]}], 
+   TraditionalForm]]],
+ ".  In Fourier space, we get (letting ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["f", "0"], "=", 
+    RowBox[{
+     SubscriptBox["E", "0"], "/", "h"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ")"
+}], "Text",
+ CellChangeTimes->{{3.6960167639679413`*^9, 3.696016826786048*^9}, {
+  3.6973703379311028`*^9, 3.6973703579898853`*^9}}],
+
+Cell[BoxData[Cell[TextData[Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"2", "\[Pi]", " ", "f", "  ", 
+     RowBox[{
+      OverscriptBox[
+       SubscriptBox["c", "0"], "~"], "(", "f", ")"}]}], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        FractionBox[
+         RowBox[{"-", 
+          SubscriptBox["d", "z"]}], "\[HBar]"], 
+        SubscriptBox[
+         OverscriptBox["\[DoubleStruckCapitalE]", "~"], "z"]}], "+", 
+       RowBox[{"2", "\[Pi]", " ", 
+        SubscriptBox["f", 
+         RowBox[{" ", "0"}]], 
+        RowBox[{
+         OverscriptBox[
+          SubscriptBox["c", "0"], "~"], "(", "f", ")"}]}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", 
+        FractionBox["\[Gamma]", "2"], " ", 
+        RowBox[{
+         OverscriptBox[
+          SubscriptBox["c", "0"], "~"], "(", "f", ")"}]}]}], "\[Rule]", 
+      RowBox[{
+       OverscriptBox[
+        SubscriptBox["c", "0"], "~"], "(", "f", ")"}]}], "=", 
+     FractionBox[
+      RowBox[{
+       RowBox[{"-", 
+        SubscriptBox["d", "z"]}], 
+       RowBox[{
+        SubscriptBox[
+         OverscriptBox["\[DoubleStruckCapitalE]", "~"], "z"], "/", 
+        "\[HBar]"}]}], 
+      RowBox[{
+       RowBox[{"2", 
+        RowBox[{"\[Pi]", "(", 
+         RowBox[{"f", "-", 
+          SubscriptBox["f", "0"]}], ")"}]}], "+", 
+       RowBox[{"\[ImaginaryI]", " ", 
+        RowBox[{"\[Gamma]", "/", "2"}]}]}]]}]}], TraditionalForm]],
+  ExpressionUUID->"5b4aabd2-1454-4826-93eb-8f504b5a7ac8"]],ExpressionUUID->
+  "eed596c7-821c-4e2d-8cc6-111dd382a2e2"]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6960166966587267`*^9, 3.696016697258561*^9}, {
+  3.6960168012040586`*^9, 3.696016802358244*^9}, {3.696070965732679*^9, 
+  3.696070985733808*^9}, {3.697370320406481*^9, 3.697370326674239*^9}, {
+  3.733479622929923*^9, 
+  3.733479623294183*^9}},ExpressionUUID->"d98141ae-a01e-4e66-aa1a-\
+c1fc7e7a142f"],
+
+Cell[TextData[{
+ "The power spectral density (see the Fourier analysis summary below) of the \
+excited state amplitude is therefore ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[ScriptCapitalP]", 
+      SubscriptBox["c", "0"]], "(", "f", ")"}], "=", 
+    RowBox[{
+     RowBox[{
+      FractionBox["1", "T"], 
+      SuperscriptBox[
+       RowBox[{"\[LeftBracketingBar]", 
+        RowBox[{
+         SubscriptBox[
+          OverscriptBox["c", "~"], "0"], "(", "f", ")"}], 
+        "\[RightBracketingBar]"}], "2"]}], "=", 
+     RowBox[{
+      FractionBox[
+       SubsuperscriptBox["d", "z", "2"], 
+       SuperscriptBox["\[HBar]", "2"]], 
+      FractionBox[
+       RowBox[{
+        RowBox[{
+         SubscriptBox["\[ScriptCapitalP]", 
+          SubscriptBox["\[DoubleStruckCapitalE]", "z"]], "(", "f", ")"}], "/",
+         "\[HBar]"}], 
+       RowBox[{
+        RowBox[{"4", 
+         RowBox[{
+          SuperscriptBox["\[Pi]", "2"], "(", 
+          RowBox[{"f", "-", 
+           SubscriptBox["f", "0"]}], ")"}]}], "+", 
+        FractionBox[
+         SuperscriptBox["\[Gamma]", "2"], "4"]}]]}]}]}], TraditionalForm]]],
+ "; the average excited state probability is   "
+}], "Text",
+ CellChangeTimes->{
+  3.6960168216240253`*^9, {3.696016880380766*^9, 3.696016908002255*^9}, {
+   3.697370440385338*^9, 3.697370459139801*^9}, {3.697370523827951*^9, 
+   3.697370562099758*^9}}],
+
+Cell[BoxData[Cell[TextData[{
+  Cell[BoxData[
+   FormBox[
+    RowBox[{
+     OverscriptBox[
+      SubsuperscriptBox["c", "0", "2"], "_"], "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"\[Integral]", 
+        RowBox[{
+         RowBox[{"\[DifferentialD]", "f"}], " ", 
+         RowBox[{
+          SubscriptBox["\[ScriptCapitalP]", 
+           SubscriptBox["c", "0"]], "(", "f", ")"}]}]}], "\[TildeTilde]", 
+       RowBox[{
+        FractionBox[
+         SubsuperscriptBox["d", "z", "2"], 
+         SuperscriptBox["\[HBar]", "2"]], 
+        RowBox[{
+         SubscriptBox["\[ScriptCapitalP]", 
+          SubscriptBox["\[DoubleStruckCapitalE]", "z"]], "(", 
+         SubscriptBox["f", "0"], ")"}], 
+        RowBox[{"\[Integral]", 
+         RowBox[{
+          RowBox[{"\[DifferentialD]", "f"}], " ", 
+          FractionBox["1", 
+           RowBox[{
+            RowBox[{"4", 
+             RowBox[{
+              SuperscriptBox["\[Pi]", "2"], "(", 
+              RowBox[{"f", "-", 
+               SubscriptBox["f", "0"]}], ")"}]}], "+", 
+            FractionBox[
+             SuperscriptBox["\[Gamma]", "2"], "4"]}]]}]}]}]}], "=", 
+      RowBox[{
+       FractionBox[
+        SubsuperscriptBox["d", "z", "2"], 
+        RowBox[{
+         SuperscriptBox["\[HBar]", "2"], "\[Gamma]"}]], 
+       RowBox[{
+        SubscriptBox["\[ScriptCapitalP]", 
+         SubscriptBox["\[DoubleStruckCapitalE]", "z"]], "(", 
+        SubscriptBox["f", "0"], ")"}]}]}]}], TraditionalForm]],
+   FormatType->"TraditionalForm"],
+  "."
+ }]]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6960166966587267`*^9, 3.696016697258561*^9}, {
+  3.6960168012040586`*^9, 3.696016802358244*^9}, {3.696016903016891*^9, 
+  3.696016904270576*^9}}],
+
+Cell["\<\
+The last integral assumes that spectrum of the black-body radiation is \
+essentially constant over the line shape of the atom.\
+\>", "Text",
+ CellChangeTimes->{3.696016911984145*^9, 3.6973706355961533`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"Integrate", "[", 
+   RowBox[{
+    FractionBox["1", 
+     RowBox[{
+      RowBox[{"4", 
+       SuperscriptBox["\[Pi]", "2"], " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"f", "-", "a"}], ")"}], "2"]}], "+", 
+      FractionBox[
+       SuperscriptBox["\[Gamma]", "2"], "4"]}]], ",", 
+    RowBox[{"{", 
+     RowBox[{"f", ",", 
+      RowBox[{"-", "\[Infinity]"}], ",", "\[Infinity]"}], "}"}], ",", 
+    RowBox[{"Assumptions", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"a", ">", "0"}], ",", 
+       RowBox[{"\[Gamma]", ">", "0"}]}], "}"}]}]}], "]"}], 
+  TraditionalForm]], "Input",
+ CellChangeTimes->{{3.696015159820956*^9, 3.696015297015237*^9}, {
+  3.696016928262454*^9, 3.696016931748445*^9}, {3.6973707953485203`*^9, 
+  3.6973708377225657`*^9}}],
+
+Cell[BoxData[
+ FractionBox["1", "\[Gamma]"]], "Output",
+ CellChangeTimes->{{3.696015192045621*^9, 3.6960152976119223`*^9}, 
+   3.6960169334306803`*^9, {3.697370791317479*^9, 3.697370839331767*^9}}]
+}, Open  ]],
+
+Cell[TextData[{
+ "We now need to calculate ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[ScriptCapitalP]", 
+     SubscriptBox["\[DoubleStruckCapitalE]", "z"]], "(", 
+    SubscriptBox["f", "0"], ")"}], TraditionalForm]]],
+ " for black-body radiation.  We already deduced ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubsuperscriptBox["\[DoubleStruckCapitalE]", "z", "2"], "=", 
+    RowBox[{
+     RowBox[{
+      FractionBox[
+       RowBox[{"4", "\[Pi]"}], "3"], "u"}], "=", 
+     RowBox[{
+      RowBox[{
+       FractionBox[
+        RowBox[{"4", "\[Pi]"}], "3"], 
+       RowBox[{
+        SubsuperscriptBox["\[Integral]", "0", "\[Infinity]"], 
+        RowBox[{
+         RowBox[{"u", "(", "f", ")"}], 
+         RowBox[{"\[DifferentialD]", "f"}]}]}]}], "=", 
+      RowBox[{
+       SubsuperscriptBox["\[Integral]", 
+        RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+       RowBox[{
+        RowBox[{"\[DifferentialD]", "f"}], " ", 
+        RowBox[{
+         SubscriptBox["\[ScriptCapitalP]", 
+          SubscriptBox["\[DoubleStruckCapitalE]", "z"]], "(", "f", ")"}], 
+        "  "}]}]}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ".  From this we conclude ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[ScriptCapitalP]", 
+      SubscriptBox["\[DoubleStruckCapitalE]", "z"]], "(", "f", ")"}], " ", 
+    "=", 
+    RowBox[{
+     RowBox[{
+      FractionBox["1", "2"], 
+      RowBox[{"(", 
+       RowBox[{
+        FractionBox[
+         RowBox[{"4", "\[Pi]"}], "3"], 
+        RowBox[{"u", "(", 
+         RowBox[{"\[LeftBracketingBar]", "f", "\[RightBracketingBar]"}], 
+         ")"}]}], ")"}]}], "=", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"2", "\[Pi]"}], "3"], 
+      RowBox[{"u", "(", 
+       RowBox[{"\[LeftBracketingBar]", "f", "\[RightBracketingBar]"}], ")"}], 
+      " "}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ".  We therefore get "
+}], "Text",
+ CellChangeTimes->{{3.696015952602851*^9, 3.696015957044668*^9}, {
+  3.696015998844659*^9, 3.696015999236648*^9}, {3.696016980333332*^9, 
+  3.696017012277171*^9}}],
+
+Cell[BoxData[Cell[TextData[{
+  Cell[BoxData[
+   FormBox[
+    RowBox[{
+     OverscriptBox[
+      SubsuperscriptBox["c", "0", "2"], "_"], "=", 
+     RowBox[{
+      RowBox[{
+       FractionBox[
+        SubsuperscriptBox["d", "z", "2"], 
+        RowBox[{
+         SuperscriptBox["\[HBar]", "2"], "\[Gamma]"}]], 
+       RowBox[{
+        SubscriptBox["\[ScriptCapitalP]", 
+         SubscriptBox["\[DoubleStruckCapitalE]", "z"]], "(", 
+        SubscriptBox["f", "0"], ")"}]}], "=", 
+      RowBox[{
+       RowBox[{
+        FractionBox[
+         SubsuperscriptBox["d", "z", "2"], 
+         RowBox[{
+          SuperscriptBox["\[HBar]", "2"], "\[Gamma]"}]], 
+        FractionBox[
+         RowBox[{"2", "\[Pi]"}], "3"], 
+        RowBox[{"u", "(", 
+         SubscriptBox["f", "0"], ")"}]}], " ", "=", 
+       RowBox[{
+        RowBox[{
+         FractionBox[
+          SubsuperscriptBox["d", "z", "2"], 
+          RowBox[{
+           SuperscriptBox["\[HBar]", "2"], "\[Gamma]"}]], 
+         FractionBox[
+          RowBox[{"2", "\[Pi]"}], "3"], 
+         FractionBox[
+          RowBox[{"8", "\[Pi]", " ", "h", " ", 
+           SuperscriptBox[
+            SubscriptBox["f", "0"], "3"]}], 
+          SuperscriptBox["c", "3"]], 
+         SuperscriptBox["\[ExponentialE]", 
+          FractionBox[
+           RowBox[{
+            RowBox[{"-", "h"}], " ", 
+            SubscriptBox["f", "0"]}], "kT"]]}], "=", 
+        SuperscriptBox["\[ExponentialE]", 
+         FractionBox[
+          RowBox[{
+           RowBox[{"-", "h"}], " ", 
+           SubscriptBox["f", "0"]}], "kT"]]}]}]}]}], TraditionalForm]]],
+  "."
+ }]]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6960166966587267`*^9, 3.696016697258561*^9}, {
+  3.6960168012040586`*^9, 3.696016802358244*^9}, {3.696016903016891*^9, 
+  3.696016904270576*^9}, {3.696016984788275*^9, 3.6960169847883263`*^9}, {
+  3.697370991304669*^9, 3.697370991304687*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"1", "==", 
+     RowBox[{
+      FractionBox[
+       SubsuperscriptBox["d", "z", "2"], 
+       RowBox[{
+        SuperscriptBox["\[HBar]", "2"], "\[Gamma]"}]], 
+      FractionBox[
+       RowBox[{"2", "\[Pi]"}], "3"], 
+      FractionBox[
+       RowBox[{"8", "\[Pi]", " ", "h", " ", 
+        SuperscriptBox[
+         SubscriptBox["f", "0"], "3"]}], 
+       SuperscriptBox["c", "3"]]}]}], "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       SubscriptBox["f", "0"], "\[Rule]", 
+       FractionBox[
+        SubscriptBox["\[Omega]", "0"], 
+        RowBox[{"2", "\[Pi]"}]]}], ",", 
+      RowBox[{"h", "\[Rule]", 
+       RowBox[{"2", "\[Pi]", " ", "\[HBar]"}]}]}], "}"}]}], ",", "\[Gamma]"}],
+   "]"}]], "Input",
+ CellChangeTimes->{{3.697371062052168*^9, 3.697371127821504*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"\[Gamma]", "\[Rule]", 
+    FractionBox[
+     RowBox[{"4", " ", 
+      SubsuperscriptBox["d", "z", "2"], " ", 
+      SubsuperscriptBox["\[Omega]", "0", "3"]}], 
+     RowBox[{"3", " ", 
+      SuperscriptBox["c", "3"], " ", "\[HBar]"}]]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.697371094063961*^9, 3.697371136718671*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Solving for ",
+ Cell[BoxData[
+  FormBox["\[Gamma]", TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Gamma]", "=", 
+    FractionBox[
+     RowBox[{"4", " ", 
+      SuperscriptBox["d", "2"], " ", 
+      SuperscriptBox[
+       SubscriptBox["\[Omega]", "0"], "3"]}], 
+     RowBox[{"3", " ", 
+      SuperscriptBox["c", "3"], " ", "\[HBar]"}]]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ", equivalent to Larmor\[CloseCurlyQuote]s famous formula for the radiation \
+of a classical oscillating dipole.\n\nFor the Rb 5p lifetime:"
+}], "Text",
+ CellChangeTimes->{{3.696016050723384*^9, 3.696016061872321*^9}, {
+  3.696016993455576*^9, 3.6960170731712027`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   RowBox[{"4", " ", 
+    SuperscriptBox["d", "2"], " ", 
+    SuperscriptBox["\[Omega]", "3"]}], 
+   RowBox[{"3", " ", 
+    SuperscriptBox["c", "3"], " ", "\[HBar]"}]], "//.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"\[Omega]", "\[Rule]", " ", 
+     FractionBox[
+      RowBox[{"1.59", " ", "eV"}], "\[HBar]"]}], ",", 
+    RowBox[{"\[HBar]", "\[Rule]", " ", 
+     FractionBox[
+      RowBox[{"1973", " ", "eV", " ", "\[CapitalARing]"}], "c"]}], ",", 
+    RowBox[{"c", "->", 
+     RowBox[{"3", " ", 
+      SuperscriptBox["10", "18"], 
+      RowBox[{"\[CapitalARing]", "/", "sec"}]}]}], ",", 
+    RowBox[{"d", "\[Rule]", 
+     RowBox[{
+      SqrtBox[
+       RowBox[{"14.4", " ", "eV", " ", "\[CapitalARing]"}]], 
+      FractionBox[
+       RowBox[{"(", 
+        RowBox[{"5.1", " ", ".5292", " ", "\[CapitalARing]"}], ")"}], 
+       SqrtBox["3"]]}]}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.695986463566051*^9, 3.695986574086648*^9}, {
+   3.695986791145245*^9, 3.69598685585568*^9}, {3.6959870780658817`*^9, 
+   3.695987108845668*^9}, {3.695988457790098*^9, 3.695988494080432*^9}, 
+   3.695989144438472*^9}],
+
+Cell[BoxData[
+ FractionBox["3.709917772221724`*^7", "sec"]], "Output",
+ CellChangeTimes->{
+  3.6959865174481697`*^9, {3.695986554075255*^9, 3.6959865762759647`*^9}, {
+   3.6959868295231524`*^9, 3.6959868580556583`*^9}, 3.6959871120359697`*^9, 
+   3.695988498698883*^9, 3.695989146604712*^9, 3.6960160685404577`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"1", "/", "%"}]], "Input",
+ CellChangeTimes->{{3.696016070209251*^9, 3.696016071158189*^9}}],
+
+Cell[BoxData[
+ RowBox[{"2.6954775318406567`*^-8", " ", "sec"}]], "Output",
+ CellChangeTimes->{3.696016072288823*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "in excellent agreement with experiment.  For Hydrogen ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"2", "\[VeryThinSpace]", "p"}], "\[Rule]", " ", 
+    RowBox[{"1", "\[VeryThinSpace]", "s"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.696016077869163*^9, 3.696016084840419*^9}, {
+  3.696017107395453*^9, 3.6960171155862703`*^9}, {3.698584459917337*^9, 
+  3.698584476917276*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     SubscriptBox["P", 
+      RowBox[{"1", ",", "0"}]], "[", "s", "]"}], 
+    RowBox[{
+     SubscriptBox["P", 
+      RowBox[{"2", ",", "1"}]], "[", "s", "]"}], "s"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"s", ",", "0", ",", "\[Infinity]"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6960171490991497`*^9, 3.6960171750890093`*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"128", " ", 
+   SqrtBox[
+    FractionBox["2", "3"]]}], "81"]], "Output",
+ CellChangeTimes->{3.696017176126831*^9, 3.696017291439323*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   RowBox[{"4", " ", 
+    SuperscriptBox["d", "2"], " ", 
+    SuperscriptBox["\[Omega]", "3"]}], 
+   RowBox[{"3", " ", 
+    SuperscriptBox["c", "3"], " ", "\[HBar]"}]], "//.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"\[Omega]", "\[Rule]", " ", 
+     FractionBox[
+      RowBox[{"27.2", " ", "eV", 
+       RowBox[{"(", 
+        RowBox[{
+         FractionBox[
+          RowBox[{"-", "1"}], "8"], "-", 
+         FractionBox[
+          RowBox[{"-", "1"}], "2"]}], ")"}]}], "\[HBar]"]}], ",", 
+    RowBox[{"\[HBar]", "\[Rule]", " ", 
+     FractionBox[
+      RowBox[{"1973", " ", "eV", " ", "\[CapitalARing]"}], "c"]}], ",", 
+    RowBox[{"c", "->", 
+     RowBox[{"3", " ", 
+      SuperscriptBox["10", "18"], 
+      RowBox[{"\[CapitalARing]", "/", "sec"}]}]}], ",", 
+    RowBox[{"d", "\[Rule]", 
+     RowBox[{
+      SqrtBox[
+       RowBox[{"14.4", " ", "eV", " ", "\[CapitalARing]"}]], 
+      FractionBox[
+       RowBox[{"(", 
+        RowBox[{"%", " ", ".5292", " ", "\[CapitalARing]"}], ")"}], 
+       SqrtBox["3"]]}]}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.695986463566051*^9, 3.695986574086648*^9}, {
+   3.695986791145245*^9, 3.69598685585568*^9}, {3.6959870780658817`*^9, 
+   3.695987108845668*^9}, {3.695988457790098*^9, 3.695988494080432*^9}, 
+   3.695989144438472*^9, {3.696017130639567*^9, 3.696017138749598*^9}, 
+   3.6960171884758997`*^9, {3.6960172529382467`*^9, 3.696017278891713*^9}}],
+
+Cell[BoxData[
+ FractionBox["6.268905403798764`*^8", "sec"]], "Output",
+ CellChangeTimes->{
+  3.6959865174481697`*^9, {3.695986554075255*^9, 3.6959865762759647`*^9}, {
+   3.6959868295231524`*^9, 3.6959868580556583`*^9}, 3.6959871120359697`*^9, 
+   3.695988498698883*^9, 3.695989146604712*^9, 3.6960160685404577`*^9, 
+   3.696017197187271*^9, {3.6960172678555107`*^9, 3.696017294021229*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"1", "/", "%"}]], "Input",
+ CellChangeTimes->{{3.696017199009408*^9, 3.696017199874498*^9}}],
+
+Cell[BoxData[
+ RowBox[{"1.5951748121674172`*^-9", " ", "sec"}]], "Output",
+ CellChangeTimes->{3.696017200636169*^9, 3.6960172972226887`*^9}]
+}, Open  ]],
+
+Cell["in exact agreement with experiment.", "Text",
+ CellChangeTimes->{{3.6960173071064997`*^9, 3.696017315914568*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Fourier analysis in the time-frequency domain: fluctuating interactions\
+\>", "Subsection",
+ CellChangeTimes->{{3.696017540996233*^9, 3.696017559132676*^9}, {
+  3.697387330842133*^9, 3.6973873772697697`*^9}, {3.698575656046804*^9, 
+  3.698575667795745*^9}}],
+
+Cell[TextData[{
+ "We are interested in analyzing the frequency content of a signal ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"c", "(", "t", ")"}], TraditionalForm]]],
+ "  which has a mean-square average of"
+}], "Text",
+ CellChangeTimes->{{3.696017564013125*^9, 3.6960176012966003`*^9}, {
+  3.696017788869853*^9, 3.69601780082717*^9}, {3.696067039410721*^9, 
+  3.696067048775198*^9}, {3.6960711187503967`*^9, 3.696071169959749*^9}, {
+  3.697392099112471*^9, 3.6973921155226517`*^9}}],
+
+Cell[BoxData[Cell[TextData[{
+  Cell[BoxData[
+   FormBox[
+    RowBox[{
+     OverscriptBox[
+      SuperscriptBox["c", "2"], "_"], "=", 
+     RowBox[{
+      FractionBox["1", "T"], 
+      RowBox[{
+       SubsuperscriptBox["\[Integral]", "0", "T"], 
+       RowBox[{
+        RowBox[{
+         SuperscriptBox["c", "2"], "(", "t", ")"}], 
+        RowBox[{"\[DifferentialD]", "t"}]}]}]}]}], TraditionalForm]]],
+  "."
+ }]]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6960166966587267`*^9, 3.696016697258561*^9}, {
+  3.6960168012040586`*^9, 3.696016802358244*^9}, {3.696016903016891*^9, 
+  3.696016904270576*^9}, {3.696016984788275*^9, 3.6960169847883263`*^9}, {
+  3.696017818029649*^9, 3.696017854279396*^9}}],
+
+Cell[TextData[{
+ "but the instantaneous ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"c", "(", "t", ")"}], TraditionalForm]]],
+ " may be changing rapidly in a complicated or unpredictable manner.  For \
+these types of problems the preferred tool is the Fourier Transform"
+}], "Text",
+ CellChangeTimes->{{3.696017880343753*^9, 3.696017893719762*^9}, {
+  3.696067056079136*^9, 3.696067128354289*^9}, {3.697377931475709*^9, 
+  3.69737793775325*^9}}],
+
+Cell[BoxData[Cell[TextData[{
+  Cell[BoxData[
+   FormBox[
+    RowBox[{
+     RowBox[{
+      OverscriptBox["c", "~"], "(", "f", ")"}], "=", 
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+      RowBox[{
+       RowBox[{"c", "(", "t", ")"}], 
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{"2", "\[Pi]", " ", "\[ImaginaryI]", " ", "f", " ", "t"}]], 
+       RowBox[{"\[DifferentialD]", "t"}]}]}]}], TraditionalForm]]],
+  "."
+ }]]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6960166966587267`*^9, 3.696016697258561*^9}, {
+  3.6960168012040586`*^9, 3.696016802358244*^9}, {3.696016903016891*^9, 
+  3.696016904270576*^9}, {3.696016984788275*^9, 3.6960169847883263`*^9}, {
+  3.696017818029649*^9, 3.696017854279396*^9}, {3.696017904153449*^9, 
+  3.696017941096012*^9}}],
+
+Cell["The inverse relation is ", "Text",
+ CellChangeTimes->{{3.6960671453477793`*^9, 3.696067153360042*^9}}],
+
+Cell[BoxData[Cell[TextData[{
+  Cell[BoxData[
+   FormBox[
+    RowBox[{
+     RowBox[{"c", "(", "t", ")"}], "=", 
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+      RowBox[{
+       RowBox[{
+        OverscriptBox["c", "~"], "(", "f", ")"}], 
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "2"}], "\[Pi]", " ", "\[ImaginaryI]", " ", "f", " ", 
+         "t"}]], 
+       RowBox[{"\[DifferentialD]", "f"}]}]}]}], TraditionalForm]]],
+  "."
+ }]]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6960166966587267`*^9, 3.696016697258561*^9}, {
+  3.6960168012040586`*^9, 3.696016802358244*^9}, {3.696016903016891*^9, 
+  3.696016904270576*^9}, {3.696016984788275*^9, 3.6960169847883263`*^9}, {
+  3.696017818029649*^9, 3.696017854279396*^9}, {3.696017904153449*^9, 
+  3.696017941096012*^9}, {3.696067164602458*^9, 3.696067180675294*^9}}],
+
+Cell["And the orthogonality conditions are", "Text",
+ CellChangeTimes->{{3.696067199426795*^9, 3.696067210376544*^9}, {
+  3.6960672446404543`*^9, 3.696067247801504*^9}}],
+
+Cell[BoxData[Cell[TextData[{
+  Cell[BoxData[
+   FormBox[
+    RowBox[{
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+      RowBox[{
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "2"}], "\[Pi]", " ", "\[ImaginaryI]", " ", 
+         RowBox[{"(", 
+          RowBox[{"f", "-", 
+           RowBox[{"f", "'"}]}], ")"}], " ", "t"}]], 
+       RowBox[{"\[DifferentialD]", "t"}]}]}], "=", 
+     RowBox[{"\[Delta]", "(", 
+      RowBox[{"f", "-", 
+       RowBox[{"f", "'"}]}], ")"}]}], TraditionalForm]]],
+  " and  ",
+  Cell[BoxData[
+   FormBox[
+    RowBox[{
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+      RowBox[{
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "2"}], "\[Pi]", " ", "\[ImaginaryI]", " ", 
+         RowBox[{"(", 
+          RowBox[{"t", "-", 
+           RowBox[{"t", "'"}]}], ")"}], " ", "f"}]], 
+       RowBox[{"\[DifferentialD]", "f"}]}]}], "=", 
+     RowBox[{"\[Delta]", "(", 
+      RowBox[{"t", "-", 
+       RowBox[{"t", "'"}]}], ")"}]}], TraditionalForm]]],
+  "."
+ }]]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6960166966587267`*^9, 3.696016697258561*^9}, {
+  3.6960168012040586`*^9, 3.696016802358244*^9}, {3.696016903016891*^9, 
+  3.696016904270576*^9}, {3.696016984788275*^9, 3.6960169847883263`*^9}, {
+  3.696017818029649*^9, 3.696017854279396*^9}, {3.696017904153449*^9, 
+  3.696017941096012*^9}, {3.696067164602458*^9, 3.696067180675294*^9}, {
+  3.696067220028995*^9, 3.69606730062646*^9}, {3.696068272848178*^9, 
+  3.696068273106979*^9}}],
+
+Cell["\<\
+These relations are completely analogous to expansions in momentum and \
+position space:\
+\>", "Text",
+ CellChangeTimes->{{3.696067386876794*^9, 3.696067418498064*^9}}],
+
+Cell[BoxData[{Cell[TextData[Cell[BoxData[
+  FormBox[
+   RowBox[{
+    TemplateBox[{"x","\[Psi]"},
+     "BraKet"], "=", 
+    RowBox[{
+     RowBox[{"\[Psi]", "(", "x", ")"}], "=", 
+     RowBox[{
+      RowBox[{
+       SubsuperscriptBox["\[Integral]", 
+        RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+       RowBox[{
+        RowBox[{"\[DifferentialD]", "p"}], 
+        TemplateBox[{"x","p"},
+         "BraKet"], 
+        TemplateBox[{"p","\[Psi]"},
+         "BraKet"]}]}], "=", 
+      RowBox[{
+       SubsuperscriptBox["\[Integral]", 
+        RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+       RowBox[{
+        RowBox[{"\[DifferentialD]", "p"}], " ", 
+        FractionBox[
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"\[ImaginaryI]", " ", "p", " ", 
+           RowBox[{"x", "/", "\[HBar]"}]}]], 
+         SqrtBox[
+          RowBox[{"2", "\[Pi]", " ", "\[HBar]"}]]], " ", 
+        RowBox[{"\[Psi]", "(", "p", ")"}]}]}]}]}]}], 
+   TraditionalForm]]]]], "\[IndentingNewLine]", Cell[TextData[Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[Psi]", "(", "p", ")"}], "=", 
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+     RowBox[{
+      RowBox[{"\[DifferentialD]", "x"}], " ", 
+      FractionBox[
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "\[ImaginaryI]"}], " ", "p", " ", 
+         RowBox[{"x", "/", "\[HBar]"}]}]], 
+       SqrtBox[
+        RowBox[{"2", "\[Pi]", " ", "\[HBar]"}]]], " ", 
+      RowBox[{"\[Psi]", "(", "x", ")"}]}]}]}], 
+   TraditionalForm]]]]], "\[IndentingNewLine]", Cell[TextData[Cell[BoxData[
+  FormBox[Cell[TextData[Cell[BoxData[
+    FormBox[Cell[TextData[Cell[BoxData[
+      FormBox[Cell[TextData[Cell[BoxData[Cell[TextData[Cell[BoxData[
+         FormBox[
+          RowBox[{
+           RowBox[{
+            SubsuperscriptBox["\[Integral]", 
+             RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+            RowBox[{
+             RowBox[{"\[DifferentialD]", "x"}], " ", 
+             FractionBox[
+              SuperscriptBox["\[ExponentialE]", 
+               RowBox[{
+                RowBox[{"-", "\[ImaginaryI]"}], " ", "p", " ", 
+                RowBox[{"x", "/", "\[HBar]"}]}]], 
+              SqrtBox[
+               RowBox[{"2", "\[Pi]", " ", "\[HBar]"}]]], 
+             FractionBox[
+              SuperscriptBox["\[ExponentialE]", 
+               RowBox[{"\[ImaginaryI]", " ", 
+                RowBox[{"p", "'"}], " ", 
+                RowBox[{"x", "/", "\[HBar]"}]}]], 
+              SqrtBox[
+               RowBox[{"2", "\[Pi]", " ", "\[HBar]"}]]]}]}], "=", 
+           RowBox[{"\[Delta]", "(", 
+            RowBox[{"p", "-", 
+             RowBox[{"p", "'"}]}], ")"}]}], TraditionalForm]]]]]]]]], 
+       TraditionalForm]]]]], TraditionalForm]]]]], 
+   TraditionalForm]]]]]}], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6960166966587267`*^9, 3.696016697258561*^9}, {
+  3.6960168012040586`*^9, 3.696016802358244*^9}, {3.696016903016891*^9, 
+  3.696016904270576*^9}, {3.696016984788275*^9, 3.6960169847883263`*^9}, {
+  3.696017818029649*^9, 3.696017854279396*^9}, {3.696017904153449*^9, 
+  3.696017941096012*^9}, {3.696067164602458*^9, 3.696067180675294*^9}, {
+  3.696067472838523*^9, 3.6960677451903753`*^9}, {3.697378092165814*^9, 
+  3.6973782819418716`*^9}}],
+
+Cell["One reason for the popularity of Fourier transforms is that", "Text",
+ CellChangeTimes->{{3.6960683097008057`*^9, 3.696068328319538*^9}}],
+
+Cell[BoxData[Cell[TextData[Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox[
+     RowBox[{"\[DifferentialD]", "c"}], 
+     RowBox[{"\[DifferentialD]", "t"}]], "=", 
+    RowBox[{
+     RowBox[{
+      FractionBox["\[DifferentialD]", 
+       RowBox[{"\[DifferentialD]", "t"}]], 
+      RowBox[{
+       SubsuperscriptBox["\[Integral]", 
+        RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+       RowBox[{
+        RowBox[{
+         OverscriptBox["c", "~"], "(", "f", ")"}], 
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"-", "2"}], "\[Pi]", " ", "\[ImaginaryI]", " ", "f", " ", 
+          "t"}]], 
+        RowBox[{"\[DifferentialD]", "f"}]}]}]}], "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "2"}], "\[Pi]", " ", "\[ImaginaryI]", " ", 
+        RowBox[{
+         SubsuperscriptBox["\[Integral]", 
+          RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+         RowBox[{"f", 
+          RowBox[{
+           OverscriptBox["c", "~"], "(", "f", ")"}], 
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{
+            RowBox[{"-", "2"}], "\[Pi]", " ", "\[ImaginaryI]", " ", "f", " ", 
+            "t"}]]}]}]}], "\[Rule]", 
+       RowBox[{
+        OverscriptBox[
+         FractionBox[
+          RowBox[{"\[DifferentialD]", "c"}], 
+          RowBox[{"\[DifferentialD]", "t"}]], "~"], 
+        RowBox[{"(", "f", ")"}]}]}], "=", 
+      RowBox[{
+       RowBox[{"-", "2"}], "\[Pi]", " ", "\[ImaginaryI]", " ", "f", " ", 
+       RowBox[{
+        OverscriptBox["c", "~"], "(", "f", ")"}], "  "}]}]}]}], 
+   TraditionalForm]]]]]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6960166966587267`*^9, 3.696016697258561*^9}, {
+  3.6960168012040586`*^9, 3.696016802358244*^9}, {3.696016903016891*^9, 
+  3.696016904270576*^9}, {3.696016984788275*^9, 3.6960169847883263`*^9}, {
+  3.696017818029649*^9, 3.696017854279396*^9}, {3.696017904153449*^9, 
+  3.696017941096012*^9}, {3.696068344770423*^9, 3.6960683605530977`*^9}, {
+  3.6960684041695843`*^9, 3.6960684088361397`*^9}, {3.696068447065907*^9, 
+  3.696068536987212*^9}, {3.696068571490876*^9, 3.6960686139709883`*^9}}],
+
+Cell[TextData[{
+ "which allows many differential equations to be converted to algebraic \
+equations.\n\nThe power spectral density (PSD) of a signal ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"c", "(", "t", ")"}], " "}], TraditionalForm]]],
+ "is defined as"
+}], "Text",
+ CellChangeTimes->{{3.6960686819862556`*^9, 3.696068819306005*^9}, {
+   3.6960706948943367`*^9, 3.696070696334319*^9}, {3.697377514562545*^9, 
+   3.6973776905230513`*^9}, 3.698575621959337*^9}],
+
+Cell[BoxData[Cell[TextData[{
+  Cell[BoxData[
+   FormBox[
+    RowBox[{
+     RowBox[{
+      SubscriptBox["\[ScriptCapitalP]", "c"], "(", "f", ")"}], "=", 
+     RowBox[{
+      FractionBox["1", "T"], 
+      SuperscriptBox[
+       RowBox[{"\[LeftBracketingBar]", 
+        RowBox[{
+         OverscriptBox["c", "~"], "(", "f", ")"}], "\[RightBracketingBar]"}], 
+       "2"]}]}], TraditionalForm]]],
+  "."
+ }]]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6960166966587267`*^9, 3.696016697258561*^9}, {
+  3.6960168012040586`*^9, 3.696016802358244*^9}, {3.696016903016891*^9, 
+  3.696016904270576*^9}, {3.696016984788275*^9, 3.6960169847883263`*^9}, {
+  3.696017818029649*^9, 3.696017854279396*^9}, {3.696017904153449*^9, 
+  3.696017941096012*^9}, {3.696068805300707*^9, 3.6960688595275707`*^9}}],
+
+Cell[TextData[{
+ "We have in mind a finite portion of the signal ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"c", "(", "t", ")"}], " "}], TraditionalForm]]],
+ "of duration ",
+ Cell[BoxData[
+  FormBox["T", TraditionalForm]]],
+ ", and so assume ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"c", "(", 
+     RowBox[{"t", "<", "0"}], ")"}], "=", 
+    RowBox[{
+     RowBox[{"c", "(", 
+      RowBox[{"t", ">", "T"}], ")"}], "=", "0.", " "}]}], TraditionalForm]]],
+ " As long as ",
+ Cell[BoxData[
+  FormBox["T", TraditionalForm]]],
+ " is much greater than any typical time scale over which ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"c", "(", "t", ")"}], " "}], TraditionalForm]]],
+ "changes, our analysis should not depend on the value of ",
+ Cell[BoxData[
+  FormBox["T", TraditionalForm]]],
+ ".  Writing ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[ScriptCapitalP]", "c"], TraditionalForm]]],
+ " using the Fourier transform relation for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    OverscriptBox["c", "~"], "(", "f", ")"}], TraditionalForm]]],
+ " gives"
+}], "Text",
+ CellChangeTimes->{{3.696068885258638*^9, 3.696068935640079*^9}, {
+  3.69606897375537*^9, 3.6960690211175833`*^9}, {3.6960698543048477`*^9, 
+  3.6960698806185513`*^9}, {3.6973777199081717`*^9, 3.697377886831872*^9}}],
+
+Cell[BoxData[Cell[TextData[Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[ScriptCapitalP]", "c"], "(", "f", ")"}], "=", 
+    RowBox[{
+     RowBox[{
+      FractionBox["1", "T"], 
+      RowBox[{
+       SubsuperscriptBox["\[Integral]", "0", "T"], 
+       RowBox[{
+        RowBox[{"\[DifferentialD]", "t"}], " ", 
+        RowBox[{"c", "(", "t", ")"}], " ", 
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"-", "\[ImaginaryI]"}], " ", "2", " ", "\[Pi]", " ", "f", 
+          " ", "t"}]], 
+        RowBox[{
+         SubsuperscriptBox["\[Integral]", "0", "T"], 
+         RowBox[{
+          RowBox[{"\[DifferentialD]", 
+           RowBox[{"t", "'"}]}], " ", 
+          RowBox[{"c", "(", 
+           RowBox[{"t", "'"}], ")"}], " ", 
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"\[ImaginaryI]", " ", "2", " ", "\[Pi]", " ", "f", " ", 
+            RowBox[{"t", "'"}]}]]}]}]}]}]}], "=", 
+     RowBox[{
+      RowBox[{
+       FractionBox["1", "T"], 
+       RowBox[{
+        SubsuperscriptBox["\[Integral]", "0", "T"], 
+        RowBox[{
+         RowBox[{"\[DifferentialD]", "t"}], " ", 
+         RowBox[{
+          SubsuperscriptBox["\[Integral]", "0", "T"], 
+          RowBox[{
+           RowBox[{"\[DifferentialD]", 
+            RowBox[{"t", "'"}]}], " ", 
+           RowBox[{"c", "(", "t", ")"}], " ", 
+           RowBox[{"c", "(", 
+            RowBox[{"t", "'"}], ")"}], " ", 
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"\[ImaginaryI]", " ", "2", " ", "\[Pi]", " ", "f", " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"t", "'"}], "-", "t"}], ")"}]}]]}]}]}]}]}], "=", 
+      RowBox[{
+       FractionBox["1", "T"], 
+       RowBox[{
+        SubsuperscriptBox["\[Integral]", "0", "T"], 
+        RowBox[{
+         RowBox[{"\[DifferentialD]", "t"}], " ", 
+         RowBox[{
+          SubsuperscriptBox["\[Integral]", 
+           RowBox[{"-", "t"}], 
+           RowBox[{"T", "-", "t"}]], 
+          RowBox[{
+           RowBox[{"\[DifferentialD]", "u"}], " ", 
+           RowBox[{"c", "(", "t", ")"}], " ", 
+           RowBox[{"c", "(", 
+            RowBox[{"t", "+", "u"}], ")"}], " ", 
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+            "\[ImaginaryI]", " ", "2", " ", "\[Pi]", " ", "f", " ", 
+             "u"}]]}]}]}]}]}]}]}]}], 
+   TraditionalForm]]]]]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6960166966587267`*^9, 3.696016697258561*^9}, {
+  3.6960168012040586`*^9, 3.696016802358244*^9}, {3.696016903016891*^9, 
+  3.696016904270576*^9}, {3.696016984788275*^9, 3.6960169847883263`*^9}, {
+  3.696017818029649*^9, 3.696017854279396*^9}, {3.696017904153449*^9, 
+  3.696017941096012*^9}, {3.696068805300707*^9, 3.6960688595275707`*^9}, {
+  3.696069030177109*^9, 3.696069174727632*^9}}],
+
+Cell[TextData[{
+ "For noisy signals, the correlation function ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"c", "(", "t", ")"}], " ", 
+    RowBox[{"c", "(", 
+     RowBox[{"t", "+", "u"}], ")"}]}], TraditionalForm]]],
+ " plays an important role.  When ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"u", "=", "0"}], TraditionalForm]]],
+ ", it is ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["c", "2"], "(", "t", ")"}], TraditionalForm]]],
+ " which is always positive and measures the instantaneous power in the \
+signal.  When ",
+ Cell[BoxData[
+  FormBox["u", TraditionalForm]]],
+ " increases, we expect ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"c", "(", 
+    RowBox[{"t", "+", "u"}], ")"}], TraditionalForm]]],
+ " to become independent of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"c", "(", "t", ")"}], TraditionalForm]]],
+ ". This will happen after a few \[OpenCurlyDoubleQuote]coherence times\
+\[CloseCurlyDoubleQuote] ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["t", "c"], " "}], TraditionalForm]]],
+ "of the signal.  Furthermore, we expect that as long as the characteristics \
+of the signal are not changing with time, the average value of  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"c", "(", "t", ")"}], " ", 
+    RowBox[{"c", "(", 
+     RowBox[{"t", "+", "u"}], ")"}]}], TraditionalForm]]],
+ " will approach 0 after a few coherence times.  Thus the integrand in the ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"u", "-"}], TraditionalForm]]],
+ "integral will approach zero for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["t", "c"], "\[LessLess]", "u", " ", "\[LessLess]", "t"}], 
+    ",", "T", " "}], TraditionalForm]]],
+ " and the value of the integral will not depend on its limits, which we can \
+replace by ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[PlusMinus]", "\[Infinity]"}], TraditionalForm]]],
+ ".  We can then change the order of integration to get"
+}], "Text",
+ CellChangeTimes->{{3.696069193625307*^9, 3.696069227600532*^9}, {
+  3.696069267076995*^9, 3.6960694033820763`*^9}, {3.6960694744034033`*^9, 
+  3.696069507107019*^9}, {3.696069818665557*^9, 3.696069821387498*^9}, {
+  3.696069929983758*^9, 3.6960699657588263`*^9}, {3.696070090994529*^9, 
+  3.696070289770537*^9}}],
+
+Cell[BoxData[Cell[TextData[Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[ScriptCapitalP]", "c"], "(", "f", ")"}], "=", 
+    RowBox[{
+     RowBox[{
+      FractionBox["1", "T"], 
+      RowBox[{
+       SubsuperscriptBox["\[Integral]", "0", "T"], 
+       RowBox[{
+        RowBox[{"\[DifferentialD]", "t"}], " ", 
+        RowBox[{
+         SubsuperscriptBox["\[Integral]", 
+          RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+         RowBox[{
+          RowBox[{"\[DifferentialD]", "u"}], " ", 
+          RowBox[{"c", "(", "t", ")"}], " ", 
+          RowBox[{"c", "(", 
+           RowBox[{"t", "+", "u"}], ")"}], " ", 
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{
+           "\[ImaginaryI]", " ", "2", " ", "\[Pi]", " ", "f", " ", 
+            "u"}]]}]}]}]}]}], "=", 
+     RowBox[{
+      RowBox[{
+       SubsuperscriptBox["\[Integral]", 
+        RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+       RowBox[{
+        RowBox[{"\[DifferentialD]", "u"}], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          FractionBox["1", "T"], 
+          RowBox[{
+           SubsuperscriptBox["\[Integral]", "0", "T"], 
+           RowBox[{
+            RowBox[{"\[DifferentialD]", "t"}], " ", 
+            RowBox[{"c", "(", "t", ")"}], " ", 
+            RowBox[{"c", "(", 
+             RowBox[{"t", "+", "u"}], ")"}]}]}]}], ")"}], " ", 
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+         "\[ImaginaryI]", " ", "2", " ", "\[Pi]", " ", "f", " ", "u"}]]}]}], 
+      "=", 
+      RowBox[{
+       SubsuperscriptBox["\[Integral]", 
+        RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+       RowBox[{
+        RowBox[{"\[DifferentialD]", "u"}], " ", 
+        OverscriptBox[
+         RowBox[{"c", 
+          RowBox[{"(", "t", ")"}], " ", "c", 
+          RowBox[{"(", 
+           RowBox[{"t", "+", "u"}], ")"}]}], "_"], 
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+         "\[ImaginaryI]", " ", "2", " ", "\[Pi]", " ", "f", " ", 
+          "u"}]]}]}]}]}]}], TraditionalForm]]]]]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6960166966587267`*^9, 3.696016697258561*^9}, {
+  3.6960168012040586`*^9, 3.696016802358244*^9}, {3.696016903016891*^9, 
+  3.696016904270576*^9}, {3.696016984788275*^9, 3.6960169847883263`*^9}, {
+  3.696017818029649*^9, 3.696017854279396*^9}, {3.696017904153449*^9, 
+  3.696017941096012*^9}, {3.696068805300707*^9, 3.6960688595275707`*^9}, {
+  3.696069030177109*^9, 3.696069174727632*^9}, {3.696070300281106*^9, 
+  3.696070373576714*^9}}],
+
+Cell[TextData[{
+ "The PSD is the Fourier transform of the correlation function.  Again, the \
+mean correlation function ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    OverscriptBox[
+     RowBox[{"c", 
+      RowBox[{"(", "t", ")"}], " ", "c", 
+      RowBox[{"(", 
+       RowBox[{"t", "+", "u"}], ")"}]}], "_"], "=", 
+    RowBox[{
+     FractionBox["1", "T"], 
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", "0", "T"], 
+      RowBox[{
+       RowBox[{"\[DifferentialD]", "t"}], " ", 
+       RowBox[{"c", "(", "t", ")"}], " ", 
+       RowBox[{"c", "(", 
+        RowBox[{"t", "+", "u"}], ")"}]}]}]}]}], TraditionalForm]]],
+ " will be independent of ",
+ Cell[BoxData[
+  FormBox["t", TraditionalForm]]],
+ " and approach 0 for large ",
+ Cell[BoxData[
+  FormBox["u", TraditionalForm]]],
+ ".  \n\nThe integral of the PSD is"
+}], "Text",
+ CellChangeTimes->{{3.696070382222541*^9, 3.696070464437913*^9}, {
+  3.6960706331775093`*^9, 3.6960707062799063`*^9}}],
+
+Cell[BoxData[Cell[TextData[Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+     RowBox[{
+      RowBox[{"\[DifferentialD]", "f"}], " ", 
+      RowBox[{
+       SubscriptBox["\[ScriptCapitalP]", "c"], "(", "f", ")"}]}]}], "=", 
+    RowBox[{
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", 
+       RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+      RowBox[{
+       RowBox[{"\[DifferentialD]", "u"}], " ", 
+       OverscriptBox[
+        RowBox[{"c", 
+         RowBox[{"(", "t", ")"}], " ", "c", 
+         RowBox[{"(", 
+          RowBox[{"t", "+", "u"}], ")"}]}], "_"], 
+       RowBox[{"\[Integral]", 
+        RowBox[{
+         RowBox[{"\[DifferentialD]", "f"}], " ", 
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+          "\[ImaginaryI]", " ", "2", " ", "\[Pi]", " ", "f", " ", 
+           "u"}]]}]}]}]}], "=", 
+     RowBox[{
+      RowBox[{
+       SubsuperscriptBox["\[Integral]", 
+        RowBox[{"-", "\[Infinity]"}], "\[Infinity]"], 
+       RowBox[{
+        RowBox[{"\[DifferentialD]", "u"}], " ", 
+        OverscriptBox[
+         RowBox[{"c", 
+          RowBox[{"(", "t", ")"}], " ", 
+          RowBox[{"c", "(", 
+           RowBox[{"t", "+", "u"}], ")"}]}], "_"], 
+        RowBox[{"\[Delta]", "(", "u", ")"}]}]}], "=", 
+      OverscriptBox[
+       RowBox[{
+        RowBox[{
+         SuperscriptBox["c", "2"], "(", "t", ")"}], " "}], "_"]}]}]}], 
+   TraditionalForm]]]]]], "DisplayFormulaNumbered",
+ CellChangeTimes->{{3.6960166966587267`*^9, 3.696016697258561*^9}, {
+  3.6960168012040586`*^9, 3.696016802358244*^9}, {3.696016903016891*^9, 
+  3.696016904270576*^9}, {3.696016984788275*^9, 3.6960169847883263`*^9}, {
+  3.696017818029649*^9, 3.696017854279396*^9}, {3.696017904153449*^9, 
+  3.696017941096012*^9}, {3.696068805300707*^9, 3.6960688595275707`*^9}, {
+  3.696069030177109*^9, 3.696069174727632*^9}, {3.696070300281106*^9, 
+  3.696070373576714*^9}, {3.6960707163616962`*^9, 3.6960708180732603`*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1718, 1065},
+WindowMargins->{{222, Automatic}, {127, Automatic}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"11.1 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 16, \
+2017)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[StyleDefinitions -> "Default.nb"]], 
+   Cell[
+    StyleData[All], FontFamily -> "Century Schoolbook", FontSize -> 13, 
+    FontWeight -> "Regular", FontSlant -> "Plain", 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}]}, Visible -> 
+  False, FrontEndVersion -> 
+  "11.1 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 16, 2017)", 
+  StyleDefinitions -> "PrivateStylesheetFormatting.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 145, 2, 80, "Section", "ExpressionUUID" -> \
+"54dd88c1-cd19-4b1c-9391-be9a4a5163f5"],
+Cell[728, 26, 1420, 40, 141, "Text", "ExpressionUUID" -> \
+"9708905b-d341-49cf-ae96-256d7c8be8d0"],
+Cell[2151, 68, 643, 18, 55, "DisplayFormulaNumbered", "ExpressionUUID" -> \
+"c3e5ab0e-bf24-43c6-b1d8-590d8c28715d"],
+Cell[CellGroupData[{
+Cell[2819, 90, 863, 27, 76, "Input", "ExpressionUUID" -> \
+"f975f309-55fa-4517-bfd8-ee045ccf39b9"],
+Cell[3685, 119, 286, 8, 72, "Output", "ExpressionUUID" -> \
+"b5795cee-e132-48d9-80f3-7c5427aec4ce"]
+}, Open  ]],
+Cell[3986, 130, 1537, 36, 84, "Text", "ExpressionUUID" -> \
+"643ca985-a04c-45fc-9964-f56671381dbc"],
+Cell[5526, 168, 1232, 31, 63, "DisplayFormulaNumbered", "ExpressionUUID" -> \
+"92d65f85-10c7-4017-a9c6-c961b87129e6"],
+Cell[6761, 201, 4165, 92, 210, "Text", "ExpressionUUID" -> \
+"87f7ad4f-3d86-4e88-8327-815266718007"],
+Cell[10929, 295, 684, 22, 52, "Text", "ExpressionUUID" -> \
+"07711bcb-0e21-4889-bfc5-53f1834a2f72"],
+Cell[11616, 319, 598, 15, 45, "DisplayFormulaNumbered", "ExpressionUUID" -> \
+"c3475bd3-75c5-4bf2-b141-53d6ca9f0a69"],
+Cell[12217, 336, 1782, 58, 141, "Text", "ExpressionUUID" -> \
+"4e062ef3-7b33-4431-a0d5-928631e9ad4d"],
+Cell[14002, 396, 995, 26, 45, "DisplayFormulaNumbered", "ExpressionUUID" -> \
+"4890f3a0-bbcc-4a55-8b98-c47c33e9c7f0"],
+Cell[15000, 424, 343, 10, 47, "Text", "ExpressionUUID" -> \
+"08bc46fc-f5f8-40cb-a9b6-f1fbb0ef3b7f"],
+Cell[15346, 436, 984, 31, 53, "Text", "ExpressionUUID" -> \
+"263a08e0-3de2-4431-937f-5470c0ae4ddb"],
+Cell[16333, 469, 1881, 52, 57, "DisplayFormulaNumbered", "ExpressionUUID" -> \
+"d98141ae-a01e-4e66-aa1a-c1fc7e7a142f"],
+Cell[18217, 523, 1395, 41, 112, "Text", "ExpressionUUID" -> \
+"733efe03-511e-4869-8f42-3f0e2bbbecac"],
+Cell[19615, 566, 1704, 48, 82, "DisplayFormulaNumbered", "ExpressionUUID" -> \
+"23511ba0-87ce-48c0-9b4a-079c263e7dbc"],
+Cell[21322, 616, 216, 4, 47, "Text", "ExpressionUUID" -> \
+"e9db00b2-6c9d-40ff-9961-18912b766664"],
+Cell[CellGroupData[{
+Cell[21563, 624, 819, 24, 88, "Input", "ExpressionUUID" -> \
+"b3ee0fd9-55e2-446d-ad2a-6edd62b55298"],
+Cell[22385, 650, 197, 3, 68, "Output", "ExpressionUUID" -> \
+"a20584ee-e690-47d0-adfc-34eaaa69940e"]
+}, Open  ]],
+Cell[22597, 656, 2096, 65, 94, "Text", "ExpressionUUID" -> \
+"278fa08b-2d98-444b-922c-21921209248b"],
+Cell[24696, 723, 1886, 54, 65, "DisplayFormulaNumbered", "ExpressionUUID" -> \
+"47d5c0c9-a637-49cc-b710-de8dc4e8532d"],
+Cell[CellGroupData[{
+Cell[26607, 781, 850, 27, 75, "Input", "ExpressionUUID" -> \
+"14ab7798-b143-44b9-9928-9792b6899720"],
+Cell[27460, 810, 382, 10, 74, "Output", "ExpressionUUID" -> \
+"c83e1116-84d4-4fbe-b6d9-2876ce9fb7d1"]
+}, Open  ]],
+Cell[27857, 823, 734, 21, 156, "Text", "ExpressionUUID" -> \
+"d9ae74c1-d970-4292-a27f-ead1eab3a0b9"],
+Cell[CellGroupData[{
+Cell[28616, 848, 1145, 31, 79, "Input", "ExpressionUUID" -> \
+"aaf03d5e-6e2f-4f40-9c6e-63ec0582c940"],
+Cell[29764, 881, 315, 5, 70, "Output", "ExpressionUUID" -> \
+"c9a10a7d-81e1-432d-8a33-7690121206c9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30116, 891, 115, 2, 49, "Input", "ExpressionUUID" -> \
+"fef39a67-8794-4bec-a2c0-dd1fa2009aa0"],
+Cell[30234, 895, 116, 2, 49, "Output", "ExpressionUUID" -> \
+"78bed154-ed03-4b2f-a06a-1c76427f8a40"]
+}, Open  ]],
+Cell[30365, 900, 455, 12, 47, "Text", "ExpressionUUID" -> \
+"df314db7-5e85-4aa3-9c5f-dfd8a4dd9413"],
+Cell[CellGroupData[{
+Cell[30845, 916, 412, 12, 52, "Input", "ExpressionUUID" -> \
+"b12e46cf-44b8-4795-a244-12c4acd37d3f"],
+Cell[31260, 930, 174, 5, 106, "Output", "ExpressionUUID" -> \
+"169bca49-0aae-4388-8255-5026f6da91ce"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31471, 940, 1435, 38, 83, "Input", "ExpressionUUID" -> \
+"a0edcb64-1bf2-4da1-a335-c90f7b227cca"],
+Cell[32909, 980, 389, 6, 70, "Output", "ExpressionUUID" -> \
+"fbba3c22-7bdc-4717-a89d-84a7233a6895"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33335, 991, 115, 2, 49, "Input", "ExpressionUUID" -> \
+"28051c68-2e29-4986-93ed-b34dd032e3be"],
+Cell[33453, 995, 140, 2, 49, "Output", "ExpressionUUID" -> \
+"c573c310-c14b-4d0c-b80f-f26177c3e5a2"]
+}, Open  ]],
+Cell[33608, 1000, 119, 1, 47, "Text", "ExpressionUUID" -> \
+"20b04254-696f-4dae-9985-1d4c16558cfc"],
+Cell[CellGroupData[{
+Cell[33752, 1005, 267, 5, 55, "Subsection", "ExpressionUUID" -> \
+"2273469f-2bc1-4108-b8b8-1a2deaaab4d3"],
+Cell[34022, 1012, 480, 10, 47, "Text", "ExpressionUUID" -> \
+"d463015d-3303-4163-bffb-b5737e4e026d"],
+Cell[34505, 1024, 705, 19, 49, "DisplayFormulaNumbered", "ExpressionUUID" -> \
+"c820bec6-0f5f-47e3-83a2-dc7d36c2626d"],
+Cell[35213, 1045, 441, 10, 47, "Text", "ExpressionUUID" -> \
+"837b4382-be34-4389-a428-d229fd5121bd"],
+Cell[35657, 1057, 837, 20, 45, "DisplayFormulaNumbered", "ExpressionUUID" -> \
+"74cb3a9a-0135-4679-86b9-57ce85b249ca"],
+Cell[36497, 1079, 108, 1, 47, "Text", "ExpressionUUID" -> \
+"2322b31b-416f-4869-9b5b-1521bb124577"],
+Cell[36608, 1082, 920, 22, 45, "DisplayFormulaNumbered", "ExpressionUUID" -> \
+"0d26ebb5-7928-4261-a89f-eca779db5c76"],
+Cell[37531, 1106, 169, 2, 47, "Text", "ExpressionUUID" -> \
+"d89d242e-5901-4d19-a4f0-636af145d2fd"],
+Cell[37703, 1110, 1658, 44, 45, "DisplayFormulaNumbered", "ExpressionUUID" -> \
+"bf042cd9-bf39-4e29-a915-b1fce4a92795"],
+Cell[39364, 1156, 178, 4, 47, "Text", "ExpressionUUID" -> \
+"55a9826a-fc20-41c3-ae5e-90d3c6163638"],
+Cell[39545, 1162, 3323, 82, 160, "DisplayFormulaNumbered", "ExpressionUUID" \
+-> "acc5030f-4c2b-49ef-8a30-a0af2cc5aedf"],
+Cell[42871, 1246, 143, 1, 47, "Text", "ExpressionUUID" -> \
+"b0ed0426-61cd-447f-81d5-c0218dc15426"],
+Cell[43017, 1249, 2128, 52, 52, "DisplayFormulaNumbered", "ExpressionUUID" -> \
+"11a03c70-58ba-4f1e-97f2-c1d19aa2c89d"],
+Cell[45148, 1303, 473, 11, 106, "Text", "ExpressionUUID" -> \
+"39cfe53d-9738-46d8-a8bd-ed2a8f20b8cc"],
+Cell[45624, 1316, 792, 19, 45, "DisplayFormulaNumbered", "ExpressionUUID" -> \
+"8aff5f16-f7b0-46d2-a4f6-4e094f31adbd"],
+Cell[46419, 1337, 1306, 42, 79, "Text", "ExpressionUUID" -> \
+"62870906-9780-4c96-aeee-12e527f86925"],
+Cell[47728, 1381, 2836, 72, 45, "DisplayFormulaNumbered", "ExpressionUUID" -> \
+"43819ba6-9b07-49df-ae13-40e71fa5398b"],
+Cell[50567, 1455, 2254, 66, 169, "Text", "ExpressionUUID" -> \
+"1f332275-fff4-42c1-a2d0-952745ac1047"],
+Cell[52824, 1523, 2526, 64, 45, "DisplayFormulaNumbered", "ExpressionUUID" -> \
+"fa8f571e-a193-4e05-ab14-559a8dfdd42e"],
+Cell[55353, 1589, 948, 29, 142, "Text", "ExpressionUUID" -> \
+"349a2874-2480-4806-a0ce-4453b2f4e728"],
+Cell[56304, 1620, 2027, 51, 47, "DisplayFormulaNumbered", "ExpressionUUID" -> \
+"f9e55994-709b-4f00-b757-ebde439a6ba5"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
